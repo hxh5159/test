@@ -54,8 +54,26 @@ runtime-v2/v3为旧评分，v4为旧排名/元数据，starter-v1已由v2替代�
     --json-output "$SHORE_TEST_ROOT/preflight-4090-$(date +%Y%m%d-%H%M%S).json"
 
 任一步报错先停止，勿继续运行依赖其输出的后续命令。
-接下来按 README_4卡4090双模型测试.txt 建立Python3.12/vLLM环境，
-分别在同一计算节点的终端A启动服务、终端B运行九宇宙校准。
+安装建议优先使用仓库根目录的修正版安装入口（uv已经安装后）：
+
+  bash install_4090_envs.sh --test-root "$TESTROOT"
+
+该入口自行恢复并检查路径，空路径不会退化到/.venv-*；复用此前uv缓存，
+HTTP读超时600秒、重试5次、同时下载2项，并在任一步失败时停止。
+不会删除之前误建的根目录环境，不自动更改驱动、系统CUDA或base环境。
+安装成功后做四卡基础BF16计算/扩展导入检查，再下载匹配内核；不启动LLM或科学实验。
+使用--plan可仅检查目录并显示目标，不安装、不访问GPU。
+
+用户已实测驱动570.195.03，低于旧说明采用的保守575.57.08门槛。
+CUDA12.x小版本兼容可能允许cu129运行，但PTX/JIT/新驱动功能仍需实际验收；
+本入口是保留0.32-cu129的受控尝试，不承诺所有vLLM/FP8内核已兼容。
+若出现driver/PTX不支持错误，保留日志并换平台兼容节点/环境后继续，不盲降vLLM，
+不将cu129 wheel与cu128 Torch混装，也不在GeForce4090上默认安装cuda-compat绕过。
+官方规则：https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html
+uv下载参数：https://docs.astral.sh/uv/reference/environment/
+
+随后按 README_4卡4090双模型测试.txt，分别在同一计算节点的终端A启动服务、
+终端B运行九宇宙校准；基础CUDA通过不等于27B加载/生成或122B-FP8 MoE验收已通过。
 已通过clone取得包并由prepare脚本解压后，跳过旧说明的“手动上传/解压”步骤。
 H200可用 python3 prepare_test_bundle.py --bundle h200，随后按其说明操作。
 
