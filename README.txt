@@ -15,7 +15,7 @@ shore-organizer-open-model-test-20261101.zip
   完整步骤见 README_三模型远端测试.txt。
   用户后来已有122B-FP8目录，两端需显式指定此目录，优先预量化权重。
 
-shore-organizer-runtime-internal-v5.zip
+shore-organizer-runtime-internal-v6.zip
   正式私有会话、运行与评测系统。不是上述自托管模型校准客户端的替代品。
 
 shore-contest-starter-v2.zip
@@ -112,5 +112,5 @@ H200可用 python3 prepare_test_bundle.py --bundle h200，随后按其说明操�
 
 当前校准仍采用模型提出表达式、工具拟合、隐藏验证评分的内部工作流，
 并非模型自动生成任意law.py后通过生产容器的完整验收。
-真实定律、数值、配额、80/(1+5e)及80/15/5计分保持当前规则。
+当前计分统一为80/(1+10e)，评分版本draft-3.11.0；真实定律、数值、配额、80/15/5和P>=40节约资格不变。旧5e结果不自动改写为新成绩，重测请使用新的结果目录。
 已做离线接线和打包检查；是否能在目标GPU上加载、实际速度与成绩仍需远端运行确认。

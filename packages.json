@@ -13,34 +13,40 @@
       "file": "shore-organizer-4090-test-20261101.zip",
       "status": "current",
       "extract_dir": "shore-organizer-4090-test-20261101",
-      "bytes": 122200,
-      "sha256": "da0f4298870033dbfcfb8feb20de644cd1302e5a2e3765ad1cfce4ec03ea1b9b",
+      "bytes": 122203,
+      "sha256": "b3b645e9628d0ed6a4178a7d02f699974e9436ec614a6f364e15308e984487f4",
       "archive_entries": 26,
       "note": "4x48GB4090: Qwen3.8-27B and existing Qwen3.5-122B-A10B-FP8",
-      "revision": 2,
+      "revision": 3,
       "runner_version": "private-open-expression-calibration-1.1.0",
-      "revision_note": "Preserve infrastructure error classification and retry legal thinking-only replies; no physics/scoring changes"
+      "revision_note": "Unify 10e scoring; unchanged model settings, true physics and observation budget",
+      "scoring_version": "draft-3.11.0",
+      "prediction_mapping": "P=80/(1+10e)"
     },
     "h200": {
       "file": "shore-organizer-open-model-test-20261101.zip",
       "status": "current",
       "extract_dir": "shore-organizer-open-model-test-20261101",
-      "bytes": 115287,
-      "sha256": "683303f9636991cc7e287194dda683cffd2334405f127ec738a782473519fcec",
+      "bytes": 115286,
+      "sha256": "71e6650dcf82e345501b62d94a8a1da62469135b47c08ab8040dd51c12060235",
       "archive_entries": 25,
       "note": "4xH200 three-model expression calibration; prefer new prequantized 122B path explicitly",
-      "revision": 2,
+      "revision": 3,
       "runner_version": "private-open-expression-calibration-1.1.0",
-      "revision_note": "Preserve infrastructure error classification and retry legal thinking-only replies; no physics/scoring changes"
+      "revision_note": "Unify 10e scoring; unchanged model settings, true physics and observation budget",
+      "scoring_version": "draft-3.11.0",
+      "prediction_mapping": "P=80/(1+10e)"
     },
     "runtime": {
-      "file": "shore-organizer-runtime-internal-v5.zip",
+      "file": "shore-organizer-runtime-internal-v6.zip",
       "status": "current",
-      "extract_dir": "shore-organizer-runtime-internal-v5",
-      "bytes": 382266,
-      "sha256": "81348ac1cf6223b33931e0b6d987bf96bdcecbb82d16b87df57692887aca72c8",
+      "extract_dir": "shore-organizer-runtime-internal-v6",
+      "bytes": 382050,
+      "sha256": "9089577da1cf4dde1b3755d79917a208ea627d56307bae24d47f49270ac4e4d6",
       "archive_entries": 48,
-      "note": "Current formal organizer runtime, scoring and service bundle"
+      "note": "Current organizer runtime; 10e scoring; frozen truth reused without simulation",
+      "scoring_version": "draft-3.11.0",
+      "prediction_mapping": "P=80/(1+10e)"
     },
     "starter": {
       "file": "shore-contest-starter-v2.zip",
@@ -95,6 +101,15 @@
       "sha256": "0067acf347b7dc60597d28024ea0d2cc95b9b47912019914d4ffc7c11ab33e59",
       "archive_entries": 31,
       "note": "Superseded by starter v2"
+    },
+    "legacy-runtime-v5": {
+      "file": "legacy/shore-organizer-runtime-internal-v5.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 382266,
+      "sha256": "81348ac1cf6223b33931e0b6d987bf96bdcecbb82d16b87df57692887aca72c8",
+      "archive_entries": 48,
+      "note": "Superseded 5e scoring runtime; keep historical results separate"
     }
   }
 }
