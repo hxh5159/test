@@ -23,84 +23,74 @@ HTTP请求允许900秒，缓解4090生成慢导致的300秒超时；不增加合
 此工作流沿用既有盲表达式候选校准，不提供预置规律库/正确claims；正式law.py和生产容器
 是另一条工程链路，本次不把表达式校准视为模型自动编写任意law.py的完整验收。
 
-二、上传、解压和只读预检
+二、从实际私有仓库目录准备并预检
 
-把 shore-organizer-4090-test-20261101.zip 单独上传到远端项目上一级test目录。
-请在已分配四张4090的GPU作业内执行以下Linux Bash命令：
+你已把测试仓库克隆到.../test/test；压缩包从ASSETROOT读取，解压到同级TESTROOT。
+以下在远端已分配四张4090的GPU作业内执行，已有receipt时安全刷新源码，保留环境和结果。
 
-  PROJECT='/inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test/DiscoverPhysics'
-  TESTROOT="$(dirname "$PROJECT")/shore-organizer-4090-test-20261101"
+  ASSETROOT='/inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test/test'
+  TESTROOT='/inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test/shore-organizer-4090-test-20261101'
   umask 077
-  mkdir -m 700 "$TESTROOT"
-  python3 -m zipfile -e "$(dirname "$PROJECT")/shore-organizer-4090-test-20261101.zip" "$TESTROOT"
-  source "$TESTROOT/env_open_models.sh"
-  mkdir -p "$SHORE_TEST_ROOT/logs" "$SHORE_TEST_ROOT/results" "$SHORE_TEST_ROOT/checks"
+  cd "$ASSETROOT" &&
+  sha256sum -c SHA256SUMS &&
+  if [ -f "$TESTROOT/.test-bundle-receipt.json" ]; then
+      python3 "$ASSETROOT/prepare_test_bundle.py" --bundle 4090 --target "$TESTROOT" --refresh
+  else
+      python3 "$ASSETROOT/prepare_test_bundle.py" --bundle 4090 --target "$TESTROOT"
+  fi &&
+  source "$TESTROOT/env_open_models.sh" &&
+  mkdir -p "$SHORE_TEST_ROOT/logs" "$SHORE_TEST_ROOT/results" "$SHORE_TEST_ROOT/checks" &&
   python3 "$SHORE_TEST_ROOT/preflight_open_models.py" \
     --hardware-profile 4090 --models 27b 122b \
     --model-122b /inspire/hdd/global_public/public_models/Qwen/Qwen3.5-122B-A10B-FP8 \
-    --json-output "$SHORE_TEST_ROOT/preflight-4090.json"
-  nvidia-smi topo -m
-  free -h
-  df -h /dev/shm
+    --json-output "$SHORE_TEST_ROOT/preflight-4090-$(date +%Y%m%d-%H%M%S).json" &&
+  nvidia-smi topo -m &&
+  free -h &&
+  df -h /dev/shm &&
   uname -m
 
-目录或输出报告已存在时不要覆盖，换一个私有测试目录/报告名并同步修改后续路径。
-预检只读配置、分片头部、tokenizer文件和GPU信息，不加载张量/模型、不调用科学实验。
-检查四张卡均为预期48GB设备且有足够空闲显存；27B与122B分别看实际分片precision。
-本次--models会排除397B，不要求其目录可读，也不把它的容量警告混入本轮。
-保留调度器CUDA_VISIBLE_DEVICES，不盲目export 0,1,2,3。终端A须在GPU作业内；
-终端B须在同一计算节点并可读私有测试目录，不需额外GPU。普通SSH登录节点不能直接
-用自己的127.0.0.1访问另一节点的服务。可在作业内用两个tmux窗口。
+准备助手拒绝覆盖非空未知目录或被你修改的源码，不清理已有结果；遇到错误先处理该项。
+预检只读配置、权重头部、tokenizer文件和GPU信息，不加载张量/模型或运行科学实验。
+保留调度器CUDA_VISIBLE_DEVICES。终端A在GPU作业内，终端B在同一计算节点访问回环服务。
 
-下面固定Linux x86_64的CUDA12.9 wheel。驱动>=575.57.08是采用此分支的保守前提；
-旧驱动并非在所有情况下绝对不能运行，但不要跳过PTX/JIT兼容性确认而直接照装。
-若预检不满足此条件，先让集群管理员提供兼容镜像/驱动；不要在共享节点自行升级驱动。
+下面固定Linux x86_64的CUDA12.9 wheel。575.57.08是旧流程采用的保守驱动门槛；
+你实际的570.195.03可进入CUDA12.x有限小版本兼容尝试，但PTX/JIT与具体内核仍需实测。
+按第三节安装/检查，再做模型服务验收；若明确报驱动不支持，由平台提供兼容环境，
+不要在共享节点自行升级驱动。
 RTX4090为SM8.9，vLLM支持Ada FP8；具体MoE内核、扩容卡稳定性和PCIe/P2P仍需实机验证。
 P2P不可用不等于数学上不能TP4，可能使用其他通信路径并变慢；不预先强制设置NCCL禁用项。
 
-三、安装两个隔离环境
+三、安装两个隔离环境并检查（每段自行恢复路径）
 
-若没有uv，可在准备阶段安装；已有则跳过第一行。安装/预取需要可访问相应软件源，
-受限集群可由平台软件镜像或离线wheel满足同样版本，不需要下载模型。
+用户已安装uv0.13.6，无需重复pip install uv。已克隆的测试仓库实际在.../test/test。
+在同一GPU作业中执行；安装入口来自私有测试仓库，不在压缩包中重复维护。
 
-  python3 -m pip install --user uv
+  ASSETROOT='/inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test/test'
+  TESTROOT='/inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test/shore-organizer-4090-test-20261101'
   export PATH="$HOME/.local/bin:$PATH"
-  source "$TESTROOT/env_open_models.sh"
-  uv venv --python 3.12 "$SHORE_TEST_ROOT/.venv-trial"
-  uv pip install --python "$SHORE_TEST_ROOT/.venv-trial/bin/python" \
-    -r "$SHORE_TEST_ROOT/requirements-trials.txt"
-  uv venv --python 3.12 "$SHORE_TEST_ROOT/.venv-vllm"
-  uv pip install --python "$SHORE_TEST_ROOT/.venv-vllm/bin/python" \
-    'https://github.com/vllm-project/vllm/releases/download/v0.32.0/vllm-0.32.0%2Bcu129-cp38-abi3-manylinux_2_28_x86_64.whl#sha256=9918be806fb2808c406547ff4f9f43870ac6ff28dc4b179291fcf532145bb50b' \
-    --torch-backend=cu129
-  source "$SHORE_TEST_ROOT/.venv-vllm/bin/activate"
-  vllm --version
-  vllm download-kernels
+  cd "$ASSETROOT" &&
+  python3 "$ASSETROOT/check_4090_environment.py" --phase paths --test-root "$TESTROOT" &&
+  CACHE_ROOT="$(env -u UV_CACHE_DIR uv cache dir)" &&
+  bash "$ASSETROOT/install_4090_envs.sh" --test-root "$TESTROOT" --cache-dir "$CACHE_ROOT" &&
+  python3 "$ASSETROOT/check_4090_environment.py" --phase installed --test-root "$TESTROOT"
 
-记录实际安装版本（无需pip）：
+安装器验证目录、每次自行source环境，避免空SHORE_TEST_ROOT写到根目录；两环境均用Python3.12。
+已有环境不重建，不删除旧根目录环境，不更改base、宿主驱动或共享模型。
+下载采用600秒读超时、5次重试、2并发；上述CACHE_ROOT选择之前默认缓存，复用已完成的下载。
+若此前使用其他缓存，可显式指定其真实路径；未完成的下载不保证逐字节断点续传。
+环境检测使用各自明确的Python，不依赖当前终端是否激活；网络下载能力仍由实际安装验证。
+vLLM0.32的CUDA扩展为_C_stable_libtorch和_moe_C_stable_libtorch，不使用旧_C检查。
+paths_checked只表示文件路径检查完成；ready_for_model_service_checks只表示可进入模型服务检查，
+不表示27B/122B已加载、FP8内核已通过或九宇宙已跑完。JSON报告保存在解压目录checks内。
 
-python - <<'PY'
-import importlib.metadata as md
-import torch
-print('vllm:', md.version('vllm'), 'torch:', torch.__version__, 'cuda:', torch.version.cuda)
-assert torch.cuda.is_available(), '当前进程没有可用CUDA设备'
-assert torch.cuda.device_count() == 4, '需要本作业可见的四张已分配GPU'
-for i in range(4):
-    p = torch.cuda.get_device_properties(i)
-    print(i, p.name, round(p.total_memory / 2**30, 2), 'GiB', torch.cuda.get_device_capability(i))
-    assert '4090' in p.name, '请核对GPU分配，不要把不同硬件结果混在一起'
-    assert p.total_memory >= 40 * 2**30, '需要48GB扩容卡，请核对实际显存'
-print('P2P矩阵:')
-for i in range(4):
-    print([i == j or torch.cuda.can_device_access_peer(i, j) for j in range(4)])
-PY
-  uv pip freeze --python "$SHORE_TEST_ROOT/.venv-vllm/bin/python" > "$SHORE_TEST_ROOT/logs/vllm-environment.txt"
-  "$SHORE_TEST_ROOT/.venv-trial/bin/python" -m unittest discover \
-    -s "$SHORE_TEST_ROOT/tests" -p 'check_open_model_*.py' -v
+驱动570.195.03低于旧说明采用的保守门槛，但可能通过CUDA12.x小版本兼容运行cu129。
+实际PTX/JIT与模型内核仍需验收；若明确报驱动/PTX不支持，再由平台提供兼容环境，不盲降版本。
+准备完成后，当前终端可运行以下命令进入正确环境：
 
-该检查不加载LLM、不访问宇宙。模型启动/内核预取均在正式发现前完成。
-若复用已有合适vLLM环境，激活该环境并运行相同版本/GPU检查；新包的env仍须source，
-随后在记录中保留真实环境位置。下面默认使用刚建立的两个环境。
+  source "$TESTROOT/env_open_models.sh" &&
+  source "$TESTROOT/.venv-vllm/bin/activate"
+
+以下模型服务与探索仍各自source路径；请完整复制对应终端命令。
 
 四、27B：终端A启动服务
 
@@ -114,7 +104,7 @@ PY
     --model 27b \
     --model-path /inspire/hdd/global_public/public_models/Qwen/Qwen3.8-27B \
     --record "$SHORE_TEST_ROOT/logs/launch-27b-4090.json" \
-    2>&1 | tee "$SHORE_TEST_ROOT/logs/vllm-27b-4090.log"
+    2>&1 | tee -a "$SHORE_TEST_ROOT/logs/vllm-27b-4090.log"
 
 等待服务日志确认已启动，再进入终端B。不要在此时向另一个节点的127.0.0.1发请求。
 服务只监听127.0.0.1:8000；自托管测试不需要旧中转站key。
@@ -153,7 +143,7 @@ smoke只测/models、根/tokenize和/chat/completions；不开始宇宙、不消
     --model 122b \
     --model-path /inspire/hdd/global_public/public_models/Qwen/Qwen3.5-122B-A10B-FP8 \
     --record "$SHORE_TEST_ROOT/logs/launch-122b-fp8-4090.json" \
-    2>&1 | tee "$SHORE_TEST_ROOT/logs/vllm-122b-fp8-4090.log"
+    2>&1 | tee -a "$SHORE_TEST_ROOT/logs/vllm-122b-fp8-4090.log"
 
 检查launch记录的precision.mode为prequantized_fp8_auto_from_config。
 本次已有FP8，命令不应额外出现--quantization fp8_per_block来在线量化原BF16。

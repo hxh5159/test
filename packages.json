@@ -13,19 +13,25 @@
       "file": "shore-organizer-4090-test-20261101.zip",
       "status": "current",
       "extract_dir": "shore-organizer-4090-test-20261101",
-      "bytes": 117738,
-      "sha256": "f4fc7ec8a45bb4890685c085f42ad494dcc15c6b56f745b250e9c2aedac1dffe",
-      "archive_entries": 25,
-      "note": "4x48GB4090: Qwen3.8-27B and existing Qwen3.5-122B-A10B-FP8"
+      "bytes": 122200,
+      "sha256": "da0f4298870033dbfcfb8feb20de644cd1302e5a2e3765ad1cfce4ec03ea1b9b",
+      "archive_entries": 26,
+      "note": "4x48GB4090: Qwen3.8-27B and existing Qwen3.5-122B-A10B-FP8",
+      "revision": 2,
+      "runner_version": "private-open-expression-calibration-1.1.0",
+      "revision_note": "Preserve infrastructure error classification and retry legal thinking-only replies; no physics/scoring changes"
     },
     "h200": {
       "file": "shore-organizer-open-model-test-20261101.zip",
       "status": "current",
       "extract_dir": "shore-organizer-open-model-test-20261101",
-      "bytes": 109634,
-      "sha256": "710a52a2d3b8a9015dab5af6b0ccf66b6cdde9c4c4d01206c1c4519613ef5152",
-      "archive_entries": 24,
-      "note": "4xH200 three-model expression calibration; prefer new prequantized 122B path explicitly"
+      "bytes": 115287,
+      "sha256": "683303f9636991cc7e287194dda683cffd2334405f127ec738a782473519fcec",
+      "archive_entries": 25,
+      "note": "4xH200 three-model expression calibration; prefer new prequantized 122B path explicitly",
+      "revision": 2,
+      "runner_version": "private-open-expression-calibration-1.1.0",
+      "revision_note": "Preserve infrastructure error classification and retry legal thinking-only replies; no physics/scoring changes"
     },
     "runtime": {
       "file": "shore-organizer-runtime-internal-v5.zip",

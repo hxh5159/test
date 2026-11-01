@@ -105,7 +105,7 @@ download-kernels可能耗时/占缓存；先做完再进入正式发现计时。
     --model Qwen3.8-27B \
     --model-path /inspire/hdd/global_public/public_models/Qwen/Qwen3.8-27B \
     --weight-precision 'auto_from_checkpoint; see preflight and vLLM log' \
-    --preset contest --context-token-limit 32768 --seeds 0 \
+    --preset contest --context-token-limit 32768 --http-timeout 900 --seeds 0 \
     --out-dir "$SHORE_TEST_ROOT/results/qwen38-27b-seed0"
 
 不需要旧API key，也不要将它写入配置。本地服务只监听127.0.0.1。
@@ -138,7 +138,7 @@ env_open_models.sh会在本终端清除残留的VLLM_API_KEY/TRIAL_VLLM_API_KEY�
     --model Qwen3.5-122B-A10B-FP8 \
     --model-path /inspire/hdd/global_public/public_models/Qwen/Qwen3.5-122B-A10B \
     --weight-precision 'FP8 deployment: checkpoint-auto or online-fp8_per_block; see vLLM log' \
-    --preset contest --context-token-limit 32768 --seeds 0 \
+    --preset contest --context-token-limit 32768 --http-timeout 900 --seeds 0 \
     --out-dir "$SHORE_TEST_ROOT/results/qwen35-122b-fp8-seed0"
 
 六、最后测现成397B-FP8
@@ -159,7 +159,7 @@ env_open_models.sh会在本终端清除残留的VLLM_API_KEY/TRIAL_VLLM_API_KEY�
     --model Qwen3.5-397B-A17B-FP8 \
     --model-path /inspire/hdd/global_public/public_models/Qwen/Qwen3.5-397B-A17B-FP8 \
     --weight-precision 'prequantized FP8 checkpoint; see header preflight and vLLM log' \
-    --preset contest --context-token-limit 32768 --seeds 0 \
+    --preset contest --context-token-limit 32768 --http-timeout 900 --seeds 0 \
     --out-dir "$SHORE_TEST_ROOT/results/qwen35-397b-fp8-seed0"
 
 七、当前校准设置和读结果

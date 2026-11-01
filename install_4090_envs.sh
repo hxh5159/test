@@ -6,13 +6,19 @@ umask 077
 SCRIPT_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 INSTALL_ROOT="$(dirname -- "$SCRIPT_ROOT")/shore-organizer-4090-test-20261101"
 PLAN_ONLY=0
+CACHE_OVERRIDE="${SHORE_INSTALL_CACHE_DIR:-}"
 while [ "$#" -gt 0 ]; do
     case "$1" in
         --test-root) [ "$#" -ge 2 ] || { printf 'Missing --test-root value\n' >&2; exit 2; }; INSTALL_ROOT="$2"; shift 2 ;;
         --plan) PLAN_ONLY=1; shift ;;
+        --cache-dir) [ "$#" -ge 2 ] && [ -n "$2" ] || { printf 'Missing --cache-dir value\n' >&2; exit 2; }; CACHE_OVERRIDE="$2"; shift 2 ;;
         *) printf 'Unknown argument: %s\n' "$1" >&2; exit 2 ;;
     esac
 done
+if [ "$CACHE_OVERRIDE" = / ]; then
+    printf 'Stop: --cache-dir must not be the filesystem root.\n' >&2
+    exit 2
+fi
 
 if [ -z "$INSTALL_ROOT" ] || [ "$INSTALL_ROOT" = / ] || [ ! -d "$INSTALL_ROOT" ]; then
     printf 'Stop: --test-root must be an existing extracted private bundle directory.\n' >&2
@@ -40,7 +46,14 @@ if ! command -v uv >/dev/null 2>&1; then
     exit 2
 fi
 # Preserve downloads from the failed attempt before env_open_models resets caches.
-INSTALL_CACHE="$(uv cache dir)"
+INSTALL_CACHE="${CACHE_OVERRIDE:-$(uv cache dir)}"
+if [ -d "$INSTALL_CACHE" ]; then
+    INSTALL_CACHE="$(cd -- "$INSTALL_CACHE" && pwd -P)"
+    if [ "$INSTALL_CACHE" = / ]; then
+        printf 'Stop: resolved cache directory must not be the filesystem root.\n' >&2
+        exit 2
+    fi
+fi
 source "$INSTALL_ROOT/env_open_models.sh"
 if [ "${SHORE_TEST_ROOT:-}" != "$INSTALL_ROOT" ]; then
     printf 'Stop: sourced SHORE_TEST_ROOT differs from the checked bundle directory.\n' >&2
@@ -75,7 +88,8 @@ uv pip install --python "$INSTALL_ROOT/.venv-vllm/bin/python" \
 import importlib.metadata as md
 import sys
 import torch
-import vllm._C
+import vllm._C_stable_libtorch
+import vllm._moe_C_stable_libtorch
 print('Python:', sys.executable)
 print('vLLM:', md.version('vllm'), 'Torch:', torch.__version__, 'CUDA runtime:', torch.version.cuda)
 assert (torch.version.cuda or '').startswith('12.9'), 'Expected the matching cu129 Torch build'
