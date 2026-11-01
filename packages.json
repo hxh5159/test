@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "repository": "hxh5159/test",
+  "required_visibility": "private",
+  "contains_secret_world_definitions_and_hidden_validation": true,
+  "participant_distribution_allowed": false,
+  "excluded_intermediate_drafts": [
+    "shore-organizer-open-model-test-20261101-before-review.zip",
+    "shore-organizer-open-model-test-20261101-before-clean-test.zip"
+  ],
+  "packages": {
+    "4090": {
+      "file": "shore-organizer-4090-test-20261101.zip",
+      "status": "current",
+      "extract_dir": "shore-organizer-4090-test-20261101",
+      "bytes": 117738,
+      "sha256": "f4fc7ec8a45bb4890685c085f42ad494dcc15c6b56f745b250e9c2aedac1dffe",
+      "archive_entries": 25,
+      "note": "4x48GB4090: Qwen3.8-27B and existing Qwen3.5-122B-A10B-FP8"
+    },
+    "h200": {
+      "file": "shore-organizer-open-model-test-20261101.zip",
+      "status": "current",
+      "extract_dir": "shore-organizer-open-model-test-20261101",
+      "bytes": 109634,
+      "sha256": "710a52a2d3b8a9015dab5af6b0ccf66b6cdde9c4c4d01206c1c4519613ef5152",
+      "archive_entries": 24,
+      "note": "4xH200 three-model expression calibration; prefer new prequantized 122B path explicitly"
+    },
+    "runtime": {
+      "file": "shore-organizer-runtime-internal-v5.zip",
+      "status": "current",
+      "extract_dir": "shore-organizer-runtime-internal-v5",
+      "bytes": 382266,
+      "sha256": "81348ac1cf6223b33931e0b6d987bf96bdcecbb82d16b87df57692887aca72c8",
+      "archive_entries": 48,
+      "note": "Current formal organizer runtime, scoring and service bundle"
+    },
+    "starter": {
+      "file": "shore-contest-starter-v2.zip",
+      "status": "current",
+      "extract_dir": "shore-contest-starter-v2",
+      "bytes": 57868,
+      "sha256": "fb8675a11e6f0696fd7f76a24cd7b0f4d3d7090275cf1bb33cac54a47e94bb16",
+      "archive_entries": 31,
+      "note": "Current public SDK and contestant template archive; do not distribute the other bundles"
+    },
+    "legacy-calibration": {
+      "file": "legacy/organizer_calibration_20261031.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 132505,
+      "sha256": "00b1e49331d5579e8ce062da0bc9c3b5802b173e48eb91736901d5de580ec927",
+      "archive_entries": 33,
+      "note": "Old closed-model tools, old 10e scoring; not the current run entry"
+    },
+    "legacy-runtime-v2": {
+      "file": "legacy/shore-organizer-runtime-internal-v2.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 375465,
+      "sha256": "83d8ef60634754c073009b8b1e15b06c23ab1dd0cfa83e9860a457065394f9cb",
+      "archive_entries": 47,
+      "note": "Superseded, old 10e scoring"
+    },
+    "legacy-runtime-v3": {
+      "file": "legacy/shore-organizer-runtime-internal-v3.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 376527,
+      "sha256": "b7033365efb66f01ee4ff3c4bd5ffa9042478d6af6a68ae97d85d603ca4bd781",
+      "archive_entries": 48,
+      "note": "Superseded, old 10e scoring"
+    },
+    "legacy-runtime-v4": {
+      "file": "legacy/shore-organizer-runtime-internal-v4.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 381436,
+      "sha256": "7dc4938c7a0ad01280a7d6e46e02a9cb3ea59e332d98781eac9d0878196e03f1",
+      "archive_entries": 48,
+      "note": "Superseded, old tie/metadata rules"
+    },
+    "legacy-starter-v1": {
+      "file": "legacy/shore-contest-starter-v1.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 57750,
+      "sha256": "0067acf347b7dc60597d28024ea0d2cc95b9b47912019914d4ffc7c11ab33e59",
+      "archive_entries": 31,
+      "note": "Superseded by starter v2"
+    }
+  }
+}
