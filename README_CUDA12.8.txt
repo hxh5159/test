@@ -15,6 +15,10 @@ bash install_cuda128_envs.sh \
   --index-url '<用户指定的包索引URL>' \
   --trusted-host '<与索引匹配的主机名>'
 
+更新r4校准源码时，prepare_test_bundle.py --refresh保留原.venv-trial、.venv-vllm、
+.venv-vllm-cu128、build-vllm-cu128.*、日志与结果，不重新安装或改动已有CUDA环境。
+此次包修订只改变观测速度的轻量噪声，既有推理环境版本与专用启动方式保持。
+
 该脚本所有pip install均使用：
 env -u PIP_EXTRA_INDEX_URL -u PIP_INDEX_URL PIP_CONFIG_FILE=/dev/null \
   <目标环境python> -m pip install ... --index-url ... --trusted-host ... --no-cache-dir

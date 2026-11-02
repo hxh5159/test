@@ -109,6 +109,7 @@ def existing_changes(destination, bundle, archive_sha256, files, members, refres
     for name in set(files) - set(old_files):
         top = PurePosixPath(name).parts[0]
         if refresh and (top.startswith(".venv") or top.startswith("venv-")
+                        or top.startswith("build-vllm-cu128.")
                         or top in {"venv", "logs", "results", "cache", ".cache"}):
             raise FileExistsError("A new source would enter an environment, log, result or cache directory; choose a new --target")
         local = local_source(destination, name)

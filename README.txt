@@ -4,8 +4,15 @@ SHORE 指挥部私有测试资料库
 只限授权指挥部成员，不向攻坚组开放；请保持仓库Private，不将其作为参赛起步包。
 没有附带模型权重、真实API key、私钥或本机历史模拟结果。
 
+2026-11-02观测仪器更新：当前校准包为r4，私有后台为internal-v7。
+速度每坐标独立叠加标准差1e-4乘公开初速度上限的高斯噪声，第一束光同规则，
+缓存重读不重抽；命令初态、真实模拟和评分真值保持精确，位置噪声同seed序列不变。
+本次只更新仪器：包中仍是此前已打包的九宇宙物理和验证，尚未迁入六公开、替代Adam
+以及新选择的验证覆盖；不包含本轮标定成绩，不能当作六公开＋九未知完整接入验收。
+旧v6/r3 ZIP与旧结果保留，重测请用新的结果目录，不覆盖原成绩。
+
 2026-11-02 CUDA12.8安装补充：install_cuda128_envs.sh及README_CUDA12.8.txt，
-独立使用torch2.11+cu128和vLLM0.24源码构建。原0.32/cu129脚本和ZIP保持；
+独立使用torch2.11+cu128和vLLM0.24源码构建。原0.32/cu129安装脚本与历史ZIP保留；
 该配置必须使用新环境的vllm serve直接启动，不调用旧的0.32专用启动/环境检查器。
 
 一、当前使用的四个包（仓库根目录）
@@ -19,14 +26,14 @@ shore-organizer-open-model-test-20261101.zip
   完整步骤见 README_三模型远端测试.txt。
   用户后来已有122B-FP8目录，两端需显式指定此目录，优先预量化权重。
 
-shore-organizer-runtime-internal-v6.zip
+shore-organizer-runtime-internal-v7.zip
   正式私有会话、运行与评测系统。不是上述自托管模型校准客户端的替代品。
 
 shore-contest-starter-v2.zip
   公开SDK/参赛模板的当前交付包。与其他私有包分开，不可整库发选手。
 
 packages.json记录每包状态、用途、SHA256和默认解压目录；SHA256SUMS可整体校验。
-legacy/保留五个历史交付包供追溯，不用于当前测试。旧闭源校准使用旧10e公式；
+legacy/保留历史交付包供追溯，不用于当前测试。旧闭源校准使用旧10e公式；
 runtime-v2/v3为旧评分，v4为旧排名/元数据，starter-v1已由v2替代。
 两份before-review/before-clean-test中间草稿不上传，避免误用。
 
@@ -109,6 +116,7 @@ H200可用 python3 prepare_test_bundle.py --bundle h200，随后按其说明操�
   python3 prepare_test_bundle.py --bundle 4090 --refresh
 
 --refresh只更新仍等于原交付内容的源码；已改动的文件会拒绝覆盖，环境/权重/结果不重建。
+包括.venv-vllm-cu128和build-vllm-cu128.*目录也保留，不重新构建CUDA12.8环境。
 若提示存在本地源码改动或包删除了旧文件，请保留原目录并用--target选择新目录。
 不要上传生成的观测日志、凭证、权重和结果，本仓库用于受限同步交付包。
 

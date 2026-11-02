@@ -91,6 +91,8 @@ class PreparationTests(unittest.TestCase):
         target = Path(prepare("4090", repository_root=self.root)["extracted_to"])
         extras = {".venv-trial/pyvenv.cfg": "existing trial environment",
                   ".venv-vllm/pyvenv.cfg": "existing vllm environment",
+                  ".venv-vllm-cu128/pyvenv.cfg": "existing independent CUDA12.8 environment",
+                  "build-vllm-cu128.synthetic/source/local-edit.py": "existing CUDA12.8 source build",
                   "logs/keep.log": "existing logs", "results/keep.json": "existing result",
                   ".cache/uv/keep.whl": "existing cached wheel"}
         for name, content in extras.items():
@@ -169,7 +171,9 @@ class PreparationTests(unittest.TestCase):
 
     def test_refresh_rejects_new_source_inside_runtime_directories(self):
         target = Path(prepare("4090", repository_root=self.root)["extracted_to"])
-        runtime_directories = (".venv-trial", ".venv-vllm", "venv", "venv-test", "logs", "results", "cache", ".cache")
+        runtime_directories = (".venv-trial", ".venv-vllm", ".venv-vllm-cu128",
+                               "build-vllm-cu128.synthetic", "venv", "venv-test",
+                               "logs", "results", "cache", ".cache")
         for name in runtime_directories:
             (target/name).mkdir()
             (target/name/"keep.txt").write_text("runtime data")
