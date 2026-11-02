@@ -1,7 +1,8 @@
 {
   "schema_version": "1.0.0",
   "repository": "hxh5159/test",
-  "required_visibility": "private",
+  "required_visibility": "public",
+  "visibility_authorization": "2026-11-02 owner explicitly confirmed public access including simulator, law truth and hidden validation; historical ZIP markings retained",
   "contains_secret_world_definitions_and_hidden_validation": true,
   "participant_distribution_allowed": false,
   "excluded_intermediate_drafts": [
