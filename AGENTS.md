@@ -24,3 +24,5 @@
 14. 2026-11-02实际部署已明确为联网CPU实例构建镜像，再启动完全无网的4H200实例；目标仍CUDA12.8。主仓库bootstrap新增--cpu-build-for h200固定SM90、CPU端不要求GPU/驱动，另行预下载FlashInfer0.6.12/cu128内核并在H200验收。环境、工具链、缓存建议放镜像包含的/opt目录，共享盘项目/模型另挂载。旧默认四卡安装器不适用于CPU制镜像；参见主仓库docs/H200_OFFLINE_SETUP.txt。未实际在远端构建/运行，不称已验收。
 
 15. 2026-11-02用户确认正式与内部模拟每宇宙10分钟（600秒），从首次成功mission起计模型调用、实验和工具处理，模型加载另计，后续指挥部积分评分不占探索时限。当前两校准包r5、正式后台internal-v8、起步包starter-v3；旧r4/v7/v2原字节在legacy保留。新v8只继承旧干净案例与真值、更新时限及摘要，不改物理或声称新六公开＋九隐藏已迁移。请求等待受剩余会话预算约束且拒绝迟到action；旧结果保留原3600秒口径，不伪称已通过600秒。刷新已有解压目录须显式--refresh，不覆盖日志、结果或环境。
+
+16. 2026-11-02用户已授权并完成整改，当前starter-v4（65文件）、两模型测试r6、runtime internal-v9。starter含六公开/可改LLM基线/完整Console生命周期/七模型/cu128新入口；runtime/public为同一公开kit，r6把完整public与正式源/profile平铺，兼容旧解压目录。旧v3/r5/v8原字节在legacy。最新九界与coverage已迁入并全量重生成干净参考；固定参数/噪声1.1/600/评分不变。隐藏team-export已停、导出CLI包括旧结果无条件拒绝，六公开记录仍可复用。当前入口为docs/QUICKSTART、scripts/serve_model.py和development_worlds.runner，旧0.32及表达式校准仅历史诊断，不作为基础框架。models目录/model-id/BF16-FP8已统一，保留venv Python路径；397BF16容量不足会拒绝。configure_runtime四步用真实设备/镜像/生成证据发布，不虚构远端验收。包CRC/hash/隔离CLI与旧refresh保护已过，公开179回归和15界75合成请求通过，未真实加载模型/GPU。

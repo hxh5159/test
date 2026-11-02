@@ -1,135 +1,71 @@
 SHORE 指挥部测试资料库
+更新：2026-11-02；当前starter-v4、模型测试包r6、正式运行包internal-v9。
 
-此仓库包含正式宇宙真实模拟器、定律真值、隐藏验证、指挥部测试工作流。
-2026-11-02已按所有者明确确认将整个仓库设为公开，包括模拟器、真值和验证数据。
-匿名HTTPS clone/pull无需GitHub登录；写入仍需授权。各包用途仍须区分，不将整库当作参赛起步包。
-历史ZIP内private/organizer-only标记反映原交付状态，保留原字节和校验值；当前访问权限以仓库状态为准。
-没有附带模型权重、真实API key、私钥或本机历史模拟结果。
+一、四个包的用途
 
-环境安装不要求先同步本仓库。公开主仓库scripts/bootstrap_cuda128.sh及
-docs/CUDA128_SETUP.txt可单独建立CPU与CUDA12.8推理环境，无需GitHub登录；
-当前仓库已公开，读取不再要求认证。请区分包更新、依赖安装和实际模型加载验收。
+shore-contest-starter-v4.zip
+  发给攻坚组的完整开发包：六公开宇宙、可修改LLM基础框架、统一实验/提交驱动、
+  固定候选积分器、公开评分、七模型配置及CUDA12.8环境/运行说明。不含九隐藏真实场或真值。
 
-2026-11-02限时更新：当前校准包为r5，私有后台为internal-v8。
-速度每坐标独立叠加标准差1e-4乘公开初速度上限的高斯噪声，第一束光同规则，
-缓存重读不重抽；命令初态、真实模拟和评分真值保持精确，位置噪声同seed序列不变。
-现行探索限时每宇宙600秒，包含模型调用与工具处理；模型加载和结束后的固定积分/评分另计。
-包中仍是此前已打包的九宇宙物理和验证，尚未迁入六公开、替代Adam
-以及新选择的验证覆盖；不包含本轮标定成绩，不能当作六公开＋九未知完整接入验收。
-旧v7/r4及更早ZIP与旧结果保留，重测请用新的结果目录，不覆盖原成绩。
+shore-organizer-runtime-internal-v9.zip
+  指挥部九隐藏运行系统，已迁入最新固定科学定义与增强验证覆盖，九套干净参考重新生成。
+  public/是同一完整攻坚组开发包；整个runtime ZIP不能作为参赛包发放。
+  configure_runtime.py可登记真实镜像/模型挂载，执行目标设备检查、真实模型生成和受信发布。
 
-2026-11-02 CUDA12.8安装补充：install_cuda128_envs.sh及README_CUDA12.8.txt，
-独立使用torch2.11+cu128和vLLM0.24源码构建。原0.32/cu129安装脚本与历史ZIP保留；
-该配置必须使用新环境的vllm serve直接启动，不调用旧的0.32专用启动/环境检查器。
+shore-organizer-open-model-test-20261101.zip（r6，4H200）
+shore-organizer-4090-test-20261101.zip（r6，4×48GB4090开发诊断）
+  将完整公开开发包与指挥部运行源/新参考合在同一测试目录，兼容此前解压位置。
+  主入口改为scripts/serve_model.py和python -m development_worlds.runner，正式九界用
+  contest_platform.py。旧表达式校准辅助仍留作历史诊断，不作为新law.py基础框架入口。
+  两个包含九隐藏真实资料，只用于指挥部；不要把整个目录发给攻坚组。
 
-一、当前使用的四个包（仓库根目录）
+2026-11-02所有者已明确授权公开整个hxh5159/test，含模拟器、真值和验证；匿名HTTPS
+读取不要求GitHub登录。访问权限与正式参赛发放受众分开：只把独立starter发给攻坚组。
+不附API凭证、私钥、权重或原始模型运行结果。历史标识保留原字节，不代表重新改变仓库权限。
 
-shore-organizer-4090-test-20261101.zip
-  四张48GB RTX4090，依次测试Qwen3.8-27B和Qwen3.5-122B-A10B-FP8。
-  完整步骤见 README_4卡4090双模型测试.txt；当前用户优先采用此包。
+二、远端准备（Linux，已有test克隆）
 
-shore-organizer-open-model-test-20261101.zip
-  四张H200的三模型校准包，27B、122B、397B依次运行。
-  完整步骤见 README_三模型远端测试.txt。
-  用户后来已有122B-FP8目录，两端需显式指定此目录，优先预量化权重。
+BASE='/inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test'
+ASSETROOT="$BASE/test"
+TESTROOT="$BASE/shore-organizer-open-model-test-20261101"
+git -C "$ASSETROOT" pull --ff-only
 
-shore-organizer-runtime-internal-v8.zip
-  正式私有会话、运行与评测系统。不是上述自托管模型校准客户端的替代品。
+首次解压：
+python3 "$ASSETROOT/prepare_test_bundle.py" --bundle h200 --target "$TESTROOT"
 
-shore-contest-starter-v3.zip
-  公开SDK/参赛模板的当前交付包。与其他私有包分开，不可整库发选手。
+已有旧包receipt、需要更新源码：
+python3 "$ASSETROOT/prepare_test_bundle.py" --bundle h200 --target "$TESTROOT" --refresh
 
-packages.json记录每包状态、用途、SHA256和默认解压目录；SHA256SUMS可整体校验。
-legacy/保留历史交付包供追溯，不用于当前测试。旧闭源校准使用旧10e公式；
-runtime-v2/v3为旧评分，v4为旧排名/元数据，starter-v1已由v2替代。
-两份before-review/before-clean-test中间草稿不上传，避免误用。
+只执行适用的一条。4090诊断将bundle换为4090并使用原4090目标目录；runtime/starter也有
+对应bundle键。准备器校验全部哈希，更新receipt管理的源文件，保护环境、缓存、日志及结果。
+源文件若被人工改动会停止，不自动覆盖。新实验使用新的输出目录，不伪改旧成绩。
 
-二、远端克隆与4090准备（Linux Bash）
+三、当前环境和完整模型流程
 
-以下HTTPS克隆允许匿名读取，不需要GitHub账号。不要把令牌直接写进URL/命令记录。
-SSH方式仍可能要求账号密钥；需要免登录读取时使用下方HTTPS地址。
+用户实际在联网CPU安装/编译并保存镜像，再到无网H200运行，目标CUDA12.8。
+安装步骤见主项目docs/H200_OFFLINE_SETUP.txt；安装不用读取本仓库，更不要求GPU在CPU端出现。
+当前包也带这些公开安装脚本和说明。旧0.32/cu129安装/检查工具仅作兼容保留，不是当前入口。
 
-  cd /inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test &&
-  umask 077 &&
-  git clone https://github.com/hxh5159/test.git test &&
-  cd test &&
-  sha256sum -c SHA256SUMS &&
-  python3 prepare_test_bundle.py --bundle 4090
+source "$TESTROOT/env_open_models.sh"
+cd "$TESTROOT"
+PY='/opt/shore-h200-cu128/.venv-trial/bin/python'
+MPY='/opt/shore-h200-cu128/.venv-vllm-cu128/bin/python'
+MODELROOT='/inspire/hdd/project/26-the-other-shore/public/models'
 
-最后一步只验证/解压，不调用模型、不运行物理模拟、不加载GPU。
-此段只用于首次克隆；你已有的实际仓库为.../test/test，后续用第三节同步，不重复clone。
-默认解压到仓库目录的同级 shore-organizer-4090-test-20261101，保持前面约定的路径。
-此前解压失败留下的空目录可以直接使用。非空未知目录拒绝覆写；用--target指定新目录。
-重复准备时校验源文件，保留已有logs/results；源文件被改过则停止，不覆盖你的改动。
+"$PY" scripts/serve_model.py --list
+"$PY" -m development_worlds.runner --worlds 1 2 3 4 5 6   --model 27b --model-root "$MODELROOT" --model-python "$MPY"   --output "results/public-$(date +%Y%m%d-%H%M%S)"
 
-确认准备成功后再执行（环境变量必须在当前终端source）：
+七个预设：27b、35b、35b-fp8、122b、122b-fp8、397b、397b-fp8。
+BF16与FP8不会互相冒充；397b BF16无法4H200全GPU常驻，应选现有FP8或另行验证合规方案。
+六公开可直接保留实验资料；九隐藏赛中不归还观测、对话、候选、日志、记忆或更新权重。
+正式分数仍80/(1+10e)、80/15/5；600秒从首次mission起计，模型加载另计。
 
-  TESTROOT='/inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test/shore-organizer-4090-test-20261101'
-  source "$TESTROOT/env_open_models.sh" &&
-  mkdir -p "$SHORE_TEST_ROOT/logs" "$SHORE_TEST_ROOT/results" "$SHORE_TEST_ROOT/checks" &&
-  python3 "$SHORE_TEST_ROOT/preflight_open_models.py" \
-    --hardware-profile 4090 --models 27b 122b \
-    --model-122b /inspire/hdd/global_public/public_models/Qwen/Qwen3.5-122B-A10B-FP8 \
-    --json-output "$SHORE_TEST_ROOT/preflight-4090-$(date +%Y%m%d-%H%M%S).json"
+六公开完整命令：解压目录docs/QUICKSTART.txt、PARTICIPANT_FILES.txt、MODEL_RUNTIME.txt。
+九隐藏隔离部署：README_正式赛题部署.txt、CODE_DELIVERY_BOUNDARIES.txt。
+正式镜像ID从实际本地构建取得；模型源目录由指挥部只读映射，不需要反复上传数百GB基座。
 
-任一步报错先停止，勿继续运行依赖其输出的后续命令。
-安装建议优先使用仓库根目录的修正版安装入口（uv已经安装后）：
+四、校验与历史
 
-  ASSETROOT='/inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test/test'
-  TESTROOT='/inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test/shore-organizer-4090-test-20261101'
-  bash "$ASSETROOT/install_4090_envs.sh" --test-root "$TESTROOT"
-
-该入口自行恢复并检查路径，空路径不会退化到/.venv-*；复用此前uv缓存，
-HTTP读超时600秒、重试5次、同时下载2项，并在任一步失败时停止。
-不会删除之前误建的根目录环境，不自动更改驱动、系统CUDA或base环境。
-如果之前失败的下载在默认uv缓存，可在上条命令中增加
---cache-dir "$(env -u UV_CACHE_DIR uv cache dir)"；这避免已source环境后改换缓存目录而重复下载。
-安装成功后做四卡基础BF16计算/扩展导入检查，再下载匹配内核；不启动LLM或科学实验。
-vLLM0.32 CUDA扩展检查使用_C_stable_libtorch和_moe_C_stable_libtorch，不使用旧_C名称。
-使用--plan可仅检查目录并显示目标，不安装、不访问GPU。
-
-本次复查后，完整的分阶段检查可执行：
-
-  python3 "$ASSETROOT/check_4090_environment.py" --phase paths --test-root "$TESTROOT" &&
-  bash "$ASSETROOT/install_4090_envs.sh" --test-root "$TESTROOT" &&
-  python3 "$ASSETROOT/check_4090_environment.py" --phase installed --test-root "$TESTROOT"
-
-paths阶段检查包内源码清单/语法、模型头部、目录读写；installed阶段使用两个明确的venv
-检查CPU依赖/CLI、0.32-cu129扩展、四卡显存与小BF16计算，生成新的JSON报告。
-只有ready_for_model_service_checks才继续模型服务验收；它不等于模型已加载或已跑九宇宙。
-驱动/网络/模型行为仍需当前节点实际验收。源码改动后先执行第三节的--refresh，保留环境和结果。
-
-当前校准工具1.1修复合法thinking-only/length回复被误报transport的问题，仍保持原thinking与
-8192/32K/900设置；跨截止的context错误也保留原故障类型，不伪装成模型科学零分。
-
-用户已实测驱动570.195.03，低于旧说明采用的保守575.57.08门槛。
-CUDA12.x小版本兼容可能允许cu129运行，但PTX/JIT/新驱动功能仍需实际验收；
-本入口是保留0.32-cu129的受控尝试，不承诺所有vLLM/FP8内核已兼容。
-若出现driver/PTX不支持错误，保留日志并换平台兼容节点/环境后继续，不盲降vLLM，
-不将cu129 wheel与cu128 Torch混装，也不在GeForce4090上默认安装cuda-compat绕过。
-官方规则：https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html
-uv下载参数：https://docs.astral.sh/uv/reference/environment/
-
-随后按 README_4卡4090双模型测试.txt，分别在同一计算节点的终端A启动服务、
-终端B运行九宇宙校准；基础CUDA通过不等于27B加载/生成或122B-FP8 MoE验收已通过。
-已通过clone取得包并由prepare脚本解压后，跳过旧说明的“手动上传/解压”步骤。
-H200可用 python3 prepare_test_bundle.py --bundle h200，随后按其说明操作。
-
-三、后续同步
-
-  cd /inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test/test &&
-  git pull --ff-only &&
-  sha256sum -c SHA256SUMS &&
-  python3 prepare_test_bundle.py --bundle 4090 --refresh
-
---refresh只更新仍等于原交付内容的源码；已改动的文件会拒绝覆盖，环境/权重/结果不重建。
-包括.venv-vllm-cu128和build-vllm-cu128.*目录也保留，不重新构建CUDA12.8环境。
-若提示存在本地源码改动或包删除了旧文件，请保留原目录并用--target选择新目录。
-不要上传生成的观测日志、凭证、权重和结果，本仓库用于受限同步交付包。
-
-四、测试边界
-
-当前校准仍采用模型提出表达式、工具拟合、隐藏验证评分的内部工作流，
-并非模型自动生成任意law.py后通过生产容器的完整验收。
-当前计分统一为80/(1+10e)，评分版本draft-3.11.0；真实定律、数值、配额、80/15/5和P>=40节约资格不变。旧5e结果不自动改写为新成绩，重测请使用新的结果目录。
-已做离线接线和打包检查；是否能在目标GPU上加载、实际速度与成绩仍需远端运行确认。
+packages.json记录每包版本、用途、SHA及默认解压目录；SHA256SUMS包含当前和全部历史包。
+可用sha256sum -c SHA256SUMS核对。legacy/保留旧v3/r5/v8及更早原始包和评分版本。
+最新发布与现场GPU验收是不同步骤：本地回归及合成HTTP联调不代表所有真实模型均已加载。
