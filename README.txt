@@ -4,6 +4,10 @@ SHORE 指挥部私有测试资料库
 只限授权指挥部成员，不向攻坚组开放；请保持仓库Private，不将其作为参赛起步包。
 没有附带模型权重、真实API key、私钥或本机历史模拟结果。
 
+2026-11-02 CUDA12.8安装补充：install_cuda128_envs.sh及README_CUDA12.8.txt，
+独立使用torch2.11+cu128和vLLM0.24源码构建。原0.32/cu129脚本和ZIP保持；
+该配置必须使用新环境的vllm serve直接启动，不调用旧的0.32专用启动/环境检查器。
+
 一、当前使用的四个包（仓库根目录）
 
 shore-organizer-4090-test-20261101.zip
