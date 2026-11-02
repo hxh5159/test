@@ -16,3 +16,5 @@
 10. 2026-11-02用户要求CUDA12.8及自选索引的pip安装格式。新增install_cuda128_envs.sh和README_CUDA12.8.txt：Python3.12/torch2.11+cu128/vLLM0.24源码/transformers5.8独立配置，旧0.32/cu129环境和ZIP保持。镜像地址通过参数传入；Torch包及上游源码仍需外网下载。先核验nvcc12.8和编译器，不把nvidia-smi的CUDA标签等同于已安装Toolkit。新环境不兼容旧0.32专用启动/检查脚本，使用其vllm serve直接启动；未远端验收，不声称模型已跑通。
 
 11. 2026-11-02用户正式采纳轻量速度噪声1.1.0：sigma_v=1e-4*公开初速上限，每坐标/时刻/探针/新实验独立；首光同规则，缓存不重抽，初态及评分真值干净。当前模型校准ZIP为revision4、运行包为internal-v7；保留原r3及v6在legacy原字节追溯。新包只更新传感器、相关提示词/文案/源码摘要，复用旧干净验证数组与案例，不代表新的六公开＋九正式定义已全部接入旧运行包。prepare --refresh保护旧环境、日志、结果及CUDA12.8源码构建目录；远端已有解压目录须显式refresh才更新，不能只git pull后声称运行了新噪声。
+
+12. 2026-11-02登录提示来自资料库认证，安装依赖与私有资料同步分开。公开主仓库scripts/bootstrap_cuda128.sh无需本仓库内容即可安装uv/CPU环境/源码vLLM CUDA12.8，并生成activate_cuda128.sh；README_CUDA12.8.txt已将此作为独立入口。sdist构建固定VLLM_VERSION_OVERRIDE，公开上游源码下载需要网络而非账号。旧安装器保留作历史，不把nvidia-smi标签等同Toolkit或基础检查等同模型验收。

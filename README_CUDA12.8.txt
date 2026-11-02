@@ -8,7 +8,15 @@ vLLM 0.24.0 源码构建环境。transformers 固定为5.8.0，以覆盖Qwen3.8-
 /inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test/test
 默认已解压包：同级 shore-organizer-4090-test-20261101
 
-先 git pull --ff-only，再运行：
+安装环境不需要先git pull私有test仓库。私有仓库同步需要GitHub认证；
+依赖安装和公开源码下载本身不需要账号。可独立使用公开主仓库中的：
+  scripts/bootstrap_cuda128.sh
+  docs/CUDA128_SETUP.txt
+新脚本不要求私有包已经解压，使用--env-root指定环境目录；会检查uv并在缺少时安装，
+从Python索引安装vLLM源码包，不再git clone vLLM，并生成可供重启后source的activate_cuda128.sh。
+具体远端镜像通过--index-url/--trusted-host传入，语法与下方旧安装器一致。
+
+以下为保留的旧安装器入口：若已同步私有test资料，可运行：
 
 bash install_cuda128_envs.sh \
   --test-root /inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test/shore-organizer-4090-test-20261101 \
