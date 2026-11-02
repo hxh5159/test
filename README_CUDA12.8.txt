@@ -10,7 +10,7 @@ vLLM 0.24.0 源码构建环境。transformers 固定为5.8.0，以覆盖Qwen3.8-
 配置的处理器要求。不是原0.32/cu129环境的就地升级，也没有改评分或真实模拟器。
 
 远端资料仓库：
-/inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test/test
+/inspire/hdd/project/26-the-other-shore/fengkairui-25026/test
 默认已解压包：同级 shore-organizer-4090-test-20261101
 
 安装环境不需要先git pull测试资料仓库。2026-11-02用户已确认将整个test公开，
@@ -24,7 +24,7 @@ vLLM 0.24.0 源码构建环境。transformers 固定为5.8.0，以覆盖Qwen3.8-
 以下为保留的旧安装器入口：若已同步私有test资料，可运行：
 
 bash install_cuda128_envs.sh \
-  --test-root /inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test/shore-organizer-4090-test-20261101 \
+  --test-root /inspire/hdd/project/26-the-other-shore/fengkairui-25026/shore-organizer-4090-test-20261101 \
   --index-url '<用户指定的包索引URL>' \
   --trusted-host '<与索引匹配的主机名>'
 

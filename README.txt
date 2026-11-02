@@ -1,5 +1,5 @@
 SHORE 指挥部测试资料库
-更新：2026-11-02；当前starter-v4、模型测试包r6、正式运行包internal-v9。
+更新：2026-11-02；当前starter-v4、模型测试包r7、正式运行包internal-v9-r2。
 
 一、四个包的用途
 
@@ -7,13 +7,13 @@ shore-contest-starter-v4.zip
   发给攻坚组的完整开发包：六公开宇宙、可修改LLM基础框架、统一实验/提交驱动、
   固定候选积分器、公开评分、七模型配置及CUDA12.8环境/运行说明。不含九隐藏真实场或真值。
 
-shore-organizer-runtime-internal-v9.zip
+shore-organizer-runtime-internal-v9-r2.zip
   指挥部九隐藏运行系统，已迁入最新固定科学定义与增强验证覆盖，九套干净参考重新生成。
   public/是同一完整攻坚组开发包；整个runtime ZIP不能作为参赛包发放。
   configure_runtime.py可登记真实镜像/模型挂载，执行目标设备检查、真实模型生成和受信发布。
 
-shore-organizer-open-model-test-20261101.zip（r6，4H200）
-shore-organizer-4090-test-20261101.zip（r6，4×48GB4090开发诊断）
+shore-organizer-open-model-test-20261101.zip（r7，4H200）
+shore-organizer-4090-test-20261101.zip（r7，4×48GB4090开发诊断）
   将完整公开开发包与指挥部运行源/新参考合在同一测试目录，兼容此前解压位置。
   主入口改为scripts/serve_model.py和python -m development_worlds.runner，正式九界用
   contest_platform.py。旧表达式校准辅助仍留作历史诊断，不作为新law.py基础框架入口。
@@ -25,7 +25,7 @@ shore-organizer-4090-test-20261101.zip（r6，4×48GB4090开发诊断）
 
 二、远端准备（Linux，已有test克隆）
 
-BASE='/inspire/hdd/project/urbanlowaltitude/fengkairui-25026/houwenzhe/test'
+BASE='/inspire/hdd/project/26-the-other-shore/fengkairui-25026'
 ASSETROOT="$BASE/test"
 TESTROOT="$BASE/shore-organizer-open-model-test-20261101"
 git -C "$ASSETROOT" pull --ff-only
@@ -67,5 +67,6 @@ BF16与FP8不会互相冒充；397b BF16无法4H200全GPU常驻，应选现有FP
 四、校验与历史
 
 packages.json记录每包版本、用途、SHA及默认解压目录；SHA256SUMS包含当前和全部历史包。
-可用sha256sum -c SHA256SUMS核对。legacy/保留旧v3/r5/v8及更早原始包和评分版本。
+可用sha256sum -c SHA256SUMS核对。legacy/保留旧v3/r6/v9及更早原始包和评分版本。
+此次r7/v9-r2仅更新项目路径与资料指引，仍使用internal-v9科学profile；starter-v4原字节保持。
 最新发布与现场GPU验收是不同步骤：本地回归及合成HTTP联调不代表所有真实模型均已加载。
