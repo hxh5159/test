@@ -1,0 +1,60 @@
+彼岸物理规律发现挑战赛：两类交付包
+日期：2026-11-03
+
+一、发给参赛者
+
+shore-contest-starter-v5.zip（69个文件）
+  development_worlds/：六个公开宇宙的真实模拟器、控制台、自测与评分。
+  shore_agent/：可修改的基础智能体、提示词、模型接入、拟合工具。
+  rift/、rift_numerics/：固定通信/候选接口和统一积分器。
+  scripts/：模型服务、格式检查、启动清单生成和外接正式测评入口。
+  docs/：最新8页赛题说明PDF、快速开始、文件职责、模型/接口/计分契约。
+  examples/：启动清单、候选规律和接口示例；非正式宇宙答案。
+  requirements.txt、LICENSE、START_HERE.txt、FILE_LIST.txt及摘要清单。
+
+完整逐文件清单：参赛者开发包_文件清单.txt，包内也有FILE_LIST.txt。
+本包不含九个正式宇宙的真实规律、隐藏真值、模型权重或API凭证。
+
+二、只由指挥部接入
+
+shore-organizer-runtime-direct-v1.zip（107个文件）
+  direct_project_eval.py：直接运行队伍当前项目的九界正式驱动。
+  contest_simulator.py、contest_world_definitions.json：九界真实模拟与定义。
+  claims_truth.json：三项声明的评分真值。
+  trial_console.py、contest_console_service.py：实验、观测噪声、配额与计时。
+  law_submission_store.py、law_program_evaluation.py：候选配对、固定积分与评分执行。
+  trial_evaluation.py、contest_job_runner.py、contest_scoreboard.py：计分、完整运行与成绩。
+  profiles/direct-v1/：正式固定配置及九份无噪隐藏验证参考。
+  public/：与参赛者包一致的完整公开组件，供固定SDK/积分与接口核验。
+  README_直接项目测评.txt、FILE_LIST.txt、bundle-manifest.json及历史兼容程序。
+
+完整逐文件清单：指挥部测评包_文件清单.txt，包内也有FILE_LIST.txt。
+不要将整个指挥部包作为公开开发资料发给队伍；只在正式窗口按现场规则接入。
+两包均不包含真实模型权重或已安装的GPU依赖。
+
+三、接入后的统一指令（远端Linux）
+
+项目保留队伍自己的submission.json，不由指挥部重新生成覆盖。
+测评期间停止编辑项目及改写所用权重，确认模型加载的是本次保存完成的检查点。
+
+  BASE='/inspire/hdd/project/26-the-other-shore/fengkairui-25026'
+  PROJECT="$BASE/DiscoverPhysics"
+  RUNTIME="$BASE/shore-organizer-runtime-direct-v1"
+  PY='/opt/shore-h200-cu128/.venv-trial/bin/python'
+
+  "$PY" "$PROJECT/scripts/evaluate_submission.py" \
+    --organizer-root "$RUNTIME" --project-root "$PROJECT" \
+    --manifest submission.json --output "$BASE/shore-results/window1-team01" \
+    --agent-python "$PY"
+
+模型目录仍由队伍配置，不做容器挂载。每次用全新结果目录。四窗口/四次由指挥部
+手工受理，按最高一次完整九界成绩汇总。summary.json只给总分及各界总分；
+private/内的隐藏观测、候选、对话、日志和分项等赛中由指挥部留存。
+
+四、验收范围
+
+公开回归184通过、私有集成122通过，另有6项平台检查在Windows跳过。
+实际两包已通过修改项目+实际基础agent+本机脚本化模型服务的真实九环境端到端，
+共36个实验/草稿/交卷动作，固定积分评分及汇总复算通过。
+这证明工程流程，不代表真实白名单权重、H200多卡部署或模型发现能力已通过实测。
+详细证据与SHA256见交付验收报告.json、packages.json、SHA256SUMS。

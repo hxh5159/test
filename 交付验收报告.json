@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "date": "2026-11-03",
+  "public_regressions": {
+    "passed": 184,
+    "platform_skipped": 3
+  },
+  "private_integration_regressions": {
+    "passed": 122,
+    "platform_skipped": 3
+  },
+  "modified_packager_and_public_entry_regressions": {
+    "passed": 26,
+    "platform_skipped": 1,
+    "note": "Targeted recheck; not added again to the full-suite count"
+  },
+  "packaged_end_to_end": {
+    "status": "passed",
+    "mode": "packaged_real_nine_worlds_with_scripted_local_transport",
+    "real_scientific_worlds": 9,
+    "model_actions": 36,
+    "generated_candidate_files": true,
+    "current_team_custom_module_config_and_checkpoint_fixture_read": true,
+    "observe_launch_draft_submit_all_nine": true,
+    "fixed_prediction_and_score_recalculation": true,
+    "only_total_and_world_totals_in_public_feedback": true,
+    "existing_results_protected": true,
+    "check_only_did_not_run_agent": true,
+    "real_model_tensors_loaded": false,
+    "external_provider_calls": 0,
+    "gpu_calls": 0,
+    "real_model_capability_claimed": false,
+    "wall_seconds": 86.90859040000942,
+    "starter_sha256": "ab22b376ee6b6c7a8258b4fe727c4ba2a1d8de52c9c8c66fffc690024bd1166a",
+    "runtime_sha256": "e21e244fe6c7a14cfad0f89d47da21058454bc4f7dc9b32f38d64164b8116019"
+  },
+  "documents": {
+    "participant_pdf_pages": 8,
+    "detailed_docx_pages": 12,
+    "unchanged_formulas_figures_fonts_scoring_and_special_statement": true
+  },
+  "science": {
+    "existing_nine_clean_references_unchanged": true,
+    "true_laws_and_scientific_sources_unchanged": true,
+    "scoring_quotas_and_600_seconds_unchanged": true
+  },
+  "test_bundle_refresh": {
+    "h200_r7_to_r8_safe_refresh": true,
+    "4090_r7_to_r8_safe_refresh": true,
+    "environments_caches_logs_and_results_preserved": true,
+    "flat_packages_fixed_sdk_and_profile_checked": true
+  },
+  "files": {
+    "starter": {
+      "file": "shore-contest-starter-v5.zip",
+      "sha256": "ab22b376ee6b6c7a8258b4fe727c4ba2a1d8de52c9c8c66fffc690024bd1166a",
+      "file_count": 69
+    },
+    "runtime": {
+      "file": "shore-organizer-runtime-direct-v1.zip",
+      "sha256": "e21e244fe6c7a14cfad0f89d47da21058454bc4f7dc9b32f38d64164b8116019",
+      "file_count": 107
+    }
+  },
+  "limits": {
+    "real_whitelist_weights_loaded": false,
+    "actual_h200_multigpu_inference_verified": false,
+    "linux_owned_process_lifecycle_tests_executed_on_windows": false,
+    "external_api_calls": 0,
+    "fixture_scores_are_not_model_capability_results": true
+  }
+}
