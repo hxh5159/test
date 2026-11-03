@@ -1,0 +1,204 @@
+{
+  "status": "passed",
+  "date": "2026-11-03",
+  "scope": "archive_structure_profiles_cli_refresh_installer_and_packaged_nine_world_protocol",
+  "profile_id": "direct-v1-r2",
+  "package_checks": {
+    "starter": {
+      "entries": 72,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true
+    },
+    "runtime": {
+      "entries": 110,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true
+    },
+    "h200": {
+      "entries": 145,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true
+    },
+    "4090": {
+      "entries": 146,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true
+    }
+  },
+  "standalone_checks": {
+    "starter": {
+      "standalone_cli_help": true,
+      "default_profile_and_fixed_sdk": false,
+      "model_or_api_calls": 0
+    },
+    "runtime": {
+      "standalone_cli_help": true,
+      "default_profile_and_fixed_sdk": true,
+      "model_or_api_calls": 0
+    },
+    "h200": {
+      "standalone_cli_help": true,
+      "default_profile_and_fixed_sdk": true,
+      "model_or_api_calls": 0
+    },
+    "4090": {
+      "standalone_cli_help": true,
+      "default_profile_and_fixed_sdk": true,
+      "model_or_api_calls": 0
+    }
+  },
+  "refresh_checks": {
+    "h200": {
+      "status": "passed",
+      "source_files_updated": 29,
+      "preserved_paths": [
+        ".venv-trial/pyvenv.cfg",
+        ".venv-vllm/pyvenv.cfg",
+        ".venv-vllm-cu128/pyvenv.cfg",
+        "build-vllm-cu128.test/source/local.py",
+        "logs/keep.log",
+        "results/keep.json",
+        ".cache/uv/keep.whl"
+      ],
+      "repeat_idempotent": true
+    },
+    "4090": {
+      "status": "passed",
+      "source_files_updated": 30,
+      "preserved_paths": [
+        ".venv-trial/pyvenv.cfg",
+        ".venv-vllm/pyvenv.cfg",
+        ".venv-vllm-cu128/pyvenv.cfg",
+        "build-vllm-cu128.test/source/local.py",
+        "logs/keep.log",
+        "results/keep.json",
+        ".cache/uv/keep.whl"
+      ],
+      "repeat_idempotent": true
+    }
+  },
+  "installer_component_checks": [
+    {
+      "script": "install_cuda128_envs.sh",
+      "bash_syntax": true
+    },
+    {
+      "script": "bootstrap_cuda128.sh",
+      "bash_syntax": true
+    },
+    {
+      "legacy_test_root_parameter_forwarding": true,
+      "cpu_plan_without_gpu": true
+    }
+  ],
+  "world_configs_and_clean_references_unchanged": true,
+  "protected_scientific_reference_and_document_files": 107,
+  "current_packages": {
+    "starter": {
+      "file": "shore-contest-starter-v6.zip",
+      "entries": 72,
+      "sha256": "61155b8dd5f9c4b6ee61688cac371d368c105f24ea2ffcb806446746d198065b"
+    },
+    "runtime": {
+      "file": "shore-organizer-runtime-direct-v1-r2.zip",
+      "entries": 110,
+      "sha256": "db772889459941e9929e9638401b1bc61dd93dca026090b8703af95fe13b51e9"
+    },
+    "h200": {
+      "file": "shore-organizer-open-model-test-20261101.zip",
+      "entries": 145,
+      "sha256": "6c6e4ac1051039238109773d00c5b5cc8badbc2ab50db0511460e43cafbbd2fe"
+    },
+    "4090": {
+      "file": "shore-organizer-4090-test-20261101.zip",
+      "entries": 146,
+      "sha256": "f18d82b742fb0b173c5e2ba9fe7633cd13c0e846b5178d89e916158d4fa28c0d"
+    }
+  },
+  "previous_actual_nine_world_evidence": "legacy/交付验收报告-direct-v1.json",
+  "packaged_end_to_end": {
+    "status": "passed",
+    "mode": "packaged_real_nine_worlds_with_scripted_local_transport",
+    "real_scientific_worlds": 9,
+    "model_actions": 36,
+    "generated_candidate_files": true,
+    "current_team_custom_module_config_and_checkpoint_fixture_read": true,
+    "observe_launch_draft_submit_all_nine": true,
+    "fixed_prediction_and_score_recalculation": true,
+    "only_total_and_world_totals_in_public_feedback": true,
+    "existing_results_protected": true,
+    "check_only_did_not_run_agent": true,
+    "real_model_tensors_loaded": false,
+    "external_provider_calls": 0,
+    "gpu_calls": 0,
+    "real_model_capability_claimed": false,
+    "wall_seconds": 88.49926649998815,
+    "starter_sha256": "61155b8dd5f9c4b6ee61688cac371d368c105f24ea2ffcb806446746d198065b",
+    "runtime_sha256": "db772889459941e9929e9638401b1bc61dd93dca026090b8703af95fe13b51e9"
+  },
+  "remote_installation_validated": false,
+  "real_models_loaded": false,
+  "gpu_calls": 0,
+  "external_provider_calls": 0,
+  "public_regressions": {
+    "passed": 224,
+    "platform_skipped": 4
+  },
+  "asset_regressions": {
+    "passed": 36,
+    "platform_skipped": 0,
+    "python_utf8_mode": true
+  },
+  "formal_runtime_regressions": {
+    "passed": 42,
+    "platform_skipped": 3
+  },
+  "published_installer_download_check": {
+    "status": "passed",
+    "installer_revision": "b185d07ee0d2a805dee439434e4cbe4de6861908",
+    "helper_revision": "20a87a71128be6e7ce577133f825b31149884ca8",
+    "files": [
+      {
+        "name": "install_all_dependencies.sh",
+        "sha256": "9a3bb1de7759bbe5c29ddd29fda4fb26863c3a19fad0c8ba379a4eabed3d2f5a",
+        "download_sha_verified": true
+      },
+      {
+        "name": "bootstrap_cuda128.sh",
+        "sha256": "4fd9f6ecc308ea6a2691f4632ee46f423d8c81be4c5b856d435773f185f6c4de",
+        "download_sha_verified": true
+      },
+      {
+        "name": "prepare_h200_offline_cache.py",
+        "sha256": "86989fe2f96c40284280c4d3d8e094dadafccf6646082617d65d41f1a9d449f1",
+        "download_sha_verified": true
+      },
+      {
+        "name": "verify_h200_cuda128.py",
+        "sha256": "5a1ebc8e5fbe1fc726701a8748f53e665ee05854befadccf334cad2ebae1ffc8",
+        "download_sha_verified": true
+      },
+      {
+        "name": "pip_index_install.py",
+        "sha256": "e4c8685ea07678629d443262321139e909bdb06fe46aa4d31c6cc25cde060c7e",
+        "download_sha_verified": true
+      },
+      {
+        "name": "preflight_cuda128_build.py",
+        "sha256": "19d0997e04cb414e1bb46e4fc9ff9ed1da822fcfd7ed873e9176f4f0bd0691f4",
+        "download_sha_verified": true
+      },
+      {
+        "name": "prepare_vllm_dependencies.py",
+        "sha256": "75b99561007ef14ef37fefb7bc13c405764725e9657a694717a015c070d21372",
+        "download_sha_verified": true
+      }
+    ],
+    "model_or_gpu_calls": 0
+  },
+  "actual_linux_cuda_build_validated": false
+}

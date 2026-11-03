@@ -24,8 +24,8 @@
 
 三、接入九宇宙
 
-当前包shore-organizer-runtime-direct-v1-r2.zip含九界真实模拟器、无噪参考、直接执行
-启动器和固定评分，并附匹配public/。此包由指挥部接入，不是参赛开发包；starter-v6
+当前包shore-organizer-runtime-direct-v1-r2-installer-v3.zip含九界真实模拟器、无噪参考、直接执行
+启动器和固定评分，并附匹配public/。此包由指挥部接入，不是参赛开发包；starter-v7
 不含九界真实规律和隐藏真值。指挥部管理运行包及隐藏材料，按既定安排清理环境并
 留存审计资料。进程分离及目录名本身不保证文件系统隔离。
 
