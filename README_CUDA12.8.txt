@@ -1,4 +1,4 @@
-CUDA 12.8 安装组件（2026-11-03）
+CUDA 12.8 安装组件（2026-11-04）
 
 安装在联网CPU实例完成，之后在有H200的实例运行。实例和镜像保存由用户处理。
 本次安装不要求CPU实例有GPU，也不下载模型、不启动实验、不改宿主驱动。
@@ -9,7 +9,7 @@ CUDA 12.8 安装组件（2026-11-03）
 环境根：/opt/shore-h200-cu128
 
 本库根目录中的bootstrap_cuda128.sh与主项目scripts/bootstrap_cuda128.sh相同。
-同级三个Python助手须配套保留：pip_index_install.py、
+同级四个Python助手须配套保留：pip_index_install.py、prepare_torch_wheel.py、
 prepare_vllm_dependencies.py、preflight_cuda128_build.py。
 install_cuda128_envs.sh仅作兼容委托，将旧--test-root映射为--env-root，
 不维护第二套构建逻辑；其余参数原样交给上述bootstrap。
@@ -42,6 +42,8 @@ torchvision0.26.0+cu128、torchaudio2.11.0+cu128、vLLM0.24.0源码、transforme
 pip使用用户指定格式，清除PIP_INDEX_URL/PIP_EXTRA_INDEX_URL并禁用继承的pip配置。
 指定镜像下载404或连接失败时，仅单次切换官方PyPI重新解析，不混合多个索引。
 已修复新版pip多行connection-failed/RemoteDisconnected消息漏触发备用源的问题。
+固定Torch轮子先下载到持久目录并核验SHA，连接中断后可继续下载，已有完整轮子可复用。
+本地轮子准备完成后再由pip安装，不把未下载完的文件当作可用安装包。
 构建前检查Torch FindCUDA、真实CUDA库、头文件布局和小型CUDA对象编译；
 随后预下载并核验缺失的Python依赖。C++/CUDA源码构建仍可能下载公开第三方资源，
 联网CPU阶段须允许这些连接；不保证只访问内网镜像。
@@ -51,7 +53,7 @@ CPU编译完成不等于H200的FlashInfer内核、多卡通信、FP8、真实生
 H200上使用项目当前scripts/serve_model.py与development_worlds.runner；
 不要再使用锁定旧0.32/cu129的serve_open_models.py或check_4090_environment.py。
 
-r10模型测试包的--refresh保护旧.venv*、构建目录、日志、缓存和结果；
+r11模型测试包的--refresh保护旧.venv*、构建目录、日志、缓存和结果；
 只git pull不会自动更新已解压包。源文件有本地修改时准备器会停止，避免覆盖。
-计分仍80/(1+10e)，80/15/5，每宇宙600秒。宇宙参数、验证真值与旧r9相同。
+计分仍80/(1+10e)，80/15/5，每宇宙600秒。宇宙参数、验证真值与旧r10相同。
 本次包和安装组件完成本地结构/回归检查，不声称用户远端已经安装或加载模型成功。

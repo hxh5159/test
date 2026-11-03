@@ -14,7 +14,7 @@ while [ "$#" -gt 0 ]; do
         *) arguments+=("$1"); shift ;;
     esac
 done
-for name in bootstrap_cuda128.sh pip_index_install.py prepare_vllm_dependencies.py preflight_cuda128_build.py; do
+for name in bootstrap_cuda128.sh pip_index_install.py prepare_vllm_dependencies.py preflight_cuda128_build.py prepare_torch_wheel.py; do
     [ -f "$SCRIPT_ROOT/$name" ] || {
         printf 'Missing matching installer component: %s\n' "$SCRIPT_ROOT/$name" >&2
         exit 2

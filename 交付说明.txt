@@ -1,14 +1,15 @@
 彼岸物理规律发现挑战赛：两类交付包
-日期：2026-11-03
+日期：2026-11-04
 
 一、发给参赛者
 
-shore-contest-starter-v7.zip（72个文件）
+shore-contest-starter-v8.zip（73个文件）
   development_worlds/：六个公开宇宙的真实模拟器、控制台、自测与评分。
   shore_agent/：可修改的基础智能体、提示词、模型接入、拟合工具。
   rift/、rift_numerics/：固定通信/候选接口和统一积分器。
   scripts/：模型服务、格式检查、启动清单生成和外接正式测评入口。
     pip_index_install.py：镜像下载失败后的单次官方PyPI回退。
+    prepare_torch_wheel.py：固定Torch轮子的持久化续传、SHA核验和完整轮子复用。
     prepare_vllm_dependencies.py：源码构建前解析、下载并校验缺少的Python依赖。
     preflight_cuda128_build.py：CPU端检查CUDA12.8头文件/工具链及最小对象编译。
   docs/：最新8页赛题说明PDF、快速开始、文件职责、模型/接口/计分契约。
@@ -20,7 +21,7 @@ shore-contest-starter-v7.zip（72个文件）
 
 二、只由指挥部接入
 
-shore-organizer-runtime-direct-v1-r2-installer-v3.zip（110个文件）
+shore-organizer-runtime-direct-v1-r2-installer-v4.zip（111个文件）
   direct_project_eval.py：直接运行队伍当前项目的九界正式驱动。
   contest_simulator.py、contest_world_definitions.json：九界真实模拟与定义。
   claims_truth.json：三项声明的评分真值。
@@ -57,8 +58,8 @@ private/内的隐藏观测、候选、对话、日志和分项等赛中由指挥
 四、验收范围
 
 新包逐项检查ZIP CRC、文件清单、摘要、默认profile、固定SDK及独立CLI导入；
-两类模型包均检查从r9刷新到r10时保留已有环境、日志、缓存和结果。
-本轮只修安装组件的多行连接失败判断与相关指引，direct-v1-r2配置、真实场、验证案例、
+两类模型包均检查从r10刷新到r11时保留已有环境、日志、缓存和结果。
+本轮只修Torch下载及CMake预检安装组件与相关指引，direct-v1-r2配置、真实场、验证案例、
 干净参考及全部科学/执行payload保持原字节，不创建新科学profile。
 前一版包已通过实际九环境与本机脚本化模型服务端到端，原摘要和报告保存在legacy；
 本轮不重跑科学/LLM端到端，不将旧包摘要的验收描述为新包实际执行。

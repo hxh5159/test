@@ -1,13 +1,13 @@
 # 测试资料库协作约定
 
-最后更新：2026-11-03（北京时间）。
+最后更新：2026-11-04（北京时间）。
 
-当前交付（2026-11-03）：starter-v7共72文件，runtime-direct-v1-r2安装组件v3包共110文件，模型测试包r10。
+当前交付（2026-11-04）：starter-v8共73文件，runtime-direct-v1-r2安装组件v4包共111文件，模型测试包r11。
 用户明确采用同一实例中直接运行队伍当前项目、外接九宇宙，测评期间禁止编辑代码/配置
 及改写所用权重；不要求容器封装、复制项目或容器模型映射。正式入口为公开
 scripts/evaluate_submission.py委托运行包direct_project_eval.py。direct-v1-r2沿用原九界
 干净参考和科学数值，固定配置发布与真实GPU/权重验收分开。旧部署说明为历史兼容。
-发放只使用starter-v7；runtime及完整模型测试包只由指挥部接入，附FILE_LIST和摘要。
+发放只使用starter-v8；runtime及完整模型测试包只由指挥部接入，附FILE_LIST和摘要。
 
 上一版安装恢复验收：内网包索引存在但档案404导致pip中断，和此前FindCUDA报错分开记录。
 同步主库匹配bootstrap及三个助手，旧--test-root入口只作委托；核心版本/cu128不放宽。
@@ -16,13 +16,22 @@ scripts/evaluate_submission.py委托运行包direct_project_eval.py。direct-v1-
 所有真实物理/参考和规则保持。完整安装器固定提交b185d07ee0d2a805dee439434e4cbe4de6861908，
 匿名实际下载外层及六匹配组件的原字节SHA均通过；尚无用户远端新版安装成功证据。
 
-2026-11-03本轮安装补丁：Triton3.6.0内网下载RemoteDisconnected，新版pip多行消息使旧
+2026-11-03历史安装补丁：Triton3.6.0内网下载RemoteDisconnected，新版pip多行消息使旧
 备用源分类器漏识别，现已修复并同步匹配组件。完整安装器版本multiline-download-v3，
 助手默认/opt/shore-image-tools-v3；新实例先激活discoverphy，不默认已有旧/opt环境。
 本轮科学profile direct-v1-r2和全部科学/执行payload原字节保持，只做安装、ZIP、CLI及
 r9刷新保护验收，不重新跑模型/科学端到端；旧包实际九界证据和原摘要在legacy保留。
 本轮资料库36项回归通过、36份登记归档SHA及CRC通过；当前四包的每个非安装/文档/
 清单payload与r9原字节一致，科学profile及无噪参考保持，未执行真实远端安装。
+
+2026-11-04安装补丁：固定Torch轮子先持久化下载、续传及SHA核验，本地完整轮子复用；
+同步CMake预检初始化修正。完整安装器使用/opt/shore-image-tools-v4，旧脚本和环境保留。
+root bootstrap与四个Python助手配套，install_cuda128_envs.sh保持--test-root兼容委托。
+科学profile仍direct-v1-r2，不改变真实场、参考、评分、配额、600秒或提交协议；仅做安装/
+归档/CLI/安全刷新检查，不重跑模型/科学端到端，旧包端到端证据按原摘要留存legacy。
+本轮资料库36项回归、40份登记归档SHA及CRC、全部四类包的r10→r11显式刷新保护通过；
+刷新核对保留wheelhouse中的.part和旧回执fixture，包内排除下载轮子/临时锁/缓存/权重。
+124项固定SDK/科学源码/profile/无噪参考/PDF保持，非安装与相关文档/打包元数据payload原字节不变。
 
 1. 用户已长期授权：本仓库有修改时，完成相应检查后自动执行Git commit并推送至origin，不再等待额外提醒或重复确认。无改动不创建空提交；用户后续明确要求暂停推送或仅本地保存时优先遵守。
 2. 本仓库为`hxh5159/test`。2026-11-02用户在明确知晓内容后确认公开整个仓库，包括正式宇宙真实模拟器、定律真值和隐藏验证；已核实visibility=public。此确认覆盖此前本仓库必须private的约定，不得自动改回private。仓库公开不等于所有内容都是正式参赛发放包，发放边界仍按各包用途区分。

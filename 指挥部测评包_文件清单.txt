@@ -1,5 +1,5 @@
 指挥部测评包文件清单（含九宇宙真实资料，不作为参赛开发包）
-文件总数：110
+文件总数：111
 
 CODE_DELIVERY_BOUNDARIES.txt
 Dockerfile.candidate
@@ -95,6 +95,7 @@ public/scripts/make_submission.py
 public/scripts/pip_index_install.py
 public/scripts/preflight_cuda128_build.py
 public/scripts/prepare_h200_offline_cache.py
+public/scripts/prepare_torch_wheel.py
 public/scripts/prepare_vllm_dependencies.py
 public/scripts/serve_model.py
 public/scripts/validate_claims.py
