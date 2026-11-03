@@ -1,5 +1,5 @@
 指挥部测评包文件清单（含九宇宙真实资料，不作为参赛开发包）
-文件总数：107
+文件总数：110
 
 CODE_DELIVERY_BOUNDARIES.txt
 Dockerfile.candidate
@@ -25,16 +25,16 @@ law_program_evaluation.py
 law_submission_store.py
 package_contest_runtime.py
 participant_packager.py
-profiles/direct-v1/profile.json
-profiles/direct-v1/references/Adam.json
-profiles/direct-v1/references/Arael.json
-profiles/direct-v1/references/Leliel.json
-profiles/direct-v1/references/Lilin.json
-profiles/direct-v1/references/Lilith.json
-profiles/direct-v1/references/Matriel.json
-profiles/direct-v1/references/Ramiel.json
-profiles/direct-v1/references/Sachiel.json
-profiles/direct-v1/references/Tabris.json
+profiles/direct-v1-r2/profile.json
+profiles/direct-v1-r2/references/Adam.json
+profiles/direct-v1-r2/references/Arael.json
+profiles/direct-v1-r2/references/Leliel.json
+profiles/direct-v1-r2/references/Lilin.json
+profiles/direct-v1-r2/references/Lilith.json
+profiles/direct-v1-r2/references/Matriel.json
+profiles/direct-v1-r2/references/Ramiel.json
+profiles/direct-v1-r2/references/Sachiel.json
+profiles/direct-v1-r2/references/Tabris.json
 public/FILE_LIST.txt
 public/LICENSE
 public/START_HERE.txt
@@ -92,7 +92,10 @@ public/scripts/bootstrap_cuda128.sh
 public/scripts/build_runtime_images.py
 public/scripts/evaluate_submission.py
 public/scripts/make_submission.py
+public/scripts/pip_index_install.py
+public/scripts/preflight_cuda128_build.py
 public/scripts/prepare_h200_offline_cache.py
+public/scripts/prepare_vllm_dependencies.py
 public/scripts/serve_model.py
 public/scripts/validate_claims.py
 public/scripts/validate_law.py

@@ -2,12 +2,19 @@
 
 最后更新：2026-11-03（北京时间）。
 
-当前交付（2026-11-03）：starter-v5共69文件，runtime-direct-v1共107文件，模型测试包r8。
+当前交付（2026-11-03）：starter-v6共72文件，runtime-direct-v1-r2共110文件，模型测试包r9。
 用户明确采用同一实例中直接运行队伍当前项目、外接九宇宙，测评期间禁止编辑代码/配置
 及改写所用权重；不要求容器封装、复制项目或容器模型映射。正式入口为公开
-scripts/evaluate_submission.py委托运行包direct_project_eval.py。direct-v1沿用原九界
+scripts/evaluate_submission.py委托运行包direct_project_eval.py。direct-v1-r2沿用原九界
 干净参考和科学数值，固定配置发布与真实GPU/权重验收分开。旧部署说明为历史兼容。
-发放只使用starter-v5；runtime及完整模型测试包只由指挥部接入，附FILE_LIST和摘要。
+发放只使用starter-v6；runtime及完整模型测试包只由指挥部接入，附FILE_LIST和摘要。
+
+2026-11-03安装恢复验收：内网包索引存在但档案404是本次pip中断原因，和此前FindCUDA报错分开记录。
+同步主库匹配bootstrap及三个助手，旧--test-root入口只作委托；核心版本/cu128不放宽。
+新包实际九界端到端及固定积分评分已在脚本化本机模型服务中通过，不表示真实模型/GPU验收。
+公开224、正式执行相关42、资料库36项回归通过，平台跳过分别4/3/0；32份ZIP校验及r8刷新保护通过。
+所有真实物理/参考和规则保持。完整安装器固定提交b185d07ee0d2a805dee439434e4cbe4de6861908，
+匿名实际下载外层及六匹配组件的原字节SHA均通过；尚无用户远端新版安装成功证据。
 
 1. 用户已长期授权：本仓库有修改时，完成相应检查后自动执行Git commit并推送至origin，不再等待额外提醒或重复确认。无改动不创建空提交；用户后续明确要求暂停推送或仅本地保存时优先遵守。
 2. 本仓库为`hxh5159/test`。2026-11-02用户在明确知晓内容后确认公开整个仓库，包括正式宇宙真实模拟器、定律真值和隐藏验证；已核实visibility=public。此确认覆盖此前本仓库必须private的约定，不得自动改回private。仓库公开不等于所有内容都是正式参赛发放包，发放边界仍按各包用途区分。
@@ -35,3 +42,5 @@ scripts/evaluate_submission.py委托运行包direct_project_eval.py。direct-v1�
 16. 2026-11-02用户已授权并完成整改，当前starter-v4（65文件）、两模型测试r6、runtime internal-v9。starter含六公开/可改LLM基线/完整Console生命周期/七模型/cu128新入口；runtime/public为同一公开kit，r6把完整public与正式源/profile平铺，兼容旧解压目录。旧v3/r5/v8原字节在legacy。最新九界与coverage已迁入并全量重生成干净参考；固定参数/噪声1.1/600/评分不变。隐藏team-export已停、导出CLI包括旧结果无条件拒绝，六公开记录仍可复用。当前入口为docs/QUICKSTART、scripts/serve_model.py和development_worlds.runner，旧0.32及表达式校准仅历史诊断，不作为基础框架。models目录/model-id/BF16-FP8已统一，保留venv Python路径；397BF16容量不足会拒绝。configure_runtime四步用真实设备/镜像/生成证据发布，不虚构远端验收。包CRC/hash/隔离CLI与旧refresh保护已过，公开179回归和15界75合成请求通过，未真实加载模型/GPU。
 
 17. 2026-11-02用户更新长期远端路径为26-the-other-shore/fengkairui-25026下的DiscoverPhysics和test（见第5条）。现行校准包升r7、runtime升internal-v9-r2，仅更新可移植项目定位和当前部署路径；科学profile仍internal-v9，真实场、验证数组、600秒及评分不变，starter-v4保持原字节。r6和v9原包归档legacy，packages/SHA及refresh保护同步检查；不重跑物理积分、真实模型或API。README中的安装/解压路径均按新父目录，旧路径只保留作历史，不因项目迁移猜测Conda安装也已移动。
+
+18. 2026-11-03修复安装镜像404和CUDA头文件/FindCUDA发现问题。starter-v6含72文件、runtime-direct-v1-r2含110文件，两校准包r9含145/146文件；三项新增助手随包提供。test根的install_cuda128_envs.sh仅委托同级canonical bootstrap，保留旧--test-root映射为--env-root，构建逻辑不另复制。指定镜像失败后仅单次官方PyPI回退；Python构建依赖先下载核验，CUDA编译仅CPU对象预检。r2只更新版本身份/源码摘要，所有原九界配置和干净参考保持原字节，r9同时保留direct-v1/internal-v9以安全刷新旧receipt。旧v5/r8/direct-v1在legacy完整保留；包校验、CPU模拟测试和现场H200安装验收分别记录，不因交付更新宣称GPU/模型已成功。外层install_all_dependencies.sh仅主项目提供，不在参赛者ZIP中。

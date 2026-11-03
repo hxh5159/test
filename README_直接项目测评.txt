@@ -15,7 +15,7 @@
   BASE='/inspire/hdd/project/26-the-other-shore/fengkairui-25026'
   PROJECT="$BASE/DiscoverPhysics"
   PY='/opt/shore-h200-cu128/.venv-trial/bin/python'
-  RUNTIME="$BASE/shore-organizer-runtime-direct-v1"
+  RUNTIME="$BASE/shore-organizer-runtime-direct-v1-r2"
 
 测试资料库为$BASE/test。公共模型根为：
   /inspire/hdd/project/26-the-other-shore/public/models
@@ -24,8 +24,8 @@
 
 三、接入九宇宙
 
-当前包shore-organizer-runtime-direct-v1.zip含九界真实模拟器、无噪参考、直接执行
-启动器和固定评分，并附匹配public/。此包由指挥部接入，不是参赛开发包；starter-v5
+当前包shore-organizer-runtime-direct-v1-r2.zip含九界真实模拟器、无噪参考、直接执行
+启动器和固定评分，并附匹配public/。此包由指挥部接入，不是参赛开发包；starter-v6
 不含九界真实规律和隐藏真值。指挥部管理运行包及隐藏材料，按既定安排清理环境并
 留存审计资料。进程分离及目录名本身不保证文件系统隔离。
 
@@ -71,7 +71,8 @@ summary.json与终端仅给总分、九界总分及必要启动/格式错误；�
 
 七、正式配置和证据
 
-direct-v1沿用现有已确认九界配置和已收敛无噪参考，不改变力律、验证轨迹或计分。
+direct-v1-r2沿用direct-v1全部九界配置和已收敛无噪参考，仅更新执行源码身份，
+不改变力律、验证轨迹或计分。启动解释器保留venv路径，不解析到其系统Python目标。
 启动护栏900秒、单次候选推演120秒、关闭30秒，均不同于探索600秒。
 配置核验固定SDK、私有科学/评分源码与参考摘要；不依赖Docker发布回执。
 配置正式发布不代表已在H200加载真实模型。协议端到端、数值检查、真实权重/多卡

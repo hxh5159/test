@@ -3,11 +3,14 @@
 
 一、发给参赛者
 
-shore-contest-starter-v5.zip（69个文件）
+shore-contest-starter-v6.zip（72个文件）
   development_worlds/：六个公开宇宙的真实模拟器、控制台、自测与评分。
   shore_agent/：可修改的基础智能体、提示词、模型接入、拟合工具。
   rift/、rift_numerics/：固定通信/候选接口和统一积分器。
   scripts/：模型服务、格式检查、启动清单生成和外接正式测评入口。
+    pip_index_install.py：镜像下载失败后的单次官方PyPI回退。
+    prepare_vllm_dependencies.py：源码构建前解析、下载并校验缺少的Python依赖。
+    preflight_cuda128_build.py：CPU端检查CUDA12.8头文件/工具链及最小对象编译。
   docs/：最新8页赛题说明PDF、快速开始、文件职责、模型/接口/计分契约。
   examples/：启动清单、候选规律和接口示例；非正式宇宙答案。
   requirements.txt、LICENSE、START_HERE.txt、FILE_LIST.txt及摘要清单。
@@ -17,14 +20,14 @@ shore-contest-starter-v5.zip（69个文件）
 
 二、只由指挥部接入
 
-shore-organizer-runtime-direct-v1.zip（107个文件）
+shore-organizer-runtime-direct-v1-r2.zip（110个文件）
   direct_project_eval.py：直接运行队伍当前项目的九界正式驱动。
   contest_simulator.py、contest_world_definitions.json：九界真实模拟与定义。
   claims_truth.json：三项声明的评分真值。
   trial_console.py、contest_console_service.py：实验、观测噪声、配额与计时。
   law_submission_store.py、law_program_evaluation.py：候选配对、固定积分与评分执行。
   trial_evaluation.py、contest_job_runner.py、contest_scoreboard.py：计分、完整运行与成绩。
-  profiles/direct-v1/：正式固定配置及九份无噪隐藏验证参考。
+  profiles/direct-v1-r2/：正式固定配置及九份原字节无噪隐藏验证参考。
   public/：与参赛者包一致的完整公开组件，供固定SDK/积分与接口核验。
   README_直接项目测评.txt、FILE_LIST.txt、bundle-manifest.json及历史兼容程序。
 
@@ -39,7 +42,7 @@ shore-organizer-runtime-direct-v1.zip（107个文件）
 
   BASE='/inspire/hdd/project/26-the-other-shore/fengkairui-25026'
   PROJECT="$BASE/DiscoverPhysics"
-  RUNTIME="$BASE/shore-organizer-runtime-direct-v1"
+  RUNTIME="$BASE/shore-organizer-runtime-direct-v1-r2"
   PY='/opt/shore-h200-cu128/.venv-trial/bin/python'
 
   "$PY" "$PROJECT/scripts/evaluate_submission.py" \
@@ -53,8 +56,10 @@ private/内的隐藏观测、候选、对话、日志和分项等赛中由指挥
 
 四、验收范围
 
-公开回归184通过、私有集成122通过，另有6项平台检查在Windows跳过。
-实际两包已通过修改项目+实际基础agent+本机脚本化模型服务的真实九环境端到端，
-共36个实验/草稿/交卷动作，固定积分评分及汇总复算通过。
-这证明工程流程，不代表真实白名单权重、H200多卡部署或模型发现能力已通过实测。
-详细证据与SHA256见交付验收报告.json、packages.json、SHA256SUMS。
+新包逐项检查ZIP CRC、文件清单、摘要、默认profile、固定SDK及独立CLI导入；
+两类模型包均检查从r8刷新到r9时保留已有环境、日志、缓存和结果。
+direct-v1-r2与direct-v1的真实场参数、验证案例和干净参考完全一致。
+此前direct-v1曾通过实际九环境与本机脚本化模型服务端到端；原报告留存legacy，
+不能用原ZIP摘要代替本次新包验收。新包端到端结果另由指挥部记录。
+这些检查不代表远端安装、真实白名单权重、H200部署或模型发现能力已通过实测。
+逐项证据与SHA256见交付验收报告.json、packages.json、SHA256SUMS。

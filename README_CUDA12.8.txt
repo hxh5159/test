@@ -1,81 +1,52 @@
-CUDA 12.8 独立安装配置（2026-11-02）
+CUDA 12.8 安装组件（2026-11-03）
 
-当前部署方式已更正：联网CPU实例构建镜像，无网H200实例运行。
-按主仓库docs/H200_OFFLINE_SETUP.txt执行bootstrap --cpu-build-for h200、
-离线内核准备以及H200端独立验收；不要在CPU实例运行旧四GPU安装器。
-环境/工具链/缓存应随镜像保留，项目和模型共享盘须在H200实例重新挂载。
+安装在联网CPU实例完成，之后在有H200的实例运行。实例和镜像保存由用户处理。
+本次安装不要求CPU实例有GPU，也不下载模型、不启动实验、不改宿主驱动。
 
-用途：给现有指挥部测试包建立 Python 3.12 + torch 2.11.0+cu128 +
-vLLM 0.24.0 源码构建环境。transformers 固定为5.8.0，以覆盖Qwen3.8-27B
-配置的处理器要求。不是原0.32/cu129环境的就地升级，也没有改评分或真实模拟器。
+主项目：/inspire/hdd/project/26-the-other-shore/fengkairui-25026/DiscoverPhysics
+资料库：/inspire/hdd/project/26-the-other-shore/fengkairui-25026/test
+模型根：/inspire/hdd/project/26-the-other-shore/public/models
+环境根：/opt/shore-h200-cu128
 
-远端资料仓库：
-/inspire/hdd/project/26-the-other-shore/fengkairui-25026/test
-默认已解压包：同级 shore-organizer-4090-test-20261101
+本库根目录中的bootstrap_cuda128.sh与主项目scripts/bootstrap_cuda128.sh相同。
+同级三个Python助手须配套保留：pip_index_install.py、
+prepare_vllm_dependencies.py、preflight_cuda128_build.py。
+install_cuda128_envs.sh仅作兼容委托，将旧--test-root映射为--env-root，
+不维护第二套构建逻辑；其余参数原样交给上述bootstrap。
 
-安装环境不需要先git pull测试资料仓库。2026-11-02用户已确认将整个test公开，
-当前HTTPS读取无需GitHub认证；依赖安装与资料同步仍分别处理。可独立使用主仓库中的：
-  scripts/bootstrap_cuda128.sh
-  docs/CUDA128_SETUP.txt
-新脚本不要求私有包已经解压，使用--env-root指定环境目录；会检查uv并在缺少时安装，
-从Python索引安装vLLM源码包，不再git clone vLLM，并生成可供重启后source的activate_cuda128.sh。
-具体远端镜像通过--index-url/--trusted-host传入，语法与下方旧安装器一致。
+安装所需完整CUDA Toolkit12.8须已存在（包括nvcc、ptxas、头文件和真实libcudart）；
+若尚无工具链，按主项目scripts/install_all_dependencies.sh的完整入口安装。
+该外层入口在主项目提供，不放入参赛者ZIP。不要只复制bootstrap一个文件。
+完整部署说明见主项目docs/H200_OFFLINE_SETUP.txt和docs/CUDA128_SETUP.txt。
 
-以下为保留的旧安装器入口：若已同步私有test资料，可运行：
+已有工具链时，从本资料库运行的示例：
 
+export SHORE_CUDA128_HOME='/opt/shore-h200-toolchain'
+export CC="$SHORE_CUDA128_HOME/bin/x86_64-conda-linux-gnu-gcc"
+export CXX="$SHORE_CUDA128_HOME/bin/x86_64-conda-linux-gnu-g++"
+export PATH="$SHORE_CUDA128_HOME/bin:$HOME/.local/bin:$PATH"
 bash install_cuda128_envs.sh \
-  --test-root /inspire/hdd/project/26-the-other-shore/fengkairui-25026/shore-organizer-4090-test-20261101 \
-  --index-url '<用户指定的包索引URL>' \
-  --trusted-host '<与索引匹配的主机名>'
+  --test-root '/opt/shore-h200-cu128' \
+  --cpu-build-for h200 \
+  --index-url 'http://nexus.sii.shaipower.online/repository/pypi/simple' \
+  --trusted-host 'nexus.sii.shaipower.online'
 
-更新r4校准源码时，prepare_test_bundle.py --refresh保留原.venv-trial、.venv-vllm、
-.venv-vllm-cu128、build-vllm-cu128.*、日志与结果，不重新安装或改动已有CUDA环境。
-此次包修订只改变观测速度的轻量噪声，既有推理环境版本与专用启动方式保持。
+目标：Python3.12、实验NumPy/SciPy/pytest、torch2.11.0+cu128、
+torchvision0.26.0+cu128、torchaudio2.11.0+cu128、vLLM0.24.0源码、transformers5.8.0。
+它保留已有日志、结果、缓存和非目标环境；失败阶段有独立日志，不把部分完成当作成功。
 
-该脚本所有pip install均使用：
-env -u PIP_EXTRA_INDEX_URL -u PIP_INDEX_URL PIP_CONFIG_FILE=/dev/null \
-  <目标环境python> -m pip install ... --index-url ... --trusted-host ... --no-cache-dir
+pip使用用户指定格式，清除PIP_INDEX_URL/PIP_EXTRA_INDEX_URL并禁用继承的pip配置。
+指定镜像下载404或连接失败时，仅单次切换官方PyPI重新解析，不混合多个索引。
+构建前检查Torch FindCUDA、真实CUDA库、头文件布局和小型CUDA对象编译；
+随后预下载并核验缺失的Python依赖。C++/CUDA源码构建仍可能下载公开第三方资源，
+联网CPU阶段须允许这些连接；不保证只访问内网镜像。
 
-普通Python依赖走用户指定索引；三种PyTorch cu128发行包还通过
---find-links检索download.pytorch.org的官方cu128目录，避免镜像只有CUDA13默认包。
-vLLM使用GitHub官方v0.24.0 tag源码。Git、CMake、可选Rust组件仍可能下载第三方代码；
-这不是纯内网离线安装。索引是否具备其余依赖，须远端实际执行确认。
+安装器可用--plan只打印计划；CPU端不初始化GPU，不运行kernel或读取模型。
+CPU编译完成不等于H200的FlashInfer内核、多卡通信、FP8、真实生成或科学测评成功。
+H200上使用项目当前scripts/serve_model.py与development_worlds.runner；
+不要再使用锁定旧0.32/cu129的serve_open_models.py或check_4090_environment.py。
 
-前置检查：Linux、uv、git、GCC/G++>=11.3（本配置限制主版本<=14）、
-CUDA Toolkit 12.8的nvcc。nvidia-smi显示12.8只说明驱动能力，并不证明安装了Toolkit。
-若Toolkit不在默认位置，可在运行脚本前执行：
-export SHORE_CUDA128_HOME='/实际的CUDA12.8目录'
-该目录必须包含bin/nvcc；不要把模型目录或GPU驱动目录填在这里。
-
-脚本保留旧.venv-vllm，新建或复用.venv-vllm-cu128；
-.venv-trial沿用并安装包内既有requirements-trials.txt，不删除已有环境、源码或结果。
-每次源码构建留在build-vllm-cu128.*目录，以便排障。不修改宿主驱动和Conda base。
---plan只检查包目录并打印计划，不安装、不联网、不调用GPU。
-
-安装后使用：
-source '<已解压包路径>/.venv-vllm-cu128/bin/activate'
-export VLLM_USE_RUST_FRONTEND=0
-vllm serve '<实际模型目录>' --host 127.0.0.1 --port 8000 \
-  --served-model-name shore-27b --tensor-parallel-size 4 \
-  --dtype bfloat16 --max-model-len 32768 --max-num-seqs 1 \
-  --gpu-memory-utilization 0.90 --enforce-eager \
-  --disable-custom-all-reduce --reasoning-parser qwen3 \
-  --limit-mm-per-prompt '{"image":0,"video":0}'
-
-上述启动示例以27B为起点；122B-FP8应替换实际模型路径和服务别名。
-不要再调用现有serve_open_models.py或check_4090_environment.py：它们明确锁定0.32/cu129，
-会拒绝这个独立配置；这里不自动放宽它们的版本检查。
-模型服务仍为localhost:8000/v1，试验客户端的HTTP协议不变。
-
-验证范围：脚本末尾检查pip依赖一致性、每张可见GPU的BF16矩阵计算、
-Torch CUDA版本、vLLM两项稳定扩展导入及serve帮助入口。
-这些检查不等于完整模型加载、FP8内核、多卡通信、生成或九宇宙测评成功。
-交付时只完成本地脚本检查，尚未远端执行安装或加载模型。
-
-官方依据：
-https://github.com/vllm-project/vllm/releases/expanded_assets/v0.32.0
-https://pytorch.org/get-started/previous-versions/
-https://raw.githubusercontent.com/vllm-project/vllm/v0.24.0/requirements/cuda.txt
-https://raw.githubusercontent.com/vllm-project/vllm/v0.24.0/requirements/build/cuda.txt
-https://raw.githubusercontent.com/vllm-project/vllm/v0.24.0/setup.py
-https://recipes.vllm.ai/Qwen/Qwen3.8-27B
+r9模型测试包的--refresh保护旧.venv*、构建目录、日志、缓存和结果；
+只git pull不会自动更新已解压包。源文件有本地修改时准备器会停止，避免覆盖。
+计分仍80/(1+10e)，80/15/5，每宇宙600秒。宇宙参数、验证真值与旧r8相同。
+本次包和安装组件完成本地结构/回归检查，不声称用户远端已经安装或加载模型成功。
