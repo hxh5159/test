@@ -6,7 +6,9 @@ fb8675a11e6f0696fd7f76a24cd7b0f4d3d7090275cf1bb33cac54a47e94bb16  legacy/shore-c
 ab22b376ee6b6c7a8258b4fe727c4ba2a1d8de52c9c8c66fffc690024bd1166a  legacy/shore-contest-starter-v5.zip
 61155b8dd5f9c4b6ee61688cac371d368c105f24ea2ffcb806446746d198065b  legacy/shore-contest-starter-v6.zip
 127e2e1641eaa04168f1294b74d02e8021d7e17f5ccf902af0c6860709b91ce0  legacy/shore-contest-starter-v7.zip
+7c5a4de70c330f96ffa73084a23d0c72718144fc6b50d02de7ea3042893f2069  legacy/shore-contest-starter-v8.zip
 a5ec7a8fcba4b3a1570f18bccf6132259b93f0a6ac0d3b5d45c98cfeb7e990a3  legacy/shore-organizer-4090-test-20261101-r10.zip
+6c6595286be644c6e9041de2eab7b981419841d2ebb1bd0f9461a2dcc683ceb1  legacy/shore-organizer-4090-test-20261101-r11.zip
 b3b645e9628d0ed6a4178a7d02f699974e9436ec614a6f364e15308e984487f4  legacy/shore-organizer-4090-test-20261101-r3.zip
 640c5cfe3d47a8fe20ad9bcce907d75919d8e4c99dd66be1e6f449a634137e89  legacy/shore-organizer-4090-test-20261101-r4.zip
 d35e19fc92ecee4d5f44cc9dfaf1f3676caadd904a5a50bcc12a2b28a26c08e2  legacy/shore-organizer-4090-test-20261101-r5.zip
@@ -15,6 +17,7 @@ d35e19fc92ecee4d5f44cc9dfaf1f3676caadd904a5a50bcc12a2b28a26c08e2  legacy/shore-o
 640ee5a86081a01df473ef7a6f357f54104fcae65d0b10190d27ad7e37d27a36  legacy/shore-organizer-4090-test-20261101-r8.zip
 f18d82b742fb0b173c5e2ba9fe7633cd13c0e846b5178d89e916158d4fa28c0d  legacy/shore-organizer-4090-test-20261101-r9.zip
 c61857a76a88173e5f4391e1a2f643ee86ab9f2b5afe2d0084dce46e21de0dbc  legacy/shore-organizer-open-model-test-20261101-r10.zip
+bd72958e19cde10e6e866277e7268d233630d94444c513e94e0a339dd44916e7  legacy/shore-organizer-open-model-test-20261101-r11.zip
 71e6650dcf82e345501b62d94a8a1da62469135b47c08ab8040dd51c12060235  legacy/shore-organizer-open-model-test-20261101-r3.zip
 c4561a72bae9cc73099a62f7d095cc5e47534b7039b74cbd181affb14f6ecf99  legacy/shore-organizer-open-model-test-20261101-r4.zip
 470cd0aa8f974a22f9c18ec2aa77a491cae28d7d09a50dce93f6755194cd2910  legacy/shore-organizer-open-model-test-20261101-r5.zip
@@ -23,6 +26,7 @@ c4561a72bae9cc73099a62f7d095cc5e47534b7039b74cbd181affb14f6ecf99  legacy/shore-o
 470f0785d8d9ac49c82dc7a30feb6780bcf95836277590ef12b6903029c6dc88  legacy/shore-organizer-open-model-test-20261101-r8.zip
 6c6e4ac1051039238109773d00c5b5cc8badbc2ab50db0511460e43cafbbd2fe  legacy/shore-organizer-open-model-test-20261101-r9.zip
 f22c70f6ac4424d9246dd847d8ca5a0c968ce03216b38ee58e083b75596b8dba  legacy/shore-organizer-runtime-direct-v1-r2-installer-v3.zip
+78cb01bf9cecec07ef58ec3317eac0d2e9e6d58211440d6f4b54b8239055cb98  legacy/shore-organizer-runtime-direct-v1-r2-installer-v4.zip
 db772889459941e9929e9638401b1bc61dd93dca026090b8703af95fe13b51e9  legacy/shore-organizer-runtime-direct-v1-r2.zip
 e21e244fe6c7a14cfad0f89d47da21058454bc4f7dc9b32f38d64164b8116019  legacy/shore-organizer-runtime-direct-v1.zip
 83d8ef60634754c073009b8b1e15b06c23ab1dd0cfa83e9860a457065394f9cb  legacy/shore-organizer-runtime-internal-v2.zip
@@ -34,7 +38,7 @@ b7033365efb66f01ee4ff3c4bd5ffa9042478d6af6a68ae97d85d603ca4bd781  legacy/shore-o
 870c68b096c5880a5a1b59cb37b03009846ea0bb6f53106bcb5fb03a5fd00211  legacy/shore-organizer-runtime-internal-v8.zip
 97296154f9c8e3e62ec36cb6bd4e7c2313c5618673ea96d3acebbe04d0a8f020  legacy/shore-organizer-runtime-internal-v9-r2.zip
 9f31c0ea550ae5a8c9ca7f029e94817b5d7279a46c38f94c1f0341b15e54e627  legacy/shore-organizer-runtime-internal-v9.zip
-7c5a4de70c330f96ffa73084a23d0c72718144fc6b50d02de7ea3042893f2069  shore-contest-starter-v8.zip
-6c6595286be644c6e9041de2eab7b981419841d2ebb1bd0f9461a2dcc683ceb1  shore-organizer-4090-test-20261101.zip
-bd72958e19cde10e6e866277e7268d233630d94444c513e94e0a339dd44916e7  shore-organizer-open-model-test-20261101.zip
-78cb01bf9cecec07ef58ec3317eac0d2e9e6d58211440d6f4b54b8239055cb98  shore-organizer-runtime-direct-v1-r2-installer-v4.zip
+f882ac2bfc73f807dfe87eb2fc5b9216e24f745714cab9ad64714dc3fb5448b2  shore-contest-starter-v9.zip
+8ed90c36cae8cb836cb2830779a2e5944965d8fd204929a0c3682073686f2543  shore-organizer-4090-test-20261101.zip
+b261e8388bc663766f7fa29cf6071f190f7e5ca874c77f8e212ee013a6fe2f7f  shore-organizer-open-model-test-20261101.zip
+33b4b4928ddd3c082ce5119ba6e9626679c69a2765847eee7e5f06698a995512  shore-organizer-runtime-direct-v1-r2-installer-v5.zip

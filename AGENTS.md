@@ -2,12 +2,12 @@
 
 最后更新：2026-11-04（北京时间）。
 
-当前交付（2026-11-04）：starter-v8共73文件，runtime-direct-v1-r2安装组件v4包共111文件，模型测试包r11。
+当前交付（2026-11-04）：starter-v9共73文件，runtime-direct-v1-r2安装组件v5包共111文件，模型测试包r12。
 用户明确采用同一实例中直接运行队伍当前项目、外接九宇宙，测评期间禁止编辑代码/配置
 及改写所用权重；不要求容器封装、复制项目或容器模型映射。正式入口为公开
 scripts/evaluate_submission.py委托运行包direct_project_eval.py。direct-v1-r2沿用原九界
 干净参考和科学数值，固定配置发布与真实GPU/权重验收分开。旧部署说明为历史兼容。
-发放只使用starter-v8；runtime及完整模型测试包只由指挥部接入，附FILE_LIST和摘要。
+发放只使用starter-v9；runtime及完整模型测试包只由指挥部接入，附FILE_LIST和摘要。
 
 上一版安装恢复验收：内网包索引存在但档案404导致pip中断，和此前FindCUDA报错分开记录。
 同步主库匹配bootstrap及三个助手，旧--test-root入口只作委托；核心版本/cu128不放宽。
@@ -32,6 +32,17 @@ root bootstrap与四个Python助手配套，install_cuda128_envs.sh保持--test-
 本轮资料库36项回归、40份登记归档SHA及CRC、全部四类包的r10→r11显式刷新保护通过；
 刷新核对保留wheelhouse中的.part和旧回执fixture，包内排除下载轮子/临时锁/缓存/权重。
 124项固定SDK/科学源码/profile/无噪参考/PDF保持，非安装与相关文档/打包元数据payload原字节不变。
+
+2026-11-04当前安装策略：用户明确要求Torch及vLLM等Python依赖使用指定内部镜像。
+当前默认mirror-only：不调用官方Torch下载器，不添加官方find-links，不自动回退PyPI；
+保留torch2.11.0+cu128、torchvision0.26.0+cu128、torchaudio2.11.0+cu128、vLLM0.24.0源码和
+Transformers5.8.0的精确约束。镜像缺少适配包时明确停止，不切换CUDA或版本。
+仅显式--allow-official-fallback恢复历史下载路径；旧v4组件/原.part/环境及日志保留，
+新助手目录为/opt/shore-image-tools-v5。Conda工具链、CMake第三方源码和额外离线内核资源
+不属于pip索引，仍可能访问公开上游。此次只更新安装组件、指引和归档，科学/执行代码、
+profile、无噪参考、固定参数、计分及600秒不改，不表示真实远端安装或GPU/模型运行通过。
+本次44份登记归档SHA/CRC、四类r11→r12安全刷新和资料库36项回归均通过；124项SDK/科学/参考/PDF保护核验保持。
+匹配助手固定提交31754aa5e1b7ffb39388c6a3c46d28e0c3624609，内部镜像是否收录所需cu128包仍须在远端实际确认。
 
 1. 用户已长期授权：本仓库有修改时，完成相应检查后自动执行Git commit并推送至origin，不再等待额外提醒或重复确认。无改动不创建空提交；用户后续明确要求暂停推送或仅本地保存时优先遵守。
 2. 本仓库为`hxh5159/test`。2026-11-02用户在明确知晓内容后确认公开整个仓库，包括正式宇宙真实模拟器、定律真值和隐藏验证；已核实visibility=public。此确认覆盖此前本仓库必须private的约定，不得自动改回private。仓库公开不等于所有内容都是正式参赛发放包，发放边界仍按各包用途区分。

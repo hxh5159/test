@@ -1,0 +1,287 @@
+{
+  "status": "passed",
+  "date": "2026-11-04",
+  "scope": "installer_only_torch_resume_cmake_preflight_recovery",
+  "profile_id": "direct-v1-r2",
+  "profile_and_clean_references_unchanged": true,
+  "protected_files": 124,
+  "package_checks": {
+    "starter": {
+      "entries": 73,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true
+    },
+    "runtime": {
+      "entries": 111,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true
+    },
+    "h200": {
+      "entries": 146,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true
+    },
+    "4090": {
+      "entries": 147,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true
+    }
+  },
+  "payload_comparison_with_prior_packages": {
+    "starter": {
+      "only_installer_docs_metadata_changed": true,
+      "changed_payloads": [
+        "scripts/prepare_torch_wheel.py",
+        "FILE_LIST.txt",
+        "docs/CODE_AND_SUBMISSION_SPEC.txt",
+        "docs/CUDA128_SETUP.txt",
+        "docs/H200_OFFLINE_SETUP.txt",
+        "scripts/bootstrap_cuda128.sh",
+        "scripts/preflight_cuda128_build.py",
+        "starter-manifest.json"
+      ],
+      "scientific_and_execution_payloads_unchanged": true
+    },
+    "runtime": {
+      "only_installer_docs_metadata_changed": true,
+      "changed_payloads": [
+        "public/scripts/prepare_torch_wheel.py",
+        "FILE_LIST.txt",
+        "README_直接项目测评.txt",
+        "bundle-manifest.json",
+        "participant_packager.py",
+        "public/FILE_LIST.txt",
+        "public/docs/CODE_AND_SUBMISSION_SPEC.txt",
+        "public/docs/CUDA128_SETUP.txt",
+        "public/docs/H200_OFFLINE_SETUP.txt",
+        "public/scripts/bootstrap_cuda128.sh",
+        "public/scripts/preflight_cuda128_build.py",
+        "public/starter-manifest.json"
+      ],
+      "scientific_and_execution_payloads_unchanged": true
+    },
+    "h200": {
+      "only_installer_docs_metadata_changed": true,
+      "changed_payloads": [
+        "scripts/prepare_torch_wheel.py",
+        "README_三模型远端测试.txt",
+        "package_open_model_test.py",
+        "README_直接项目测评.txt",
+        "participant_packager.py",
+        "FILE_LIST.txt",
+        "docs/CODE_AND_SUBMISSION_SPEC.txt",
+        "docs/CUDA128_SETUP.txt",
+        "docs/H200_OFFLINE_SETUP.txt",
+        "scripts/bootstrap_cuda128.sh",
+        "scripts/preflight_cuda128_build.py",
+        "starter-manifest.json",
+        "PRIVATE_PACKAGE_MANIFEST.json"
+      ],
+      "scientific_and_execution_payloads_unchanged": true
+    },
+    "4090": {
+      "only_installer_docs_metadata_changed": true,
+      "changed_payloads": [
+        "scripts/prepare_torch_wheel.py",
+        "README_三模型远端测试.txt",
+        "package_open_model_test.py",
+        "README_4卡4090双模型测试.txt",
+        "README_直接项目测评.txt",
+        "participant_packager.py",
+        "FILE_LIST.txt",
+        "docs/CODE_AND_SUBMISSION_SPEC.txt",
+        "docs/CUDA128_SETUP.txt",
+        "docs/H200_OFFLINE_SETUP.txt",
+        "scripts/bootstrap_cuda128.sh",
+        "scripts/preflight_cuda128_build.py",
+        "starter-manifest.json",
+        "PRIVATE_PACKAGE_MANIFEST.json"
+      ],
+      "scientific_and_execution_payloads_unchanged": true
+    }
+  },
+  "standalone_checks": {
+    "starter": {
+      "standalone_cli_help": true,
+      "model_or_api_calls": 0
+    },
+    "runtime": {
+      "standalone_cli_help": true,
+      "model_or_api_calls": 0
+    },
+    "h200": {
+      "standalone_cli_help": true,
+      "model_or_api_calls": 0
+    },
+    "4090": {
+      "standalone_cli_help": true,
+      "model_or_api_calls": 0
+    }
+  },
+  "refresh_checks": {
+    "starter": {
+      "status": "passed",
+      "source_files_updated": 8,
+      "preserved_paths": [
+        ".venv-trial/pyvenv.cfg",
+        ".venv-vllm-cu128/pyvenv.cfg",
+        "logs/keep.log",
+        "results/keep.json",
+        ".cache/uv/keep.whl",
+        "build-vllm-cu128.test/source/local.py",
+        "wheelhouse/torch-2.11.0+cu128-cp312-cp312-manylinux_2_28_x86_64.whl.part",
+        "wheelhouse/torch-download-existing.json"
+      ],
+      "repeat_idempotent": true,
+      "torch_partial_and_receipt_retained": true,
+      "real_torch_wheel_downloaded": false
+    },
+    "runtime": {
+      "status": "passed",
+      "source_files_updated": 12,
+      "preserved_paths": [
+        ".venv-trial/pyvenv.cfg",
+        ".venv-vllm-cu128/pyvenv.cfg",
+        "logs/keep.log",
+        "results/keep.json",
+        ".cache/uv/keep.whl",
+        "build-vllm-cu128.test/source/local.py",
+        "wheelhouse/torch-2.11.0+cu128-cp312-cp312-manylinux_2_28_x86_64.whl.part",
+        "wheelhouse/torch-download-existing.json"
+      ],
+      "repeat_idempotent": true,
+      "torch_partial_and_receipt_retained": true,
+      "real_torch_wheel_downloaded": false
+    },
+    "h200": {
+      "status": "passed",
+      "source_files_updated": 13,
+      "preserved_paths": [
+        ".venv-trial/pyvenv.cfg",
+        ".venv-vllm-cu128/pyvenv.cfg",
+        "logs/keep.log",
+        "results/keep.json",
+        ".cache/uv/keep.whl",
+        "build-vllm-cu128.test/source/local.py",
+        "wheelhouse/torch-2.11.0+cu128-cp312-cp312-manylinux_2_28_x86_64.whl.part",
+        "wheelhouse/torch-download-existing.json"
+      ],
+      "repeat_idempotent": true,
+      "torch_partial_and_receipt_retained": true,
+      "real_torch_wheel_downloaded": false
+    },
+    "4090": {
+      "status": "passed",
+      "source_files_updated": 14,
+      "preserved_paths": [
+        ".venv-trial/pyvenv.cfg",
+        ".venv-vllm-cu128/pyvenv.cfg",
+        "logs/keep.log",
+        "results/keep.json",
+        ".cache/uv/keep.whl",
+        "build-vllm-cu128.test/source/local.py",
+        "wheelhouse/torch-2.11.0+cu128-cp312-cp312-manylinux_2_28_x86_64.whl.part",
+        "wheelhouse/torch-download-existing.json"
+      ],
+      "repeat_idempotent": true,
+      "torch_partial_and_receipt_retained": true,
+      "real_torch_wheel_downloaded": false
+    }
+  },
+  "previous_actual_nine_world_evidence": "legacy/交付验收报告-installer-v2.json",
+  "previous_installer_acceptance_evidence": "legacy/交付验收报告-installer-v3.json",
+  "packaged_end_to_end": {
+    "status": "not_rerun_installer_only_patch",
+    "note": "Prior hashes and scripted-model evidence retained; scientific/execution payloads are byte-identical"
+  },
+  "remote_installation_validated": false,
+  "gpu_or_real_model_calls": 0,
+  "physical_integrations": 0,
+  "current_packages": {
+    "4090": {
+      "file": "shore-organizer-4090-test-20261101.zip",
+      "sha256": "6c6595286be644c6e9041de2eab7b981419841d2ebb1bd0f9461a2dcc683ceb1",
+      "entries": 147
+    },
+    "h200": {
+      "file": "shore-organizer-open-model-test-20261101.zip",
+      "sha256": "bd72958e19cde10e6e866277e7268d233630d94444c513e94e0a339dd44916e7",
+      "entries": 146
+    },
+    "runtime": {
+      "file": "shore-organizer-runtime-direct-v1-r2-installer-v4.zip",
+      "sha256": "78cb01bf9cecec07ef58ec3317eac0d2e9e6d58211440d6f4b54b8239055cb98",
+      "entries": 111
+    },
+    "starter": {
+      "file": "shore-contest-starter-v8.zip",
+      "sha256": "7c5a4de70c330f96ffa73084a23d0c72718144fc6b50d02de7ea3042893f2069",
+      "entries": 73
+    }
+  },
+  "registered_archives_sha256_and_crc_verified": 40,
+  "matching_canonical_installation_components": true,
+  "torch_download_partials_locks_wheelhouse_and_weights_excluded": true,
+  "asset_regressions": {
+    "passed": 36,
+    "platform_skipped": 0,
+    "python_utf8_mode": true
+  },
+  "public_regressions": {
+    "passed": 243,
+    "platform_skipped": 4,
+    "real_cmake_regressions_executed": 2
+  },
+  "published_installer_download_check": {
+    "status": "passed",
+    "installer_revision": "45dab58e3090ae3e95387dd3bb0ebd4bad379c56",
+    "helper_revision": "66950e93eed55241469fc30587f45a24ad86fea1",
+    "files": [
+      {
+        "name": "install_all_dependencies.sh",
+        "sha256": "4fe5795004d8b9b24e0157a0f77af6f39d3746a1e43d445a6f03e0cd7767ec92",
+        "actual_download_verified": true
+      },
+      {
+        "name": "bootstrap_cuda128.sh",
+        "sha256": "79f550a133418e50998fc92f462aee655a55b5e05e3aca3b40f90de2c88fdabc",
+        "actual_download_verified": true
+      },
+      {
+        "name": "prepare_h200_offline_cache.py",
+        "sha256": "86989fe2f96c40284280c4d3d8e094dadafccf6646082617d65d41f1a9d449f1",
+        "actual_download_verified": true
+      },
+      {
+        "name": "verify_h200_cuda128.py",
+        "sha256": "5a1ebc8e5fbe1fc726701a8748f53e665ee05854befadccf334cad2ebae1ffc8",
+        "actual_download_verified": true
+      },
+      {
+        "name": "pip_index_install.py",
+        "sha256": "06019da034952e2e8e62fd79f2ff12d35fd7d168fb7a65af467e093ddfa658d7",
+        "actual_download_verified": true
+      },
+      {
+        "name": "preflight_cuda128_build.py",
+        "sha256": "4d2855ff709a3d57b8cc5f12993c5b38d6b256cc16222a245caa91c8dfdd45b0",
+        "actual_download_verified": true
+      },
+      {
+        "name": "prepare_vllm_dependencies.py",
+        "sha256": "75b99561007ef14ef37fefb7bc13c405764725e9657a694717a015c070d21372",
+        "actual_download_verified": true
+      },
+      {
+        "name": "prepare_torch_wheel.py",
+        "sha256": "c76933e29f01461295397c79166638451b40c341a82c1a74ba9b2441bd3ec954",
+        "actual_download_verified": true
+      }
+    ],
+    "remote_full_installation_verified": false
+  }
+}

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # Compatibility launcher; the sibling canonical bootstrap owns all installation.
+# Python packages default to the supplied mirror only; upstream fallback requires
+# an explicit --allow-official-fallback. Existing environments/downloads are kept.
 set -euo pipefail
 
 SCRIPT_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
