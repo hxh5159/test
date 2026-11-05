@@ -1,5 +1,5 @@
 指挥部测评包文件清单（含九宇宙真实资料，不作为参赛开发包）
-文件总数：161
+文件总数：171
 
 CODE_DELIVERY_BOUNDARIES.txt
 Dockerfile.candidate
@@ -68,6 +68,16 @@ profiles/strategy-v2/references/Matriel.json
 profiles/strategy-v2/references/Ramiel.json
 profiles/strategy-v2/references/Sachiel.json
 profiles/strategy-v2/references/Tabris.json
+profiles/strategy-v3/profile.json
+profiles/strategy-v3/references/Adam.json
+profiles/strategy-v3/references/Arael.json
+profiles/strategy-v3/references/Leliel.json
+profiles/strategy-v3/references/Lilin.json
+profiles/strategy-v3/references/Lilith.json
+profiles/strategy-v3/references/Matriel.json
+profiles/strategy-v3/references/Ramiel.json
+profiles/strategy-v3/references/Sachiel.json
+profiles/strategy-v3/references/Tabris.json
 public/FILE_LIST.txt
 public/LICENSE
 public/README.md

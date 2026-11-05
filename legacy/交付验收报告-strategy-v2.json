@@ -1,0 +1,110 @@
+{
+  "status": "passed",
+  "date": "2026-11-05",
+  "scope": "participant_readme_qwen_only_whitelist",
+  "profile_id": "strategy-v2",
+  "package_checks": {
+    "starter": {
+      "entries": 90,
+      "crc": true,
+      "all_payload_digests": true,
+      "root_readme_and_current_qwen_catalog": true,
+      "no_model_calls": true
+    },
+    "runtime": {
+      "entries": 161,
+      "crc": true,
+      "all_payload_digests": true,
+      "root_readme_and_current_qwen_catalog": true,
+      "no_model_calls": true
+    },
+    "h200": {
+      "entries": 196,
+      "crc": true,
+      "all_payload_digests": true,
+      "root_readme_and_current_qwen_catalog": true,
+      "no_model_calls": true
+    },
+    "4090": {
+      "entries": 197,
+      "crc": true,
+      "all_payload_digests": true,
+      "root_readme_and_current_qwen_catalog": true,
+      "no_model_calls": true
+    }
+  },
+  "refresh_checks": {
+    "starter": {
+      "status": "passed",
+      "source_files_updated": 19,
+      "environments_results_logs_cache_and_partial_download_preserved": true,
+      "repeat_idempotent": true
+    },
+    "runtime": {
+      "status": "passed",
+      "source_files_updated": 34,
+      "environments_results_logs_cache_and_partial_download_preserved": true,
+      "repeat_idempotent": true
+    },
+    "h200": {
+      "status": "passed",
+      "source_files_updated": 12,
+      "environments_results_logs_cache_and_partial_download_preserved": true,
+      "repeat_idempotent": true
+    },
+    "4090": {
+      "status": "passed",
+      "source_files_updated": 12,
+      "environments_results_logs_cache_and_partial_download_preserved": true,
+      "repeat_idempotent": true
+    }
+  },
+  "protected_science_and_profiles": 106,
+  "registered_archives_verified": 56,
+  "old_archives_preserved": true,
+  "physical_or_model_simulations_run": false,
+  "real_model_or_remote_installation_validated": false,
+  "note": "Model loading and Linux account validation remain separate from documentation/policy packaging checks",
+  "standalone_checks": [
+    {
+      "slot": "starter",
+      "readme_links": true,
+      "entrypoints": true,
+      "frozen_current_profile": false
+    },
+    {
+      "slot": "runtime",
+      "readme_links": true,
+      "entrypoints": true,
+      "frozen_current_profile": true
+    },
+    {
+      "slot": "h200",
+      "readme_links": true,
+      "entrypoints": true,
+      "frozen_current_profile": true
+    },
+    {
+      "slot": "4090",
+      "readme_links": true,
+      "entrypoints": true,
+      "frozen_current_profile": true
+    }
+  ],
+  "public_regression": {
+    "passed": 278,
+    "skipped": 7,
+    "one_git_bash_permission_case_verified_separately": true
+  },
+  "asset_regression": {
+    "tests": 36,
+    "passed_including_normal_permission_rechecks": true
+  },
+  "participant_policy": {
+    "formal_evaluation_limit": 6,
+    "exploration_rounds": 3,
+    "same_model_multiple_instances": true,
+    "readme_has_no_sdk_or_sha_terms": true,
+    "distillation_source_ban_removed": true
+  }
+}

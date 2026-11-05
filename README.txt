@@ -1,24 +1,24 @@
 SHORE 指挥部测试资料库
-更新：2026-11-05；当前starter-v12、模型测试包r15、正式运行包strategy-v2。
+更新：2026-11-05；当前starter-v12、模型测试包r16、正式运行包strategy-v3。
 
 一、发放范围
 
 shore-contest-starter-v12.zip
-  发给攻坚组。根目录README.md说明环境安装、任务、禁止事项、提交与文件边界。包含六公开宇宙、完整可修改agent/、models.json模板、固定SDK/积分器、
+  发给攻坚组。根目录README.md说明环境安装、任务、禁止事项、提交与文件边界。包含六公开宇宙、完整可修改agent/、models.json模板、固定接口/积分器、
   公开评测、格式检查器及说明。五个已提供模型是起步配置，同一个模型可加载多个实例；基础框架默认加载注册表的
   primary_model_id，不会同时加载全部五个。所有本队策略、提示词、工具、记忆和子智能体
   代码均在agent/内；模型权重独立保存，通过models.json按稳定id逐项声明。
 
-shore-organizer-runtime-strategy-v2.zip
+shore-organizer-runtime-strategy-v3.zip
   只交指挥部。包含evaluate_strategy.py、九隐藏真实环境、验证真值及固定评分程序。
   指挥部在自己的目录保管环境，以管理员权限接收agent目录与models.json两条路径，
-  通过统一命令启动队伍策略。策略以指定普通评测账号运行，官方SDK可读，真实环境与
-  运行材料留在管理员私有目录；不能把管理员本人的权限继承给队伍程序。
+  通过统一命令启动队伍策略。策略仍以指定普通评测账号运行；现有文件读取条件已具备，
+  不要求重新设置指挥部目录权限或重复授权，真实环境和运行材料由指挥部管理。
   当前正式仅测Adam、Ramiel、Leliel，九宇宙定义及参考全部保留，权重0.3/0.4/0.3。
-  public/包含同一完整开发包，供指挥部的固定SDK、积分器及接口使用。
+  public/包含同一完整开发包，供指挥部的固定积分器及接口使用。
 
-shore-organizer-open-model-test-20261101.zip（r15，4H200）
-shore-organizer-4090-test-20261101.zip（r15，4×48GB4090诊断）
+shore-organizer-open-model-test-20261101.zip（r16，4H200）
+shore-organizer-4090-test-20261101.zip（r16，4×48GB4090诊断）
   组合公开开发组件及指挥部运行系统，仅供指挥部内部测试，不整体发送攻坚组。
   六公开开发入口与正式评测使用同一agent目录、模型注册表和实验/交卷协议。
   不附带模型张量、API密钥、任务数据库或历史运行材料。
@@ -30,13 +30,13 @@ shore-organizer-4090-test-20261101.zip（r15，4×48GB4090诊断）
 
 BASE='/inspire/hdd/project/26-the-other-shore/fengkairui-25026'
 ASSETROOT="$BASE/test"
-RUNTIME="$BASE/shore-organizer-runtime-strategy-v2"
+RUNTIME='/opt/shore-organizer-strategy-v3'
 
-git -C "$ASSETROOT" pull --ff-only
+mkdir -p "$RUNTIME"
 python3 "$ASSETROOT/prepare_test_bundle.py" --bundle runtime --target "$RUNTIME"
 
-如目标已由旧receipt管理，需要更新，使用同一命令加--refresh。准备器检查全部SHA，
-保护已有环境、缓存、日志和结果；人工改动的受管理源文件会停止刷新。starter/h200/4090
+上述命令使用已经传到远端的新版资料，不在无网测评节点拉取仓库。已有受管理目录需要更新时，
+使用同一命令加--refresh；保留已有环境、缓存、日志和结果。starter/h200/4090
 也有同名bundle键，分别选用各自目标目录。新实验始终使用新的结果目录。
 
 三、统一策略与模型路径
@@ -50,14 +50,15 @@ agent/内含run.py、__init__.py、strategy.json及本队全部辅助代码。st
 checkpoint路径、可选adapter_path及用途role，并指定primary_model_id。相同底座的不同
 训练检查点使用不同id，全部列入清单。公共底座可引用公共模型目录，不要求重复复制大模型权重。
 
-指挥部统一设置评测账号与解释器，为该普通账号授予策略目录、模型目录及父目录的必要
-读取/遍历权限。测评期间本次策略、配置及所有声明权重保持可读且不被改写。管理员能
-读取某路径不等于评测账号也能读取；先执行check-only核对。具体命令及账号设置见
+指挥部统一设置评测账号与解释器，直接复用现有读取条件和依赖，不把授权作为每次必做步骤。
+每次只填写agent目录和models.json两条路径，结果目录由命令自动生成；模型名、权重、
+宇宙、真实常数或claims答案不用额外输入。测评期间本次策略和权重保持不变。具体命令见
 README_策略路径测评.txt。六公开操作见开发包docs/STRATEGY_SUBMISSION.txt和QUICKSTART.txt。
 
 模型权重根默认：/inspire/hdd/project/26-the-other-shore/public/models。
 主项目：$BASE/DiscoverPhysics；测试资料库：$BASE/test。模型推理解释器与实验解释器由
-实际配置决定；CPU联网安装与无网H200运行的环境步骤见主项目docs/H200_OFFLINE_SETUP.txt。
+实际配置决定；指挥部与选手可以共用此前安装好的实验与推理环境，不需要各装一套。
+需要重新准备依赖时，环境步骤见主项目docs/H200_OFFLINE_SETUP.txt。
 本轮文件组织调整不代表已在远端加载真实模型，旧CUDA安装说明按相应实际环境核对。
 
 四、测评及反馈
@@ -69,7 +70,7 @@ README_策略路径测评.txt。六公开操作见开发包docs/STRATEGY_SUBMISS
 
 五、清单与历史
 
-packages.json给出当前包、历史包、版本、用途和SHA，SHA256SUMS可用sha256sum -c核验。
+packages.json给出当前包、历史包、版本和用途；按包的发放对象分别使用。
 远端建议目录见远端文件结构.txt。两份逐文件清单及交付说明见参赛者开发包_文件清单.txt、指挥部测评包_文件清单.txt、
-交付说明.txt；每个ZIP自带FILE_LIST和内容摘要。legacy保留旧starter-v10/runtime-r3/r13
+交付说明.txt；每个ZIP自带FILE_LIST。legacy保留旧starter-v10/runtime-r3/r13
 及更早原始文件，不重新生成历史验证真值。旧直接项目入口与表达式校准仅保留兼容。

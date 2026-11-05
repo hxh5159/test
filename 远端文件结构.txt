@@ -44,16 +44,16 @@
 /inspire/hdd/project/26-the-other-shore/fengkairui-25026/
   DiscoverPhysics/             主项目与出题开发文件，不整体发给选手
   test/                        指挥部交付资料库，不整体发给选手
-  organizer-results/           正式输出目录示例，权限限指挥部
+  organizer-results/           正式输出目录，命令按时间自动生成每次结果子目录
 
-将shore-organizer-runtime-strategy-v2.zip解压到指挥部私有目录，例如：
+将shore-organizer-runtime-strategy-v3.zip解压到指挥部目录，例如：
 
-/opt/shore-organizer-strategy-v2/
+/opt/shore-organizer-strategy-v3/
   evaluate_strategy.py         正式测评统一入口
   README_策略路径测评.txt       指挥部配置、路径检查及运行命令
   contest_simulator.py等       九宇宙真实环境
   claims_truth.json            三项声明的真实答案
-  profiles/strategy-v2/         当前配置及九宇宙验证参考
+  profiles/strategy-v3/         当前配置及九宇宙验证参考
   public/                      与选手开发包相同的固定公共程序
     README.md
     agent/
@@ -63,17 +63,19 @@
     scripts/、docs/等
   其余会话、积分、评分和榜单程序
 
-正式环境目录由指挥部保管，选手及运行中的智能体不能读取其中的真实实现和验证数据。
+正式环境目录由指挥部保管，不发给选手；不要求重复设置目录权限或进行授权。
 指挥部按选手提交的两类路径读取策略与全部权重，无需将正式环境复制到选手项目。
 正式运行输出与隐藏观测、对话、日志、新记忆及权重由指挥部私有留存。
 指挥部包内public/agent和models.json是起步模板；正式运行使用选手交付的实际路径。
-具体解释器与访问设置按README_策略路径测评.txt执行，不能仅凭目录名称保证可读/隔离。
+复用已有可读取的策略、权重和依赖路径，具体解释器和运行命令见README_策略路径测评.txt。
 
 四、安装环境
 
-复用已经配置好的两套环境，或按开发包README安装：
+指挥部和选手共用已经配置好的依赖；此前两套环境分别承担以下职责：
   /opt/shore-h200-cu128/.venv-trial/         实验、拟合、积分与计分
   /opt/shore-h200-cu128/.venv-vllm-cu128/    模型推理
   /opt/shore-h200-toolchain/                CUDA编译工具（需要构建时）
 
 代码/权重路径与Python环境是分别引用的，不要求把环境复制进agent目录。
+如果同一个Python已经装齐所需依赖，也可以由两个职责共同使用该解释器。
+每次测评只填写agent和models.json两条绝对路径，不需要额外输入模型名、权重或宇宙参数。
