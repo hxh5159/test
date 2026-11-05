@@ -1,9 +1,15 @@
 攻坚组开发包文件清单（不含九宇宙真实模拟器/真值）
-文件总数：73
+文件总数：89
 
 FILE_LIST.txt
 LICENSE
 START_HERE.txt
+agent/__init__.py
+agent/models.py
+agent/run.py
+agent/strategy.json
+agent/tool_worker.py
+agent/tools.py
 development_worlds/README.md
 development_worlds/__init__.py
 development_worlds/catalog.py
@@ -22,6 +28,7 @@ docs/MODELS.txt
 docs/MODEL_RUNTIME.txt
 docs/PARTICIPANT_FILES.txt
 docs/QUICKSTART.txt
+docs/STRATEGY_SUBMISSION.txt
 docs/SUBMISSION_API.txt
 docs/contracts/claims.example.json
 docs/contracts/claims.schema.json
@@ -29,10 +36,12 @@ docs/contracts/exploration_protocol.json
 docs/contracts/feedback.schema.json
 docs/contracts/law_api.json
 docs/contracts/law_case.schema.json
+docs/contracts/model_registry.schema.json
 docs/contracts/numerics.json
 docs/contracts/observation_noise.json
 docs/contracts/runtime.json
 docs/contracts/scoring.json
+docs/contracts/strategy.schema.json
 docs/contracts/submission.schema.json
 docs/彼岸物理规律发现挑战赛_赛题说明_更新版.pdf
 examples/Dockerfile.agent
@@ -40,7 +49,10 @@ examples/Dockerfile.candidate
 examples/agent.py
 examples/law.py
 examples/law_case.json
+examples/models.json
+examples/models.multi.json
 examples/submission.json
+models.json
 requirements.txt
 rift/__init__.py
 rift/console.py
@@ -49,6 +61,7 @@ rift/model_catalog.json
 rift/model_registry.py
 rift/observations.py
 rift/prediction.py
+rift/strategy.py
 rift/submission.py
 rift/worker.py
 rift_numerics/__init__.py
@@ -61,11 +74,14 @@ scripts/make_submission.py
 scripts/pip_index_install.py
 scripts/preflight_cuda128_build.py
 scripts/prepare_h200_offline_cache.py
+scripts/prepare_strategy.py
 scripts/prepare_torch_wheel.py
 scripts/prepare_vllm_dependencies.py
+scripts/run_strategy.py
 scripts/serve_model.py
 scripts/validate_claims.py
 scripts/validate_law.py
+scripts/validate_strategy.py
 scripts/validate_submission.py
 scripts/verify_h200_cuda128.py
 shore_agent/__init__.py

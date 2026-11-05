@@ -1,82 +1,75 @@
 SHORE 指挥部测试资料库
-更新：2026-11-05；当前starter-v10、模型测试包r13、正式运行包direct-v1-r3。
+更新：2026-11-05；当前starter-v11、模型测试包r14、正式运行包strategy-v1。
 
-一、四个包的用途
+一、发放范围
 
-shore-contest-starter-v10.zip
-  发给攻坚组的完整开发包：六公开宇宙、可修改LLM基础框架、统一实验/提交驱动、
-  固定候选积分器、公开评分、七模型配置、统一正式入口、最新8页说明PDF及CUDA12.8指引。
-  基础智能体默认每宇宙最多3轮模型交互；不含九隐藏真实场、真值或真实模型权重，见包内FILE_LIST.txt。
+shore-contest-starter-v11.zip
+  发给攻坚组。包含六公开宇宙、完整可修改agent/、models.json模板、固定SDK/积分器、
+  公开评测、格式检查器及说明。七个已提供模型是起步配置，基础框架默认加载注册表的
+  primary_model_id，不会同时加载全部七个。所有本队策略、提示词、工具、记忆和子智能体
+  代码均在agent/内；模型权重独立保存，通过models.json按稳定id逐项声明。
 
-shore-organizer-runtime-direct-v1-r3.zip
-  指挥部九隐藏运行系统，沿用最新固定科学定义、覆盖和原字节干净参考，不改物理或计分。
-  public/是同一完整攻坚组开发包；整个runtime ZIP不能作为参赛包发放。
-  保留全部九界配置和无噪参考，当前仅运行Adam、Ramiel、Leliel，档位权重仍为0.3/0.4/0.3。
-  直接运行队伍当前项目，九界环境外接，无需Docker、项目复制或模型挂载映射。
-  固定配置direct-v1-r3；当前命令见README_直接项目测评.txt，完整清单见包内FILE_LIST.txt。
+shore-organizer-runtime-strategy-v1.zip
+  只交指挥部。包含evaluate_strategy.py、九隐藏真实环境、验证真值及固定评分程序。
+  指挥部在自己的目录保管环境，以管理员权限接收agent目录与models.json两条路径，
+  通过统一命令启动队伍策略。策略以指定普通评测账号运行，官方SDK可读，真实环境与
+  运行材料留在管理员私有目录；不能把管理员本人的权限继承给队伍程序。
+  当前正式仅测Adam、Ramiel、Leliel，九宇宙定义及参考全部保留，权重0.3/0.4/0.3。
+  public/包含同一完整开发包，供指挥部的固定SDK、积分器及接口使用。
 
-shore-organizer-open-model-test-20261101.zip（r13，4H200）
-shore-organizer-4090-test-20261101.zip（r13，4×48GB4090开发诊断）
-  将完整公开开发包与指挥部运行源/新参考合在同一测试目录，兼容此前解压位置。
-  主入口为scripts/serve_model.py和python -m development_worlds.runner，正式测评用
-  scripts/evaluate_submission.py --organizer-root .。旧容器与表达式校准入口仅兼容保留。
-  两个包含九隐藏真实资料，只用于指挥部；不要把整个目录发给攻坚组。六公开开发仍覆盖1—6号，
-  基础框架开发和正式测评均默认3轮，默认正式测评只运行上述3界，其余6界完整保留。
+shore-organizer-open-model-test-20261101.zip（r14，4H200）
+shore-organizer-4090-test-20261101.zip（r14，4×48GB4090诊断）
+  组合公开开发组件及指挥部运行系统，仅供指挥部内部测试，不整体发送攻坚组。
+  六公开开发入口与正式评测使用同一agent目录、模型注册表和实验/交卷协议。
+  不附带模型张量、API密钥、任务数据库或历史运行材料。
 
-2026-11-02所有者已明确授权公开整个hxh5159/test，含模拟器、真值和验证；匿名HTTPS
-读取不要求GitHub登录。访问权限与正式参赛发放受众分开：只把独立starter发给攻坚组。
-不附API凭证、私钥、权重或原始模型运行结果。历史标识保留原字节，不代表重新改变仓库权限。
+本test仓库按所有者明确授权保持public。仓库访问权限与比赛发放受众分别管理；向攻坚组
+只发独立starter，不能将包含真实模拟器的整个仓库或完整模型测试包作为开发包交付。
 
-二、远端准备（Linux，已有test克隆）
+二、同步与准备（远端Linux）
 
 BASE='/inspire/hdd/project/26-the-other-shore/fengkairui-25026'
 ASSETROOT="$BASE/test"
-TESTROOT="$BASE/shore-organizer-open-model-test-20261101"
+RUNTIME="$BASE/shore-organizer-runtime-strategy-v1"
+
 git -C "$ASSETROOT" pull --ff-only
+python3 "$ASSETROOT/prepare_test_bundle.py" --bundle runtime --target "$RUNTIME"
 
-首次解压：
-python3 "$ASSETROOT/prepare_test_bundle.py" --bundle h200 --target "$TESTROOT"
+如目标已由旧receipt管理，需要更新，使用同一命令加--refresh。准备器检查全部SHA，
+保护已有环境、缓存、日志和结果；人工改动的受管理源文件会停止刷新。starter/h200/4090
+也有同名bundle键，分别选用各自目标目录。新实验始终使用新的结果目录。
 
-已有旧包receipt、需要更新源码：
-python3 "$ASSETROOT/prepare_test_bundle.py" --bundle h200 --target "$TESTROOT" --refresh
+三、统一策略与模型路径
 
-只执行适用的一条。4090诊断将bundle换为4090并使用原4090目标目录；runtime/starter也有
-对应bundle键。准备器校验全部哈希，更新receipt管理的源文件，保护环境、缓存、日志及结果。
-源文件若被人工改动会停止，不自动覆盖。新实验使用新的输出目录，不伪改旧成绩。
+攻坚组交两条绝对路径：
+  /path/to/team01/agent
+  /path/to/team01/models.json
 
-三、当前环境和完整模型流程
+agent/内含run.py、__init__.py、strategy.json及本队全部辅助代码。strategy.json记录队伍、
+提交和版本身份。models.json为每个实际使用的模型声明唯一id、白名单base_model、完整
+checkpoint路径、可选adapter_path及用途role，并指定primary_model_id。相同底座的不同
+训练检查点使用不同id，全部列入清单。公共底座可引用公共模型目录，不要求复制397B权重。
 
-用户实际在联网CPU安装/编译并保存镜像，再到无网H200运行，目标CUDA12.8。
-安装步骤见主项目docs/H200_OFFLINE_SETUP.txt；安装不用读取本仓库，更不要求GPU在CPU端出现。
-当前包也带这些公开安装脚本和说明。旧0.32/cu129安装/检查工具仅作兼容保留，不是当前入口。
+指挥部统一设置评测账号与解释器，为该普通账号授予策略目录、模型目录及父目录的必要
+读取/遍历权限。测评期间本次策略、配置及所有声明权重保持可读且不被改写。管理员能
+读取某路径不等于评测账号也能读取；先执行check-only核对。具体命令及账号设置见
+README_策略路径测评.txt。六公开操作见开发包docs/STRATEGY_SUBMISSION.txt和QUICKSTART.txt。
 
-source "$TESTROOT/env_open_models.sh"
-cd "$TESTROOT"
-PY='/opt/shore-h200-cu128/.venv-trial/bin/python'
-MPY='/opt/shore-h200-cu128/.venv-vllm-cu128/bin/python'
-MODELROOT='/inspire/hdd/project/26-the-other-shore/public/models'
+模型权重根默认：/inspire/hdd/project/26-the-other-shore/public/models。
+主项目：$BASE/DiscoverPhysics；测试资料库：$BASE/test。模型推理解释器与实验解释器由
+实际配置决定；CPU联网安装与无网H200运行的环境步骤见主项目docs/H200_OFFLINE_SETUP.txt。
+本轮文件组织调整不代表已在远端加载真实模型，旧CUDA安装说明按相应实际环境核对。
 
-"$PY" scripts/serve_model.py --list
-"$PY" -m development_worlds.runner --worlds 1 2 3 4 5 6   --model 27b --model-root "$MODELROOT" --model-python "$MPY"   --output "results/public-$(date +%Y%m%d-%H%M%S)"
+四、测评及反馈
 
-七个预设：27b、35b、35b-fp8、122b、122b-fp8、397b、397b-fp8。
-BF16与FP8不会互相冒充；397b BF16无法4H200全GPU常驻，应选现有FP8或另行验证合规方案。
-六公开可直接保留实验资料；九隐藏赛中不归还观测、对话、候选、日志、记忆或更新权重。
-正式分数仍80/(1+10e)、80/15/5；600秒从首次mission起计，模型加载另计。
+六公开开发仍覆盖1—6号，基础框架默认每界3次模型决策；正式运行默认选择三个隐藏
+宇宙，每界600秒，自首次mission开始，模型加载另计。单界评分80/(1+10e)、80/15/5，
+能量100、observe20及无噪评分真值规则保持。三个宇宙一次完整运行汇总后才反馈成绩，
+只反馈总分与各宇宙总分；隐藏观测、对话、候选、日志、新记忆和更新权重由指挥部保留。
 
-六公开完整命令：解压目录docs/QUICKSTART.txt、PARTICIPANT_FILES.txt、MODEL_RUNTIME.txt。
-九隐藏直接项目测评：README_直接项目测评.txt、CODE_DELIVERY_BOUNDARIES.txt。
-指挥部接入九界后，从队伍当前项目运行scripts/evaluate_submission.py，测评期间禁止
-编辑代码、配置和改写本次权重。指挥部不覆盖队伍入口、策略或模型配置。
+五、清单与历史
 
-四、校验与历史
-
-packages.json记录每包版本、用途、SHA及默认解压目录；SHA256SUMS包含当前和全部历史包。
-可用sha256sum -c SHA256SUMS核对。legacy/保留旧v3/r6/v9及更早原始包和评分版本。
-当前安装组件v5默认仅使用指定内部镜像安装Python包，不再调用官方Torch下载器、
-官方find-links或自动回退PyPI。镜像缺少精确cu128版本时明确停止；仅显式--allow-official-fallback恢复旧行为。
-C++/CUDA源码及离线内核资源不属于pip索引，仍可能访问公开上游。匹配助手随包提供。
-当前正式profile为direct-v1-r3，只选择3界运行；宇宙规律、无噪验证、600秒、配额和单界计分保持。
-原starter-v9/r12/direct-v1-r2及更早版本留存legacy原字节，不重生成验证真值。
-根目录可能留有旧版本原件，当前入口始终以packages.json的current记录为准。
-最新发布与现场GPU验收是不同步骤：本地回归及合成HTTP联调不代表所有真实模型均已加载。
+packages.json给出当前包、历史包、版本、用途和SHA，SHA256SUMS可用sha256sum -c核验。
+两份逐文件清单及交付说明见参赛者开发包_文件清单.txt、指挥部测评包_文件清单.txt、
+交付说明.txt；每个ZIP自带FILE_LIST和内容摘要。legacy保留旧starter-v10/runtime-r3/r13
+及更早原始文件，不重新生成历史验证真值。旧直接项目入口与表达式校准仅保留兼容。

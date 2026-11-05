@@ -1,0 +1,288 @@
+{
+  "status": "passed",
+  "date": "2026-11-05",
+  "scope": "three_turn_baseline_and_three_world_evaluation",
+  "profile_id": "direct-v1-r3",
+  "evaluation_worlds": [
+    "Adam",
+    "Ramiel",
+    "Leliel"
+  ],
+  "all_nine_environment_definitions_retained": true,
+  "physics_and_clean_references_unchanged": true,
+  "protected_files": 104,
+  "package_checks": {
+    "starter": {
+      "entries": 73,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true,
+      "all_nine_physical_environments_retained": false
+    },
+    "runtime": {
+      "entries": 121,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true,
+      "all_nine_physical_environments_retained": true
+    },
+    "h200": {
+      "entries": 156,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true,
+      "all_nine_physical_environments_retained": true
+    },
+    "4090": {
+      "entries": 157,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true,
+      "all_nine_physical_environments_retained": true
+    }
+  },
+  "standalone_checks": {
+    "starter": {
+      "standalone_cli_and_default_profile": true,
+      "model_or_api_calls": 0
+    },
+    "runtime": {
+      "standalone_cli_and_default_profile": true,
+      "model_or_api_calls": 0
+    },
+    "h200": {
+      "standalone_cli_and_default_profile": true,
+      "model_or_api_calls": 0
+    },
+    "4090": {
+      "standalone_cli_and_default_profile": true,
+      "model_or_api_calls": 0
+    }
+  },
+  "refresh_checks": {
+    "starter": {
+      "status": "passed",
+      "source_files_updated": 14,
+      "environments_results_logs_cache_and_partial_download_preserved": true,
+      "repeat_idempotent": true
+    },
+    "runtime": {
+      "status": "passed",
+      "source_files_updated": 33,
+      "environments_results_logs_cache_and_partial_download_preserved": true,
+      "repeat_idempotent": true
+    },
+    "h200": {
+      "status": "passed",
+      "source_files_updated": 35,
+      "environments_results_logs_cache_and_partial_download_preserved": true,
+      "repeat_idempotent": true
+    },
+    "4090": {
+      "status": "passed",
+      "source_files_updated": 36,
+      "environments_results_logs_cache_and_partial_download_preserved": true,
+      "repeat_idempotent": true
+    }
+  },
+  "registered_archives_verified": 48,
+  "remote_installation_validated": false,
+  "gpu_or_real_model_calls": 0,
+  "physical_integrations_during_packaging": 0,
+  "packaged_end_to_end": {
+    "status": "passed",
+    "mode": "packaged_selected_three_worlds_three_turns_scripted_transport",
+    "real_scientific_worlds": 3,
+    "retained_hidden_world_definitions": 9,
+    "baseline_max_turns": 3,
+    "model_actions": 9,
+    "generated_candidate_files": true,
+    "current_team_custom_module_config_and_checkpoint_fixture_read": true,
+    "observe_launch_draft_auto_submit_all_three": true,
+    "fixed_prediction_and_score_recalculation": true,
+    "only_total_and_world_totals_in_public_feedback": true,
+    "existing_results_protected": true,
+    "check_only_did_not_run_agent": true,
+    "real_model_tensors_loaded": false,
+    "external_provider_calls": 0,
+    "gpu_calls": 0,
+    "real_model_capability_claimed": false,
+    "wall_seconds": 82.905356700001,
+    "starter_sha256": "640e6780c458d17d87fc7ddf06f8a416710e5a12af0d78cbaaf90425259aafb0",
+    "runtime_sha256": "d688328e2f1dcfd91e77f77bbaeae71e8dd18ca7bc83814b062fe1174ff2a17f",
+    "public_six_three_turn_acceptance": true,
+    "public_model_actions": 18,
+    "final_package_correspondence": "Final packages differ only by two normative contract texts and derived manifest digests; execution, SDK and physics identity verified file-by-file",
+    "source_worlds_unselected_not_run": true
+  },
+  "current_packages": {
+    "4090": {
+      "file": "shore-organizer-4090-test-20261101.zip",
+      "sha256": "309a878fad2731502de953b5a35963e2ee680427369958d06282d4470250b08e",
+      "entries": 157
+    },
+    "h200": {
+      "file": "shore-organizer-open-model-test-20261101.zip",
+      "sha256": "5be1779b43a17e7a3545a55fca0264a318350dd68c6166d003bdc9cc8ada21ea",
+      "entries": 156
+    },
+    "runtime": {
+      "file": "shore-organizer-runtime-direct-v1-r3.zip",
+      "sha256": "cf922365f822daccae07f86e044cbac4feb698a8c1e4ef27e223d563f95a606f",
+      "entries": 121
+    },
+    "starter": {
+      "file": "shore-contest-starter-v10.zip",
+      "sha256": "8a4fc3aaa4e800568220ac32bedd31c6fe99eb98ed15b1ead9aa6d55e09a07d8",
+      "entries": 73
+    }
+  },
+  "history_preserved": {
+    "starter": {
+      "file": "legacy/shore-contest-starter-v9.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 652156,
+      "sha256": "f882ac2bfc73f807dfe87eb2fc5b9216e24f745714cab9ad64714dc3fb5448b2",
+      "archive_entries": 73,
+      "note": "Original bytes before three-world evaluation and three-turn baseline update",
+      "wall_clock_seconds": 600,
+      "execution_mode": "direct_project",
+      "requires_container_runtime": false,
+      "actual_model_loaded_and_validated": false,
+      "revision_note": "Installer-only mirror-index package selection; scientific/execution payloads unchanged",
+      "protocol_e2e_validated": false,
+      "protocol_e2e_scope": "No new model/scientific E2E; installer/archive/CLI checks and exact unchanged execution payload comparison"
+    },
+    "runtime": {
+      "file": "legacy/shore-organizer-runtime-direct-v1-r2-installer-v5.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 1038988,
+      "sha256": "33b4b4928ddd3c082ce5119ba6e9626679c69a2765847eee7e5f06698a995512",
+      "archive_entries": 111,
+      "note": "Original bytes before three-world evaluation and three-turn baseline update",
+      "scoring_version": "draft-3.11.0",
+      "prediction_mapping": "P=80/(1+10e)",
+      "observation_noise_version": "1.1.0",
+      "velocity_noise_fraction": 0.0001,
+      "scientific_dataset_scope": "Latest fixed six-public/nine-hidden design; selected Adam and validation coverage installed",
+      "wall_clock_seconds": 600,
+      "hidden_artifacts_returned_during_contest": false,
+      "documentation_revision": 7,
+      "revision_note": "Installer-only mirror-index package selection; scientific/execution payloads unchanged",
+      "execution_mode": "direct_project",
+      "requires_container_runtime": false,
+      "actual_model_loaded_and_validated": false,
+      "profile_id": "direct-v1-r2",
+      "protocol_e2e_validated": false,
+      "protocol_e2e_scope": "No new model/scientific E2E; installer/archive/CLI checks and exact unchanged execution payload comparison"
+    },
+    "h200": {
+      "file": "legacy/shore-organizer-open-model-test-20261101-r12.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 1608378,
+      "sha256": "b261e8388bc663766f7fa29cf6071f190f7e5ca874c77f8e212ee013a6fe2f7f",
+      "archive_entries": 146,
+      "note": "Original bytes before three-world evaluation and three-turn baseline update",
+      "revision": 12,
+      "runner_version": "shore-agent-baseline-1.0.0",
+      "revision_note": "Installer-only mirror-index package selection; scientific/execution payloads unchanged",
+      "scoring_version": "draft-3.11.0",
+      "prediction_mapping": "P=80/(1+10e)",
+      "observation_noise_version": "1.1.0",
+      "velocity_noise_fraction": 0.0001,
+      "scientific_dataset_scope": "Latest fixed six-public/nine-hidden design; selected Adam and validation coverage installed",
+      "wall_clock_seconds": 600,
+      "hidden_artifacts_returned_during_contest": false,
+      "primary_entrypoint": "python -m development_worlds.runner (public); scripts/evaluate_submission.py --organizer-root . (formal)",
+      "model_service_entrypoint": "scripts/serve_model.py",
+      "actual_model_loaded_and_validated": false,
+      "execution_mode": "direct_project",
+      "requires_container_runtime": false,
+      "profile_id": "direct-v1-r2",
+      "safe_r7_refresh_verified": true,
+      "protocol_e2e_validated": false,
+      "protocol_e2e_scope": "No new model/scientific E2E; installer/archive/CLI checks and exact unchanged execution payload comparison",
+      "safe_r8_refresh_verified": true,
+      "safe_r9_refresh_verified": true,
+      "safe_r10_refresh_verified": true,
+      "safe_r11_refresh_verified": true
+    },
+    "4090": {
+      "file": "legacy/shore-organizer-4090-test-20261101-r12.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 1611016,
+      "sha256": "8ed90c36cae8cb836cb2830779a2e5944965d8fd204929a0c3682073686f2543",
+      "archive_entries": 147,
+      "note": "Original bytes before three-world evaluation and three-turn baseline update",
+      "revision": 12,
+      "runner_version": "shore-agent-baseline-1.0.0",
+      "revision_note": "Installer-only mirror-index package selection; scientific/execution payloads unchanged",
+      "scoring_version": "draft-3.11.0",
+      "prediction_mapping": "P=80/(1+10e)",
+      "observation_noise_version": "1.1.0",
+      "velocity_noise_fraction": 0.0001,
+      "scientific_dataset_scope": "Latest fixed six-public/nine-hidden design; selected Adam and validation coverage installed",
+      "wall_clock_seconds": 600,
+      "hidden_artifacts_returned_during_contest": false,
+      "primary_entrypoint": "python -m development_worlds.runner (public); scripts/evaluate_submission.py --organizer-root . (formal)",
+      "model_service_entrypoint": "scripts/serve_model.py",
+      "actual_model_loaded_and_validated": false,
+      "execution_mode": "direct_project",
+      "requires_container_runtime": false,
+      "profile_id": "direct-v1-r2",
+      "safe_r7_refresh_verified": true,
+      "protocol_e2e_validated": false,
+      "protocol_e2e_scope": "No new model/scientific E2E; installer/archive/CLI checks and exact unchanged execution payload comparison",
+      "safe_r8_refresh_verified": true,
+      "safe_r9_refresh_verified": true,
+      "safe_r10_refresh_verified": true,
+      "safe_r11_refresh_verified": true
+    }
+  },
+  "build_directory": "C:\\Users\\hwz\\Desktop\\秋\\26秋\\.project-memory\\three_worlds_20261105\\rebuild-3837237b58",
+  "final_contract_sync": {
+    "starter": {
+      "changed": [
+        "docs/contracts/exploration_protocol.json",
+        "docs/contracts/runtime.json",
+        "starter-manifest.json"
+      ],
+      "execution_and_physics_bytes_identical": true
+    },
+    "runtime": {
+      "changed": [
+        "bundle-manifest.json",
+        "public/docs/contracts/exploration_protocol.json",
+        "public/docs/contracts/runtime.json",
+        "public/starter-manifest.json"
+      ],
+      "execution_and_physics_bytes_identical": true
+    },
+    "h200": {
+      "changed": [
+        "docs/contracts/exploration_protocol.json",
+        "docs/contracts/runtime.json",
+        "starter-manifest.json",
+        "PRIVATE_PACKAGE_MANIFEST.json"
+      ],
+      "execution_and_physics_bytes_identical": true
+    },
+    "4090": {
+      "changed": [
+        "docs/contracts/exploration_protocol.json",
+        "docs/contracts/runtime.json",
+        "starter-manifest.json",
+        "PRIVATE_PACKAGE_MANIFEST.json"
+      ],
+      "execution_and_physics_bytes_identical": true
+    }
+  },
+  "asset_tests": {
+    "passed": 36,
+    "real_install_or_download": false
+  }
+}

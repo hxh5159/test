@@ -1,67 +1,49 @@
-彼岸物理规律发现挑战赛：两类交付包
-日期：2026-11-04
+彼岸物理规律发现挑战赛：当前两类交付包
+日期：2026-11-05
 
-一、发给参赛者
+一、发给攻坚组
 
-shore-contest-starter-v9.zip（73个文件）
-  development_worlds/：六个公开宇宙的真实模拟器、控制台、自测与评分。
-  shore_agent/：可修改的基础智能体、提示词、模型接入、拟合工具。
-  rift/、rift_numerics/：固定通信/候选接口和统一积分器。
-  scripts/：模型服务、格式检查、启动清单生成和外接正式测评入口。
-    pip_index_install.py：默认仅使用指定镜像；缺包或失败时停止，不自动回退官方源。
-    prepare_torch_wheel.py：仅显式允许官方回退时使用的持久Torch下载器；默认镜像安装不调用。
-    prepare_vllm_dependencies.py：源码构建前解析、下载并校验缺少的Python依赖。
-    preflight_cuda128_build.py：CPU端检查CUDA12.8头文件/工具链及最小对象编译。
-  docs/：最新8页赛题说明PDF、快速开始、文件职责、模型/接口/计分契约。
-  examples/：启动清单、候选规律和接口示例；非正式宇宙答案。
+shore-contest-starter-v11.zip
+  agent/：全部可修改策略，包括run.py主入口、strategy.json身份、模型客户端、提示词、
+    分析拟合工具、记忆管理及可新增的多智能体协调代码。所有本队策略均保存在该目录。
+  models.json：完整模型路径清单模板。每个模型有唯一id、白名单底座、checkpoint路径、
+    可选LoRA adapter_path和role；同底座的多个训练结果也要分别声明。
+  development_worlds/：六公开宇宙真实模拟、实验控制台、标准自测与公开评分。
+  rift/、rift_numerics/：固定协议、模型注册表检查、候选接口与统一积分器。
+  scripts/：固定策略启动器、路径/提交/格式检查、模型服务及环境准备脚本。
+  docs/：策略路径规范、快速开始、固定/可改文件说明、数学及提交契约和赛题说明PDF。
+  examples/：结构化提交与候选接口示例；不包含正式宇宙答案。
+  shore_agent/：旧入口兼容别名；全部实际可修改策略代码在agent/。
   requirements.txt、LICENSE、START_HERE.txt、FILE_LIST.txt及摘要清单。
 
-完整逐文件清单：参赛者开发包_文件清单.txt，包内也有FILE_LIST.txt。
-本包不含九个正式宇宙的真实规律、隐藏真值、模型权重或API凭证。
+该包不包含正式九宇宙真实模拟器、参数、验证真值、权重张量或凭证。
+完整逐文件清单见参赛者开发包_文件清单.txt。攻坚组最终仅提交agent目录与models.json
+两条路径，权重文件保留原处，无需随策略复制或打包上传。
 
-二、只由指挥部接入
+二、只交指挥部
 
-shore-organizer-runtime-direct-v1-r2-installer-v5.zip（111个文件）
-  direct_project_eval.py：直接运行队伍当前项目的九界正式驱动。
-  contest_simulator.py、contest_world_definitions.json：九界真实模拟与定义。
-  claims_truth.json：三项声明的评分真值。
-  trial_console.py、contest_console_service.py：实验、观测噪声、配额与计时。
-  law_submission_store.py、law_program_evaluation.py：候选配对、固定积分与评分执行。
-  trial_evaluation.py、contest_job_runner.py、contest_scoreboard.py：计分、完整运行与成绩。
-  profiles/direct-v1-r2/：正式固定配置及九份原字节无噪隐藏验证参考。
-  public/：与参赛者包一致的完整公开组件，供固定SDK/积分与接口核验。
-  README_直接项目测评.txt、FILE_LIST.txt、bundle-manifest.json及历史兼容程序。
+shore-organizer-runtime-strategy-v1.zip
+  evaluate_strategy.py：指挥部固定入口，读取队伍的agent目录和模型注册表，管理员启动，
+    将队伍代码降权至指定普通评测账号执行。统一设置账号与解释器，各队只替换两条路径。
+  contest_simulator.py、contest_world_definitions.json：全部九隐藏环境真实模拟与定义。
+  claims_truth.json：三个声明的评分真值。
+  trial_console.py、contest_console_service.py：实验、噪声、配额与计时服务。
+  law_submission_store.py、law_program_evaluation.py：候选配对、固定积分及评分执行。
+  trial_evaluation.py、contest_job_runner.py、contest_scoreboard.py：计分、完整运行与榜单。
+  profiles/strategy-v1/：当前正式配置及九份原字节无噪验证参考，仅选择Adam、Ramiel、Leliel。
+  public/：同一完整开发包，供固定SDK、候选积分与公开接口使用。
+  README_策略路径测评.txt：管理员、普通评测账号、路径权限及统一命令。
+  FILE_LIST.txt、bundle-manifest.json：逐文件说明与哈希。旧direct运行器和profile兼容保留。
 
-完整逐文件清单：指挥部测评包_文件清单.txt，包内也有FILE_LIST.txt。
-不要将整个指挥部包作为公开开发资料发给队伍；只在正式窗口按现场规则接入。
-两包均不包含真实模型权重或已安装的GPU依赖。
+环境与正式运行材料由指挥部保管，不要求放进参赛者项目或交给参赛者读取。
+仅给出总分和当前三个宇宙各自总分，不返回单项、隐藏观测、对话、日志、候选或真值。
+完整逐文件清单见指挥部测评包_文件清单.txt。
 
-三、接入后的统一指令（远端Linux）
+三、指挥部内部的组合测试包
 
-项目保留队伍自己的submission.json，不由指挥部重新生成覆盖。
-测评期间停止编辑项目及改写所用权重，确认模型加载的是本次保存完成的检查点。
+shore-organizer-open-model-test-20261101.zip（r14，4H200）
+shore-organizer-4090-test-20261101.zip（r14，4×48GB4090）
+  组合开发包与指挥部运行系统，便于内部部署、自测及与旧目录安全刷新。
+  内含九隐藏真实资料，不能整体发给攻坚组。模型权重通过实际路径提供，不在ZIP中。
 
-  BASE='/inspire/hdd/project/26-the-other-shore/fengkairui-25026'
-  PROJECT="$BASE/DiscoverPhysics"
-  RUNTIME="$BASE/shore-organizer-runtime-direct-v1-r2"
-  PY='/opt/shore-h200-cu128/.venv-trial/bin/python'
-
-  "$PY" "$PROJECT/scripts/evaluate_submission.py" \
-    --organizer-root "$RUNTIME" --project-root "$PROJECT" \
-    --manifest submission.json --output "$BASE/shore-results/window1-team01" \
-    --agent-python "$PY"
-
-模型目录仍由队伍配置，不做容器挂载。每次用全新结果目录。四窗口/四次由指挥部
-手工受理，按最高一次完整九界成绩汇总。summary.json只给总分及各界总分；
-private/内的隐藏观测、候选、对话、日志和分项等赛中由指挥部留存。
-
-四、验收范围
-
-新包逐项检查ZIP CRC、文件清单、摘要、默认profile、固定SDK及独立CLI导入；
-两类模型包均检查从r11刷新到r12时保留已有环境、日志、缓存和结果。
-本轮只更新Python包镜像安装策略及相关指引，direct-v1-r2配置、真实场、验证案例、
-干净参考及全部科学/执行payload保持原字节，不创建新科学profile。
-前一版包已通过实际九环境与本机脚本化模型服务端到端，原摘要和报告保存在legacy；
-本轮不重跑科学/LLM端到端，不将旧包摘要的验收描述为新包实际执行。
-这些检查不代表远端安装、真实白名单权重、H200部署或模型发现能力已通过实测。
-逐项证据与SHA256见交付验收报告.json、packages.json、SHA256SUMS。
+全部实际文件数与SHA以packages.json、两份FILE_LIST和SHA256SUMS为准。
