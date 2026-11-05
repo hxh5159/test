@@ -1,0 +1,79 @@
+彼岸挑战赛：远端文件组织
+更新：2026-11-05
+
+一、共享模型目录
+
+/inspire/hdd/project/26-the-other-shore/public/models/
+  Qwen3.8-27B/
+  Qwen3.6-35B-A3B/
+  Qwen-3.6-35B-A3B-FP8/    也识别不带额外横杠的目录名
+  Qwen3.5-122B-A10B/
+  Qwen3.5-122B-A10B-FP8/
+
+模型权重不放进代码压缩包。同一模型可加载多个实例；相同权重可共用同一个清单ID和路径。
+每份独立微调结果或适配器分别登记，不要求复制相同的公共底座。
+
+二、选手项目
+
+将shore-contest-starter-v12.zip直接解压到本组选择的项目目录，保持包内相对结构：
+
+<攻坚组目录>/project/
+  README.md                   安装、任务、自测和提交的阅读入口
+  agent/                      本队完整可修改策略
+    run.py                    统一入口，协调全部智能体
+    strategy.json             队伍和版本信息
+    models.py、tools.py等      模型调用和工具策略
+    prompts/、memory/等        按需新增，运行所需策略材料均在agent/内
+  models.json                 本次全部模型/适配器路径，可编辑
+  development_worlds/         六公开宇宙及固定实验、评分程序，不得修改
+  rift/、rift_numerics/         固定操作接口和积分程序，不得修改
+  scripts/、shore_agent/       官方启动/检查程序及兼容入口，不得修改
+  docs/                       赛题说明、文件规范和接口说明
+  examples/                   格式示例
+  requirements.txt            实验计算依赖
+  results/                    自测运行时产生，可保留本队开发成果
+
+训练程序和训练数据可另行保存；正式推理读取的自定义程序、配置、提示词和记忆须在agent/内。
+本队训练后的完整权重或适配器可另放共享盘目录，由models.json逐项引用。
+正式提交仅提供agent目录、models.json两类绝对路径；测评期间停止编辑对应代码和权重。
+只给选手starter包，不给整个test资料库、完整出题仓库或含正式环境的组合测试包。
+
+三、指挥部目录
+
+已有开发/资料库路径保持：
+/inspire/hdd/project/26-the-other-shore/fengkairui-25026/
+  DiscoverPhysics/             主项目与出题开发文件，不整体发给选手
+  test/                        指挥部交付资料库，不整体发给选手
+  organizer-results/           正式输出目录示例，权限限指挥部
+
+将shore-organizer-runtime-strategy-v2.zip解压到指挥部私有目录，例如：
+
+/opt/shore-organizer-strategy-v2/
+  evaluate_strategy.py         正式测评统一入口
+  README_策略路径测评.txt       指挥部配置、路径检查及运行命令
+  contest_simulator.py等       九宇宙真实环境
+  claims_truth.json            三项声明的真实答案
+  profiles/strategy-v2/         当前配置及九宇宙验证参考
+  public/                      与选手开发包相同的固定公共程序
+    README.md
+    agent/
+    models.json
+    development_worlds/
+    rift/、rift_numerics/
+    scripts/、docs/等
+  其余会话、积分、评分和榜单程序
+
+正式环境目录由指挥部保管，选手及运行中的智能体不能读取其中的真实实现和验证数据。
+指挥部按选手提交的两类路径读取策略与全部权重，无需将正式环境复制到选手项目。
+正式运行输出与隐藏观测、对话、日志、新记忆及权重由指挥部私有留存。
+指挥部包内public/agent和models.json是起步模板；正式运行使用选手交付的实际路径。
+具体解释器与访问设置按README_策略路径测评.txt执行，不能仅凭目录名称保证可读/隔离。
+
+四、安装环境
+
+复用已经配置好的两套环境，或按开发包README安装：
+  /opt/shore-h200-cu128/.venv-trial/         实验、拟合、积分与计分
+  /opt/shore-h200-cu128/.venv-vllm-cu128/    模型推理
+  /opt/shore-h200-toolchain/                CUDA编译工具（需要构建时）
+
+代码/权重路径与Python环境是分别引用的，不要求把环境复制进agent目录。

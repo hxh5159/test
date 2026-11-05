@@ -9,7 +9,7 @@ public/为完整公开开发包，攻坚组使用独立的starter包即可。
 攻坚组提交两类信息：agent目录绝对路径、models.json绝对路径。
 agent/包含run.py、strategy.json、全部子智能体、提示词、配置、工具与合法开发记忆。
 models.json逐项列出所有完整checkpoint和可选底座+LoRA路径，按唯一ID绑定。
-不复制397B等大权重，不要求各队另写启动教程。入口统一为agent/run.py。
+不重复复制大模型权重，不要求各队另写启动教程。入口统一为agent/run.py。
 
 当前正式运行只测Adam、Ramiel、Leliel，原九套定义与验证参考全保留。
 六公开全部可用，基础框架开发/正式每宇宙默认3次模型决策；单宇宙600秒。
@@ -20,7 +20,7 @@ models.json逐项列出所有完整checkpoint和可选底座+LoRA路径，按唯
 
   BASE='/inspire/hdd/project/26-the-other-shore/fengkairui-25026'
   ASSETS="$BASE/test"
-  ORGANIZER_ROOT='/opt/shore-organizer-strategy-v1'
+  ORGANIZER_ROOT='/opt/shore-organizer-strategy-v2'
   PY='/opt/shore-h200-cu128/.venv-trial/bin/python'
   MPY='/opt/shore-h200-cu128/.venv-vllm-cu128/bin/python'
 
@@ -31,7 +31,7 @@ models.json逐项列出所有完整checkpoint和可选底座+LoRA路径，按唯
   chmod 0700 "$ORGANIZER_ROOT"
 
 新目录使用上述命令；显式更新已有受管理解压目录时加--refresh，旧日志和结果保持。
-本轮包为shore-organizer-runtime-strategy-v1.zip，当前profile为strategy-v1。
+本轮包为shore-organizer-runtime-strategy-v2.zip，当前profile为strategy-v2。
 
 准备专用无登录账号，账号名可由指挥部统一替换。
 
@@ -97,5 +97,5 @@ models.json可包含多个训练checkpoint，多个子智能体可以引用同�
 私有运行观测、日志、候选、新记忆和权重由指挥部留存，赛中不归还。
 输出归档失败会保留受限工作区与回执，先修复再重评，不作为科学零分。
 
-四窗口次数由指挥部受理控制，榜单取最高完整一次。同分只比较同次加权节约分升序。
+每组最多6次正式测评，由指挥部受理控制，榜单取最高完整一次。同分只比较同次加权节约分升序。
 旧direct_project_eval.py与旧profile仅用于历史兼容，正式窗口使用本文件的新入口。

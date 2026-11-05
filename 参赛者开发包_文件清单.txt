@@ -1,8 +1,9 @@
 攻坚组开发包文件清单（不含九宇宙真实模拟器/真值）
-文件总数：89
+文件总数：90
 
 FILE_LIST.txt
 LICENSE
+README.md
 START_HERE.txt
 agent/__init__.py
 agent/models.py

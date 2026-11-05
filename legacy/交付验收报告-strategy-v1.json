@@ -1,0 +1,325 @@
+{
+  "status": "passed",
+  "date": "2026-11-05",
+  "scope": "strategy_and_model_paths_organizer_owned_environment",
+  "profile_id": "strategy-v1",
+  "evaluation_worlds": [
+    "Adam",
+    "Ramiel",
+    "Leliel"
+  ],
+  "all_nine_environment_definitions_retained": true,
+  "physics_and_clean_references_unchanged": true,
+  "protected_files": 105,
+  "package_checks": {
+    "starter": {
+      "entries": 89,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true,
+      "all_nine_physical_environments_retained": false
+    },
+    "runtime": {
+      "entries": 150,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true,
+      "all_nine_physical_environments_retained": true
+    },
+    "h200": {
+      "entries": 185,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true,
+      "all_nine_physical_environments_retained": true
+    },
+    "4090": {
+      "entries": 186,
+      "crc": true,
+      "manifest_hashes": true,
+      "file_list_complete": true,
+      "all_nine_physical_environments_retained": true
+    }
+  },
+  "standalone_checks": {
+    "starter": {
+      "standalone_cli_and_default_profile": true,
+      "model_or_api_calls": 0
+    },
+    "runtime": {
+      "standalone_cli_and_default_profile": true,
+      "model_or_api_calls": 0
+    },
+    "h200": {
+      "standalone_cli_and_default_profile": true,
+      "model_or_api_calls": 0
+    },
+    "4090": {
+      "standalone_cli_and_default_profile": true,
+      "model_or_api_calls": 0
+    }
+  },
+  "refresh_checks": {
+    "starter": {
+      "status": "passed",
+      "source_files_updated": 33,
+      "environments_results_logs_cache_and_partial_download_preserved": true,
+      "repeat_idempotent": true
+    },
+    "runtime": {
+      "status": "passed",
+      "source_files_updated": 56,
+      "environments_results_logs_cache_and_partial_download_preserved": true,
+      "repeat_idempotent": true
+    },
+    "h200": {
+      "status": "passed",
+      "source_files_updated": 57,
+      "environments_results_logs_cache_and_partial_download_preserved": true,
+      "repeat_idempotent": true
+    },
+    "4090": {
+      "status": "passed",
+      "source_files_updated": 58,
+      "environments_results_logs_cache_and_partial_download_preserved": true,
+      "repeat_idempotent": true
+    }
+  },
+  "registered_archives_verified": 52,
+  "remote_installation_validated": false,
+  "gpu_or_real_model_calls": 0,
+  "physical_integrations_during_packaging": 0,
+  "packaged_end_to_end": {
+    "status": "passed",
+    "mode": "organizer_package_two_paths_and_multiple_weights_scripted_transport",
+    "real_scientific_worlds": 3,
+    "retained_hidden_world_definitions": 9,
+    "baseline_max_turns": 3,
+    "model_actions": 9,
+    "generated_candidate_files": true,
+    "current_team_custom_module_config_and_checkpoint_fixture_read": true,
+    "observe_launch_draft_auto_submit_all_three": true,
+    "fixed_prediction_and_score_recalculation": true,
+    "only_total_and_world_totals_in_public_feedback": true,
+    "existing_results_protected": true,
+    "check_only_did_not_run_agent": true,
+    "real_model_tensors_loaded": false,
+    "external_provider_calls": 0,
+    "gpu_calls": 0,
+    "real_model_capability_claimed": false,
+    "wall_seconds": 88.96837280000182,
+    "starter_sha256": "681031070672182cb82fb627f86384076640de5fb1aca7aaf10b75a9f952529d",
+    "runtime_sha256": "d8fe5591ba67a073158da93a5f7547915c5c864bd867a9c2b99851cced3e335c",
+    "two_input_paths_completed": true,
+    "same_base_two_trained_bindings_and_adapter_received": true,
+    "organizer_runtime_outside_team_project": true,
+    "linux_uid_drop_validated": false,
+    "public_six_three_turn_acceptance": true,
+    "public_model_actions": 18,
+    "final_package_correspondence": "Final packages only prepend historical notices to five old guides and update derived manifests; exact execution, SDK, agent and science bytes match the actually executed packages. Original execution hashes are preserved."
+  },
+  "current_packages": {
+    "4090": {
+      "file": "shore-organizer-4090-test-20261101.zip",
+      "sha256": "5c5472b6ebc7812b7fa4eeb3f2d28ab5c377b9176e75793f54f85d94dd731582",
+      "entries": 186
+    },
+    "h200": {
+      "file": "shore-organizer-open-model-test-20261101.zip",
+      "sha256": "1822b7fa4609822ad8ed47e7a274458ddd1655d3d15cc2e8ac01d3aacce95483",
+      "entries": 185
+    },
+    "runtime": {
+      "file": "shore-organizer-runtime-strategy-v1.zip",
+      "sha256": "529b2f6130c09329ec85e95886b8ed8ad38deb1756de466caa8dcc687bd560da",
+      "entries": 150
+    },
+    "starter": {
+      "file": "shore-contest-starter-v11.zip",
+      "sha256": "681031070672182cb82fb627f86384076640de5fb1aca7aaf10b75a9f952529d",
+      "entries": 89
+    }
+  },
+  "history_preserved": {
+    "starter": {
+      "file": "legacy/shore-contest-starter-v10.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 653712,
+      "sha256": "8a4fc3aaa4e800568220ac32bedd31c6fe99eb98ed15b1ead9aa6d55e09a07d8",
+      "archive_entries": 73,
+      "note": "Original bytes before organizer-owned strategy/model path evaluation",
+      "wall_clock_seconds": 600,
+      "execution_mode": "direct_project",
+      "requires_container_runtime": false,
+      "actual_model_loaded_and_validated": false,
+      "revision_note": "Default three LLM turns; evaluate Adam/Ramiel/Leliel; all nine physics definitions retained",
+      "protocol_e2e_validated": false,
+      "protocol_e2e_scope": "Archive/hash/standalone CLI/safe refresh checked; packaged model E2E reported separately",
+      "default_agent_max_turns": 3,
+      "evaluation_worlds": [
+        "Adam",
+        "Ramiel",
+        "Leliel"
+      ]
+    },
+    "runtime": {
+      "file": "legacy/shore-organizer-runtime-direct-v1-r3.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 1291894,
+      "sha256": "cf922365f822daccae07f86e044cbac4feb698a8c1e4ef27e223d563f95a606f",
+      "archive_entries": 121,
+      "note": "Original bytes before organizer-owned strategy/model path evaluation",
+      "scoring_version": "draft-3.11.0",
+      "prediction_mapping": "P=80/(1+10e)",
+      "observation_noise_version": "1.1.0",
+      "velocity_noise_fraction": 0.0001,
+      "scientific_dataset_scope": "Latest fixed six-public/nine-hidden design; selected Adam and validation coverage installed",
+      "wall_clock_seconds": 600,
+      "hidden_artifacts_returned_during_contest": false,
+      "documentation_revision": 8,
+      "revision_note": "Default three LLM turns; evaluate Adam/Ramiel/Leliel; all nine physics definitions retained",
+      "execution_mode": "direct_project",
+      "requires_container_runtime": false,
+      "actual_model_loaded_and_validated": false,
+      "profile_id": "direct-v1-r3",
+      "protocol_e2e_validated": false,
+      "protocol_e2e_scope": "Archive/hash/standalone CLI/safe refresh checked; packaged model E2E reported separately",
+      "default_agent_max_turns": 3,
+      "evaluation_worlds": [
+        "Adam",
+        "Ramiel",
+        "Leliel"
+      ]
+    },
+    "h200": {
+      "file": "legacy/shore-organizer-open-model-test-20261101-r13.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 1861507,
+      "sha256": "5be1779b43a17e7a3545a55fca0264a318350dd68c6166d003bdc9cc8ada21ea",
+      "archive_entries": 156,
+      "note": "Original bytes before organizer-owned strategy/model path evaluation",
+      "revision": 13,
+      "runner_version": "shore-agent-baseline-1.0.0",
+      "revision_note": "Default three LLM turns; evaluate Adam/Ramiel/Leliel; all nine physics definitions retained",
+      "scoring_version": "draft-3.11.0",
+      "prediction_mapping": "P=80/(1+10e)",
+      "observation_noise_version": "1.1.0",
+      "velocity_noise_fraction": 0.0001,
+      "scientific_dataset_scope": "Latest fixed six-public/nine-hidden design; selected Adam and validation coverage installed",
+      "wall_clock_seconds": 600,
+      "hidden_artifacts_returned_during_contest": false,
+      "primary_entrypoint": "python -m development_worlds.runner (public); scripts/evaluate_submission.py --organizer-root . (formal)",
+      "model_service_entrypoint": "scripts/serve_model.py",
+      "actual_model_loaded_and_validated": false,
+      "execution_mode": "direct_project",
+      "requires_container_runtime": false,
+      "profile_id": "direct-v1-r3",
+      "safe_r7_refresh_verified": true,
+      "protocol_e2e_validated": false,
+      "protocol_e2e_scope": "Archive/hash/standalone CLI/safe refresh checked; packaged model E2E reported separately",
+      "safe_r8_refresh_verified": true,
+      "safe_r9_refresh_verified": true,
+      "safe_r10_refresh_verified": true,
+      "safe_r11_refresh_verified": true,
+      "default_agent_max_turns": 3,
+      "evaluation_worlds": [
+        "Adam",
+        "Ramiel",
+        "Leliel"
+      ],
+      "safe_r12_refresh_verified": true
+    },
+    "4090": {
+      "file": "legacy/shore-organizer-4090-test-20261101-r13.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 1864288,
+      "sha256": "309a878fad2731502de953b5a35963e2ee680427369958d06282d4470250b08e",
+      "archive_entries": 157,
+      "note": "Original bytes before organizer-owned strategy/model path evaluation",
+      "revision": 13,
+      "runner_version": "shore-agent-baseline-1.0.0",
+      "revision_note": "Default three LLM turns; evaluate Adam/Ramiel/Leliel; all nine physics definitions retained",
+      "scoring_version": "draft-3.11.0",
+      "prediction_mapping": "P=80/(1+10e)",
+      "observation_noise_version": "1.1.0",
+      "velocity_noise_fraction": 0.0001,
+      "scientific_dataset_scope": "Latest fixed six-public/nine-hidden design; selected Adam and validation coverage installed",
+      "wall_clock_seconds": 600,
+      "hidden_artifacts_returned_during_contest": false,
+      "primary_entrypoint": "python -m development_worlds.runner (public); scripts/evaluate_submission.py --organizer-root . (formal)",
+      "model_service_entrypoint": "scripts/serve_model.py",
+      "actual_model_loaded_and_validated": false,
+      "execution_mode": "direct_project",
+      "requires_container_runtime": false,
+      "profile_id": "direct-v1-r3",
+      "safe_r7_refresh_verified": true,
+      "protocol_e2e_validated": false,
+      "protocol_e2e_scope": "Archive/hash/standalone CLI/safe refresh checked; packaged model E2E reported separately",
+      "safe_r8_refresh_verified": true,
+      "safe_r9_refresh_verified": true,
+      "safe_r10_refresh_verified": true,
+      "safe_r11_refresh_verified": true,
+      "default_agent_max_turns": 3,
+      "evaluation_worlds": [
+        "Adam",
+        "Ramiel",
+        "Leliel"
+      ],
+      "safe_r12_refresh_verified": true
+    }
+  },
+  "build_directory": "C:\\Users\\hwz\\Desktop\\秋\\26秋\\.project-memory\\strategy_paths_20261105\\historical-guides-c8f45285f0",
+  "asset_tests": {
+    "passed": 36,
+    "python_utf8_mode": true,
+    "real_install_or_download": false
+  },
+  "historical_guide_sync": {
+    "starter": {
+      "changed": [],
+      "execution_sdk_agent_physics_bytes_identical": true,
+      "old_sha256": "681031070672182cb82fb627f86384076640de5fb1aca7aaf10b75a9f952529d",
+      "new_sha256": "681031070672182cb82fb627f86384076640de5fb1aca7aaf10b75a9f952529d"
+    },
+    "runtime": {
+      "changed": [
+        "CODE_DELIVERY_BOUNDARIES.txt",
+        "README_正式赛题部署.txt",
+        "README_直接项目测评.txt",
+        "bundle-manifest.json"
+      ],
+      "execution_sdk_agent_physics_bytes_identical": true,
+      "old_sha256": "d8fe5591ba67a073158da93a5f7547915c5c864bd867a9c2b99851cced3e335c",
+      "new_sha256": "529b2f6130c09329ec85e95886b8ed8ad38deb1756de466caa8dcc687bd560da"
+    },
+    "h200": {
+      "changed": [
+        "README_三模型远端测试.txt",
+        "README_正式赛题部署.txt",
+        "CODE_DELIVERY_BOUNDARIES.txt",
+        "README_直接项目测评.txt",
+        "PRIVATE_PACKAGE_MANIFEST.json"
+      ],
+      "execution_sdk_agent_physics_bytes_identical": true,
+      "old_sha256": "a2b66015fd5f93ed85d0110bd124121380cc4bc57e33365e129ed42709a26acf",
+      "new_sha256": "1822b7fa4609822ad8ed47e7a274458ddd1655d3d15cc2e8ac01d3aacce95483"
+    },
+    "4090": {
+      "changed": [
+        "README_三模型远端测试.txt",
+        "README_4卡4090双模型测试.txt",
+        "README_正式赛题部署.txt",
+        "CODE_DELIVERY_BOUNDARIES.txt",
+        "README_直接项目测评.txt",
+        "PRIVATE_PACKAGE_MANIFEST.json"
+      ],
+      "execution_sdk_agent_physics_bytes_identical": true,
+      "old_sha256": "419dc16628ee9da7e5c0856cf37a6609e256867c39d5a2df78f9bab22c8f3a24",
+      "new_sha256": "5c5472b6ebc7812b7fa4eeb3f2d28ab5c377b9176e75793f54f85d94dd731582"
+    }
+  }
+}

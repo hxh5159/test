@@ -3,7 +3,7 @@
 
 一、发给攻坚组
 
-shore-contest-starter-v11.zip
+shore-contest-starter-v12.zip
   agent/：全部可修改策略，包括run.py主入口、strategy.json身份、模型客户端、提示词、
     分析拟合工具、记忆管理及可新增的多智能体协调代码。所有本队策略均保存在该目录。
   models.json：完整模型路径清单模板。每个模型有唯一id、白名单底座、checkpoint路径、
@@ -14,7 +14,7 @@ shore-contest-starter-v11.zip
   docs/：策略路径规范、快速开始、固定/可改文件说明、数学及提交契约和赛题说明PDF。
   examples/：结构化提交与候选接口示例；不包含正式宇宙答案。
   shore_agent/：旧入口兼容别名；全部实际可修改策略代码在agent/。
-  requirements.txt、LICENSE、START_HERE.txt、FILE_LIST.txt及摘要清单。
+  README.md（根目录环境/任务/提交入口）、requirements.txt、LICENSE、START_HERE.txt、FILE_LIST.txt及摘要清单。
 
 该包不包含正式九宇宙真实模拟器、参数、验证真值、权重张量或凭证。
 完整逐文件清单见参赛者开发包_文件清单.txt。攻坚组最终仅提交agent目录与models.json
@@ -22,7 +22,7 @@ shore-contest-starter-v11.zip
 
 二、只交指挥部
 
-shore-organizer-runtime-strategy-v1.zip
+shore-organizer-runtime-strategy-v2.zip
   evaluate_strategy.py：指挥部固定入口，读取队伍的agent目录和模型注册表，管理员启动，
     将队伍代码降权至指定普通评测账号执行。统一设置账号与解释器，各队只替换两条路径。
   contest_simulator.py、contest_world_definitions.json：全部九隐藏环境真实模拟与定义。
@@ -30,7 +30,7 @@ shore-organizer-runtime-strategy-v1.zip
   trial_console.py、contest_console_service.py：实验、噪声、配额与计时服务。
   law_submission_store.py、law_program_evaluation.py：候选配对、固定积分及评分执行。
   trial_evaluation.py、contest_job_runner.py、contest_scoreboard.py：计分、完整运行与榜单。
-  profiles/strategy-v1/：当前正式配置及九份原字节无噪验证参考，仅选择Adam、Ramiel、Leliel。
+  profiles/strategy-v2/：当前正式配置及九份原字节无噪验证参考，仅选择Adam、Ramiel、Leliel。
   public/：同一完整开发包，供固定SDK、候选积分与公开接口使用。
   README_策略路径测评.txt：管理员、普通评测账号、路径权限及统一命令。
   FILE_LIST.txt、bundle-manifest.json：逐文件说明与哈希。旧direct运行器和profile兼容保留。
@@ -41,8 +41,8 @@ shore-organizer-runtime-strategy-v1.zip
 
 三、指挥部内部的组合测试包
 
-shore-organizer-open-model-test-20261101.zip（r14，4H200）
-shore-organizer-4090-test-20261101.zip（r14，4×48GB4090）
+shore-organizer-open-model-test-20261101.zip（r15，4H200）
+shore-organizer-4090-test-20261101.zip（r15，4×48GB4090）
   组合开发包与指挥部运行系统，便于内部部署、自测及与旧目录安全刷新。
   内含九隐藏真实资料，不能整体发给攻坚组。模型权重通过实际路径提供，不在ZIP中。
 
