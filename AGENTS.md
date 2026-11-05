@@ -1,13 +1,21 @@
 # 测试资料库协作约定
 
-最后更新：2026-11-04（北京时间）。
+最后更新：2026-11-05（北京时间）。
 
-当前交付（2026-11-04）：starter-v9共73文件，runtime-direct-v1-r2安装组件v5包共111文件，模型测试包r12。
+当前交付（2026-11-05）：starter-v10、runtime-direct-v1-r3、模型测试包r13，实际文件数见packages.json及FILE_LIST。
+基础框架在六开发宇宙与正式测评默认每宇宙最多3轮模型交互；六开发宇宙仍全部保留，
+九隐藏宇宙定义、固定参数和干净验证参考也全部保留。当前正式测评只运行Adam、Ramiel、Leliel，
+每档一个，权重0.3/0.4/0.3；按此前固定参数真实API模拟的每档单界总分中位数选定。
+旧源码默认max_turns=0，5轮只是历史脚本化联调序列，不能声称旧通用模型统一限制5轮。
 用户明确采用同一实例中直接运行队伍当前项目、外接九宇宙，测评期间禁止编辑代码/配置
 及改写所用权重；不要求容器封装、复制项目或容器模型映射。正式入口为公开
-scripts/evaluate_submission.py委托运行包direct_project_eval.py。direct-v1-r2沿用原九界
+scripts/evaluate_submission.py委托运行包direct_project_eval.py。direct-v1-r3沿用原九界
 干净参考和科学数值，固定配置发布与真实GPU/权重验收分开。旧部署说明为历史兼容。
-发放只使用starter-v9；runtime及完整模型测试包只由指挥部接入，附FILE_LIST和摘要。
+发放只使用starter-v10；runtime及完整模型测试包只由指挥部接入，附FILE_LIST和摘要。
+此前starter-v9、direct-v1-r2安装v5、模型测试r12均按原字节归档，已有环境/缓存/结果通过显式刷新保留。
+本轮打包核验104项物理/旧配置/干净参考原字节不变，48份登记归档SHA/CRC通过，四类旧包显式刷新和独立CLI通过。
+资料库36项回归通过；其中Git Bash模拟安装须在可访问工作区的沙箱外执行，未安装或下载真实依赖。
+新版测评的协议端到端验收单独记录，不将归档或脚本化服务测试当作真实白名单模型/H200测试。
 
 上一版安装恢复验收：内网包索引存在但档案404导致pip中断，和此前FindCUDA报错分开记录。
 同步主库匹配bootstrap及三个助手，旧--test-root入口只作委托；核心版本/cu128不放宽。
@@ -72,3 +80,5 @@ profile、无噪参考、固定参数、计分及600秒不改，不表示真实�
 17. 2026-11-02用户更新长期远端路径为26-the-other-shore/fengkairui-25026下的DiscoverPhysics和test（见第5条）。现行校准包升r7、runtime升internal-v9-r2，仅更新可移植项目定位和当前部署路径；科学profile仍internal-v9，真实场、验证数组、600秒及评分不变，starter-v4保持原字节。r6和v9原包归档legacy，packages/SHA及refresh保护同步检查；不重跑物理积分、真实模型或API。README中的安装/解压路径均按新父目录，旧路径只保留作历史，不因项目迁移猜测Conda安装也已移动。
 
 18. 2026-11-03修复安装镜像404和CUDA头文件/FindCUDA发现问题。starter-v6含72文件、runtime-direct-v1-r2含110文件，两校准包r9含145/146文件；三项新增助手随包提供。test根的install_cuda128_envs.sh仅委托同级canonical bootstrap，保留旧--test-root映射为--env-root，构建逻辑不另复制。指定镜像失败后仅单次官方PyPI回退；Python构建依赖先下载核验，CUDA编译仅CPU对象预检。r2只更新版本身份/源码摘要，所有原九界配置和干净参考保持原字节，r9同时保留direct-v1/internal-v9以安全刷新旧receipt。旧v5/r8/direct-v1在legacy完整保留；包校验、CPU模拟测试和现场H200安装验收分别记录，不因交付更新宣称GPU/模型已成功。外层install_all_dependencies.sh仅主项目提供，不在参赛者ZIP中。
+
+19. 2026-11-05已完成三轮/三隐藏交付，48份归档SHA/CRC、104项科学/旧profile/干净参考原字节及四类旧包刷新保护通过，资料库36项回归通过。实际解压的starter-v10和runtime-r3以脚本化本机模型服务跑通六公开每界3调用共18次，三隐藏每界3调用共9次，law/claims与固定积分计分、权重/反馈独立复算通过；最终两契约文字修订后的包与已执行包保持执行/SDK/科学字节完全相同，回执保留实跑包摘要，不冒充新真实模型验收。无外部API、权重张量或GPU调用。
