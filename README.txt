@@ -1,5 +1,5 @@
 SHORE 指挥部测试资料库
-更新：2026-11-05；当前starter-v12、模型测试包r16、正式运行包strategy-v3。
+更新：2026-11-05；当前starter-v12、模型测试包r17、正式运行包strategy-v3。
 
 一、发放范围
 
@@ -9,7 +9,7 @@ shore-contest-starter-v12.zip
   primary_model_id，不会同时加载全部五个。所有本队策略、提示词、工具、记忆和子智能体
   代码均在agent/内；模型权重独立保存，通过models.json按稳定id逐项声明。
 
-shore-organizer-runtime-strategy-v3.zip
+shore-organizer-runtime-strategy-v3-r2.zip
   只交指挥部。包含evaluate_strategy.py、九隐藏真实环境、验证真值及固定评分程序。
   指挥部在自己的目录保管环境，以管理员权限接收agent目录与models.json两条路径，
   通过统一命令启动队伍策略。策略仍以指定普通评测账号运行；现有文件读取条件已具备，
@@ -17,8 +17,8 @@ shore-organizer-runtime-strategy-v3.zip
   当前正式仅测Adam、Ramiel、Leliel，九宇宙定义及参考全部保留，权重0.3/0.4/0.3。
   public/包含同一完整开发包，供指挥部的固定积分器及接口使用。
 
-shore-organizer-open-model-test-20261101.zip（r16，4H200）
-shore-organizer-4090-test-20261101.zip（r16，4×48GB4090诊断）
+shore-organizer-open-model-test-20261101.zip（r17，4H200）
+shore-organizer-4090-test-20261101.zip（r17，4×48GB4090诊断）
   组合公开开发组件及指挥部运行系统，仅供指挥部内部测试，不整体发送攻坚组。
   六公开开发入口与正式评测使用同一agent目录、模型注册表和实验/交卷协议。
   不附带模型张量、API密钥、任务数据库或历史运行材料。

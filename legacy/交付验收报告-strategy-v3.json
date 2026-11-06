@@ -1,0 +1,88 @@
+{
+  "status": "passed",
+  "date": "2026-11-05",
+  "profile_id": "strategy-v3",
+  "scope": "organizer_directory_requirement_removed",
+  "package_checks": {
+    "runtime": {
+      "entries": 171,
+      "crc": true,
+      "all_payload_digests": true,
+      "root_readme_and_current_qwen_catalog": true,
+      "no_model_calls": true,
+      "current_profile": "strategy-v3",
+      "directory_mode_not_required": true
+    },
+    "h200": {
+      "entries": 206,
+      "crc": true,
+      "all_payload_digests": true,
+      "root_readme_and_current_qwen_catalog": true,
+      "no_model_calls": true,
+      "current_profile": "strategy-v3",
+      "directory_mode_not_required": true
+    },
+    "4090": {
+      "entries": 207,
+      "crc": true,
+      "all_payload_digests": true,
+      "root_readme_and_current_qwen_catalog": true,
+      "no_model_calls": true,
+      "current_profile": "strategy-v3",
+      "directory_mode_not_required": true
+    }
+  },
+  "refresh_checks": {
+    "runtime": {
+      "status": "passed",
+      "source_files_updated": 14,
+      "environments_results_logs_cache_and_partial_download_preserved": true,
+      "repeat_idempotent": true
+    },
+    "h200": {
+      "status": "passed",
+      "source_files_updated": 15,
+      "environments_results_logs_cache_and_partial_download_preserved": true,
+      "repeat_idempotent": true
+    },
+    "4090": {
+      "status": "passed",
+      "source_files_updated": 15,
+      "environments_results_logs_cache_and_partial_download_preserved": true,
+      "repeat_idempotent": true
+    }
+  },
+  "protected_science_and_old_profiles": 107,
+  "registered_archives_verified": 59,
+  "starter_v12_byte_identical": true,
+  "real_model_or_gpu_validated": false,
+  "scientific_or_model_simulations_run": false,
+  "standalone_checks": [
+    {
+      "slot": "starter",
+      "readme_links": true,
+      "entrypoints": true,
+      "frozen_current_profile": false
+    },
+    {
+      "slot": "runtime",
+      "readme_links": true,
+      "entrypoints": true,
+      "frozen_current_profile": true
+    },
+    {
+      "slot": "h200",
+      "readme_links": true,
+      "entrypoints": true,
+      "frozen_current_profile": true
+    },
+    {
+      "slot": "4090",
+      "readme_links": true,
+      "entrypoints": true,
+      "frozen_current_profile": true
+    }
+  ],
+  "strategy_regression_tests_passed": 12,
+  "job_runner_regression_tests_passed": 10
+}

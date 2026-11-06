@@ -46,7 +46,7 @@
   test/                        指挥部交付资料库，不整体发给选手
   organizer-results/           正式输出目录，命令按时间自动生成每次结果子目录
 
-将shore-organizer-runtime-strategy-v3.zip解压到指挥部目录，例如：
+将shore-organizer-runtime-strategy-v3-r2.zip解压到指挥部目录，例如：
 
 /opt/shore-organizer-strategy-v3/
   evaluate_strategy.py         正式测评统一入口
