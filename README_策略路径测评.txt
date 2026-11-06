@@ -18,7 +18,7 @@
 
   BASE='/inspire/hdd/project/26-the-other-shore/fengkairui-25026'
   ASSETS="$BASE/test"
-  ORGANIZER_ROOT='/opt/shore-organizer-strategy-v4'
+  ORGANIZER_ROOT='/opt/shore-organizer-strategy-v5'
   PY='/opt/shore-h200-cu128/.venv-trial/bin/python'
   MPY='/opt/shore-h200-cu128/.venv-vllm-cu128/bin/python'
   RUN_AS='shore-eval'
@@ -36,7 +36,7 @@
 
   python3 "$ASSETS/prepare_test_bundle.py" --bundle runtime --target "$ORGANIZER_ROOT" --refresh
 
-当前正式运行包为shore-organizer-runtime-strategy-v4.zip，自动读取strategy-v4配置。
+当前正式运行包为shore-organizer-runtime-strategy-v5.zip，自动读取strategy-v5配置。
 不需要在测评节点联网拉取仓库、下载权重或安装依赖。
 普通评测账号已存在时直接复用；首次尚未创建时执行一次：
 
@@ -75,23 +75,26 @@
     --run-as "$RUN_AS" --agent-python "$PY" --output "$OUTPUT"
 
 命令中的参数由前面设置的变量提供。--run-as、--agent-python是固定运行配置；--output自动生成。
---profile通常不需要填写，程序自动读取当前strategy-v4配置。--check-only只用于检查。
+--profile通常不需要填写，程序自动读取当前strategy-v5配置。--check-only只用于检查。
 正式命令执行后全程自动运行，不需要交互输入其他参数或逐个宇宙确认。
 OUTPUT必须是新目录；下一次测评先重新生成OUTPUT，再执行正式命令。
 
 五、当前测评规模与结果
 
-当前实际测评Tabris、Ramiel、Leliel，原九套定义与验证参考全保留。
-六公开及正式运行每宇宙固定3次模型决策、600秒探索；模型加载另计。
+当前实际测评Adam、Lilith、Sachiel、Matriel、Leliel、Arael，原九套定义与验证参考全保留。
+未测的Tabris、Ramiel、Lilin不记零，也不删除。
+六公开及正式运行每宇宙固定3次模型决策、300秒探索、10点能量；模型加载另计。
 每宇宙智能体自动探索并交卷，指挥部固定积分、比较无噪真值，再计算成绩。
-单界预言80/(1+10e)、定律15、预言>=40时才计节约5。
-总分=0.3×Tabris+0.4×Ramiel+0.3×Leliel，未测六界不记零。
+单界预言80/(1+10e)、定律15；仅预言>=40时节约分为5*(1-E/10)，否则为0。
+总分=0.3×(Adam+Lilith)/2+0.4×(Leliel+Matriel)/2+0.3×(Sachiel+Arael)/2。
+各组内等权；每界权重依次为Adam .15、Lilith .15、Sachiel .15、Matriel .20、Leliel .20、Arael .15。
+以上是本次明确指定的评分分组，不按原宇宙难度标签或相邻运行顺序重新分组。
 
 查看本次结果：
 
   "$PY" -m json.tool "$OUTPUT/summary.json"
 
-确认state为completed后登记成绩。summary.json包含总分、三个宇宙总分及完成状态。
+确认state为completed后登记成绩。summary.json包含总分、六个宇宙总分及完成状态。
 只向选手反馈规定成绩和必要启动/格式错误，不反馈分项或声明判断。
 OUTPUT/private中的隐藏观测、对话、日志、候选、新记忆和更新权重由指挥部留存，赛中不归还。
 每组最多6次正式测评，由指挥部登记次数；榜单取最高完整一次，不拼接历史宇宙分数。
@@ -99,5 +102,5 @@ OUTPUT/private中的隐藏观测、对话、日志、候选、新记忆和更新
 
 正式环境包由指挥部保管，不解压到队伍项目。旧direct_project_eval.py与旧配置仅作历史兼容。
 
-本次选集依据：单张H200、Qwen3.5-122B-A10B-FP8的九宇宙单次实测，各档选择总分最高者；不代表所有模型的普遍难度排序。
+本次选集与分组权重由指挥部明确指定；不是基于本轮新增模型实测选出。当前版未重新运行真实模型。
 旧profile与旧入口源码保持历史绑定，需要复现旧配置时使用对应旧版完整运行包；不要在当前包中强行替换旧配置的摘要。

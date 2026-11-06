@@ -15,7 +15,7 @@
 
 二、选手项目
 
-将shore-contest-starter-v14.zip直接解压到本组选择的项目目录，保持包内相对结构：
+将shore-contest-starter-v15.zip直接解压到本组选择的项目目录，保持包内相对结构：
 
 <攻坚组目录>/project/
   README.md                   安装、任务、自测和提交的阅读入口
@@ -46,14 +46,14 @@
   test/                        指挥部交付资料库，不整体发给选手
   organizer-results/           正式输出目录，命令按时间自动生成每次结果子目录
 
-将shore-organizer-runtime-strategy-v4.zip解压到指挥部目录，例如：
+将shore-organizer-runtime-strategy-v5.zip解压到指挥部目录，例如：
 
-/opt/shore-organizer-strategy-v4/
+/opt/shore-organizer-strategy-v5/
   evaluate_strategy.py         正式测评统一入口
   README_策略路径测评.txt       指挥部配置、路径检查及运行命令
   contest_simulator.py等       九宇宙真实环境
   claims_truth.json            三项声明的真实答案
-  profiles/strategy-v4/         当前配置及九宇宙验证参考
+  profiles/strategy-v5/         当前配置及九宇宙验证参考
   public/                      与选手开发包相同的固定公共程序
     README.md
     agent/
