@@ -36,7 +36,7 @@
 
   python3 "$ASSETS/prepare_test_bundle.py" --bundle runtime --target "$ORGANIZER_ROOT" --refresh
 
-当前正式运行包为shore-organizer-runtime-strategy-v3-r2.zip，自动读取strategy-v3配置。
+当前正式运行包为shore-organizer-runtime-strategy-v3-r3.zip，自动读取strategy-v3配置。
 不需要在测评节点联网拉取仓库、下载权重或安装依赖。
 普通评测账号已存在时直接复用；首次尚未创建时执行一次：
 

@@ -3,7 +3,7 @@
 
 一、发给攻坚组
 
-shore-contest-starter-v12.zip
+shore-contest-starter-v13.zip
   agent/：全部可修改策略，包括run.py主入口、strategy.json身份、模型客户端、提示词、
     分析拟合工具、记忆管理及可新增的多智能体协调代码。所有本队策略均保存在该目录。
   models.json：完整模型路径清单模板。每个模型有唯一id、白名单底座、checkpoint路径、
@@ -22,7 +22,7 @@ shore-contest-starter-v12.zip
 
 二、只交指挥部
 
-shore-organizer-runtime-strategy-v3-r2.zip
+shore-organizer-runtime-strategy-v3-r3.zip
   evaluate_strategy.py：指挥部固定入口，读取队伍的agent目录和模型注册表，管理员启动，
     将队伍代码降权至指定普通评测账号执行。统一设置账号与解释器，各队只替换两条路径。
   contest_simulator.py、contest_world_definitions.json：全部九隐藏环境真实模拟与定义。
@@ -43,8 +43,8 @@ shore-organizer-runtime-strategy-v3-r2.zip
 
 三、指挥部内部的组合测试包
 
-shore-organizer-open-model-test-20261101.zip（r17，4H200）
-shore-organizer-4090-test-20261101.zip（r17，4×48GB4090）
+shore-organizer-open-model-test-20261101.zip（r18，4H200）
+shore-organizer-4090-test-20261101.zip（r18，4×48GB4090）
   组合开发包与指挥部运行系统，便于内部部署、自测及与旧目录安全刷新。
   内含九隐藏真实资料，不能整体发给攻坚组。模型权重通过实际路径提供，不在ZIP中。
 
