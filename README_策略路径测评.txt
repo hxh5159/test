@@ -1,4 +1,4 @@
-指挥部：策略目录与多模型路径测评（2026-11-05）
+指挥部：策略目录与多模型路径测评（2026-11-06）
 
 一、选手提交什么
 
@@ -18,7 +18,7 @@
 
   BASE='/inspire/hdd/project/26-the-other-shore/fengkairui-25026'
   ASSETS="$BASE/test"
-  ORGANIZER_ROOT='/opt/shore-organizer-strategy-v3'
+  ORGANIZER_ROOT='/opt/shore-organizer-strategy-v4'
   PY='/opt/shore-h200-cu128/.venv-trial/bin/python'
   MPY='/opt/shore-h200-cu128/.venv-vllm-cu128/bin/python'
   RUN_AS='shore-eval'
@@ -36,7 +36,7 @@
 
   python3 "$ASSETS/prepare_test_bundle.py" --bundle runtime --target "$ORGANIZER_ROOT" --refresh
 
-当前正式运行包为shore-organizer-runtime-strategy-v3-r3.zip，自动读取strategy-v3配置。
+当前正式运行包为shore-organizer-runtime-strategy-v4.zip，自动读取strategy-v4配置。
 不需要在测评节点联网拉取仓库、下载权重或安装依赖。
 普通评测账号已存在时直接复用；首次尚未创建时执行一次：
 
@@ -75,17 +75,17 @@
     --run-as "$RUN_AS" --agent-python "$PY" --output "$OUTPUT"
 
 命令中的参数由前面设置的变量提供。--run-as、--agent-python是固定运行配置；--output自动生成。
---profile通常不需要填写，程序自动读取当前strategy-v3配置。--check-only只用于检查。
+--profile通常不需要填写，程序自动读取当前strategy-v4配置。--check-only只用于检查。
 正式命令执行后全程自动运行，不需要交互输入其他参数或逐个宇宙确认。
 OUTPUT必须是新目录；下一次测评先重新生成OUTPUT，再执行正式命令。
 
 五、当前测评规模与结果
 
-当前实际测评Adam、Ramiel、Leliel，原九套定义与验证参考全保留。
+当前实际测评Tabris、Ramiel、Leliel，原九套定义与验证参考全保留。
 六公开及正式运行每宇宙固定3次模型决策、600秒探索；模型加载另计。
 每宇宙智能体自动探索并交卷，指挥部固定积分、比较无噪真值，再计算成绩。
 单界预言80/(1+10e)、定律15、预言>=40时才计节约5。
-总分=0.3×Adam+0.4×Ramiel+0.3×Leliel，未测六界不记零。
+总分=0.3×Tabris+0.4×Ramiel+0.3×Leliel，未测六界不记零。
 
 查看本次结果：
 
@@ -98,3 +98,6 @@ OUTPUT/private中的隐藏观测、对话、日志、候选、新记忆和更新
 同分只比较同次加权节约分升序，仍同并列。
 
 正式环境包由指挥部保管，不解压到队伍项目。旧direct_project_eval.py与旧配置仅作历史兼容。
+
+本次选集依据：单张H200、Qwen3.5-122B-A10B-FP8的九宇宙单次实测，各档选择总分最高者；不代表所有模型的普遍难度排序。
+旧profile与旧入口源码保持历史绑定，需要复现旧配置时使用对应旧版完整运行包；不要在当前包中强行替换旧配置的摘要。

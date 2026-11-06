@@ -14,13 +14,13 @@
       "file": "shore-organizer-4090-test-20261101.zip",
       "status": "current",
       "extract_dir": "shore-organizer-4090-test-20261101",
-      "bytes": 2648262,
-      "sha256": "a198de692c5405418597ab7d2b0ccc41f8876ac1832a81a677ba3be6784622f1",
-      "archive_entries": 207,
+      "bytes": 2900039,
+      "sha256": "a30cc7b8a983ba647816bb68589f4fcbe1b3c7664070fc9909ee8667079f2116",
+      "archive_entries": 217,
       "note": "Organizer combined public development and private strategy-path evaluation kit",
-      "revision": 18,
+      "revision": 19,
       "runner_version": "shore-agent-baseline-1.0.0",
-      "revision_note": "Editable agent flow repair: explicit batch operations, fitted candidate persistence and optional structured output; science and scoring unchanged",
+      "revision_note": "Candidate lifecycle repair; select Tabris/Ramiel/Leliel from one Qwen122B-FP8 single-H200 nine-world run; physical laws and scoring unchanged",
       "scoring_version": "draft-3.11.0",
       "prediction_mapping": "P=80/(1+10e)",
       "observation_noise_version": "1.1.0",
@@ -33,17 +33,17 @@
       "actual_model_loaded_and_validated": false,
       "execution_mode": "organizer_strategy_paths",
       "requires_container_runtime": false,
-      "profile_id": "strategy-v3",
+      "profile_id": "strategy-v4",
       "safe_r7_refresh_verified": true,
       "protocol_e2e_validated": false,
-      "protocol_e2e_scope": "Archive integrity, released profile, standalone CLI and safe refresh; real model evidence recorded separately",
+      "protocol_e2e_scope": "Final selected-three profile and archive checks; the preceding nine-world real-model trial used the identical editable agent but a different selected-world contract and default entrypoint",
       "safe_r8_refresh_verified": true,
       "safe_r9_refresh_verified": true,
       "safe_r10_refresh_verified": true,
       "safe_r11_refresh_verified": true,
       "default_agent_max_turns": 3,
       "evaluation_worlds": [
-        "Adam",
+        "Tabris",
         "Ramiel",
         "Leliel"
       ],
@@ -67,19 +67,21 @@
       "organizer_directory_mode_enforced": false,
       "safe_r15_refresh_verified": true,
       "safe_r16_refresh_verified": true,
-      "safe_r17_refresh_verified": true
+      "safe_r17_refresh_verified": true,
+      "validation_boolean_scope": "Full supported model/hardware/development/evaluation deployment matrix not certified; single-model evidence is scoped separately",
+      "safe_r18_refresh_verified": true
     },
     "h200": {
       "file": "shore-organizer-open-model-test-20261101.zip",
       "status": "current",
       "extract_dir": "shore-organizer-open-model-test-20261101",
-      "bytes": 2645328,
-      "sha256": "357d06d6f70a92ac53ed7e36904c63f8dc4061db01ce23fc65ecc5d688cdbba0",
-      "archive_entries": 206,
+      "bytes": 2897108,
+      "sha256": "0d8a46f0f8df0b3a4fdbbf2b79f73d837fb4a2a87c2b16c76ebd961b16e5a351",
+      "archive_entries": 216,
       "note": "Organizer combined public development and private strategy-path evaluation kit",
-      "revision": 18,
+      "revision": 19,
       "runner_version": "shore-agent-baseline-1.0.0",
-      "revision_note": "Editable agent flow repair: explicit batch operations, fitted candidate persistence and optional structured output; science and scoring unchanged",
+      "revision_note": "Candidate lifecycle repair; select Tabris/Ramiel/Leliel from one Qwen122B-FP8 single-H200 nine-world run; physical laws and scoring unchanged",
       "scoring_version": "draft-3.11.0",
       "prediction_mapping": "P=80/(1+10e)",
       "observation_noise_version": "1.1.0",
@@ -92,17 +94,17 @@
       "actual_model_loaded_and_validated": false,
       "execution_mode": "organizer_strategy_paths",
       "requires_container_runtime": false,
-      "profile_id": "strategy-v3",
+      "profile_id": "strategy-v4",
       "safe_r7_refresh_verified": true,
       "protocol_e2e_validated": false,
-      "protocol_e2e_scope": "Archive integrity, released profile, standalone CLI and safe refresh; real model evidence recorded separately",
+      "protocol_e2e_scope": "Final selected-three profile and archive checks; the preceding nine-world real-model trial used the identical editable agent but a different selected-world contract and default entrypoint",
       "safe_r8_refresh_verified": true,
       "safe_r9_refresh_verified": true,
       "safe_r10_refresh_verified": true,
       "safe_r11_refresh_verified": true,
       "default_agent_max_turns": 3,
       "evaluation_worlds": [
-        "Adam",
+        "Tabris",
         "Ramiel",
         "Leliel"
       ],
@@ -126,15 +128,17 @@
       "organizer_directory_mode_enforced": false,
       "safe_r15_refresh_verified": true,
       "safe_r16_refresh_verified": true,
-      "safe_r17_refresh_verified": true
+      "safe_r17_refresh_verified": true,
+      "validation_boolean_scope": "Full supported model/hardware/development/evaluation deployment matrix not certified; single-model evidence is scoped separately",
+      "safe_r18_refresh_verified": true
     },
     "runtime": {
-      "file": "shore-organizer-runtime-strategy-v3-r3.zip",
+      "file": "shore-organizer-runtime-strategy-v4.zip",
       "status": "current",
-      "extract_dir": "shore-organizer-runtime-strategy-v3",
-      "bytes": 2075835,
-      "sha256": "4fa07f77a75a73bebf6095fea04eb39145fd92b1c693dec3d9260a4e4fd065c6",
-      "archive_entries": 171,
+      "extract_dir": "shore-organizer-runtime-strategy-v4",
+      "bytes": 2327567,
+      "sha256": "ee7c3c5af358181b2e077f2710c2a8daef1ea4e3875f5afe7648b1b71769bc23",
+      "archive_entries": 181,
       "note": "Organizer-owned hidden environment; strategy/model paths evaluated under a dedicated unprivileged account",
       "scoring_version": "draft-3.11.0",
       "prediction_mapping": "P=80/(1+10e)",
@@ -144,16 +148,16 @@
       "wall_clock_seconds": 600,
       "hidden_artifacts_returned_during_contest": false,
       "documentation_revision": 12,
-      "revision_note": "Editable agent flow repair: explicit batch operations, fitted candidate persistence and optional structured output; science and scoring unchanged",
+      "revision_note": "Candidate lifecycle repair; select Tabris/Ramiel/Leliel from one Qwen122B-FP8 single-H200 nine-world run; physical laws and scoring unchanged",
       "execution_mode": "organizer_strategy_paths",
       "requires_container_runtime": false,
       "actual_model_loaded_and_validated": false,
-      "profile_id": "strategy-v3",
+      "profile_id": "strategy-v4",
       "protocol_e2e_validated": false,
-      "protocol_e2e_scope": "Archive integrity, released profile, standalone CLI and safe refresh; real model evidence recorded separately",
+      "protocol_e2e_scope": "Final selected-three profile and archive checks; the preceding nine-world real-model trial used the identical editable agent but a different selected-world contract and default entrypoint",
       "default_agent_max_turns": 3,
       "evaluation_worlds": [
-        "Adam",
+        "Tabris",
         "Ramiel",
         "Leliel"
       ],
@@ -173,84 +177,34 @@
         "final_docs_only_rebuild_execution_identity_verified": true
       },
       "organizer_directory_mode_enforced": false,
-      "runtime_revision": 3,
-      "validation_boolean_scope": "The broad validation booleans remain false because the full supported model/hardware/development/evaluation deployment matrix has not been certified; the single observed real-model run is recorded separately.",
-      "observed_model_run": {
-        "status": "completed_official_evaluation",
-        "date": "2026-11-06",
-        "scope": "One real Qwen3.5-122B-A10B-FP8 run on one H200 across Adam, Ramiel and Leliel; not a full deployment-matrix certification",
-        "executed_archives": {
-          "starter": {
-            "file": "shore-contest-starter-v13.zip",
-            "sha256": "2e6cd4806eb6fa2bc1617503da5f461c69ca32239b4b106941227a9af9df40d8"
-          },
-          "runtime": {
-            "file": "shore-organizer-runtime-strategy-v3-r3.zip",
-            "sha256": "4fa07f77a75a73bebf6095fea04eb39145fd92b1c693dec3d9260a4e4fd065c6"
-          }
-        },
-        "model": "Qwen3.5-122B-A10B-FP8",
-        "hardware": {
-          "gpu": "NVIDIA H200",
-          "gpu_count": 1
-        },
-        "environment": {
-          "torch": "2.11.0+cu130",
-          "torch_cuda": "13.0",
-          "vllm": "0.24.0"
-        },
-        "execution": {
-          "worlds": [
-            "Adam",
-            "Ramiel",
-            "Leliel"
-          ],
-          "model_service": "preloaded local vLLM service",
-          "structured_output": "explicit JSON schema",
-          "official_summary_return_code": 0,
-          "model_calls_returned": 9,
-          "valid_world_submissions": 2,
-          "worlds_without_valid_submission": 1,
-          "candidate_failure": "Model requested a saved candidate that did not exist; not an organizer-startup failure"
-        },
-        "all_whitelist_models_validated": false,
-        "not_validated": [
-          "Six-public-world full run",
-          "Other six hidden worlds",
-          "Other whitelist model configurations",
-          "Four-H200 deployment",
-          "RTX4090 deployment",
-          "Clean installation and managed model auto-start"
-        ],
-        "raw_observations_dialogue_scores_and_private_paths_included": false,
-        "original_archive_bytes_unchanged_after_run": true
-      }
+      "runtime_revision": 1,
+      "validation_boolean_scope": "Full supported model/hardware/development/evaluation deployment matrix not certified; single-model evidence is scoped separately"
     },
     "starter": {
-      "file": "shore-contest-starter-v13.zip",
+      "file": "shore-contest-starter-v14.zip",
       "status": "current",
-      "extract_dir": "shore-contest-starter-v13",
-      "bytes": 673975,
-      "sha256": "2e6cd4806eb6fa2bc1617503da5f461c69ca32239b4b106941227a9af9df40d8",
+      "extract_dir": "shore-contest-starter-v14",
+      "bytes": 675040,
+      "sha256": "c77d514665d08f0a423b5a612827182972f44323d6f956d22d3b52f250398c71",
       "archive_entries": 90,
       "note": "Six public worlds, complete editable agent directory and model registry; no hidden environment",
       "wall_clock_seconds": 600,
       "execution_mode": "organizer_strategy_paths",
       "requires_container_runtime": false,
       "actual_model_loaded_and_validated": false,
-      "revision_note": "Editable agent flow repair: explicit batch operations, fitted candidate persistence and optional structured output; science and scoring unchanged",
+      "revision_note": "Candidate lifecycle repair; select Tabris/Ramiel/Leliel from one Qwen122B-FP8 single-H200 nine-world run; physical laws and scoring unchanged",
       "protocol_e2e_validated": false,
-      "protocol_e2e_scope": "Archive integrity, released profile, standalone CLI and safe refresh; real model evidence recorded separately",
+      "protocol_e2e_scope": "Final selected-three profile and archive checks; the preceding nine-world real-model trial used the identical editable agent but a different selected-world contract and default entrypoint",
       "default_agent_max_turns": 3,
       "evaluation_worlds": [
-        "Adam",
+        "Tabris",
         "Ramiel",
         "Leliel"
       ],
       "primary_entrypoint": "python -m development_worlds.runner --agent-dir <path> --models-file <path>",
       "requires_dedicated_unprivileged_account": false,
       "complete_strategy_directory": "agent",
-      "profile_id": "strategy-v3",
+      "profile_id": "strategy-v4",
       "participant_readme": "README.md",
       "whitelist_families": 3,
       "provided_model_directories": 5,
@@ -263,57 +217,7 @@
         "real_model_tensors_loaded": false,
         "final_docs_only_rebuild_execution_identity_verified": true
       },
-      "validation_boolean_scope": "The broad validation booleans remain false because the full supported model/hardware/development/evaluation deployment matrix has not been certified; the single observed real-model run is recorded separately.",
-      "observed_model_run": {
-        "status": "completed_official_evaluation",
-        "date": "2026-11-06",
-        "scope": "One real Qwen3.5-122B-A10B-FP8 run on one H200 across Adam, Ramiel and Leliel; not a full deployment-matrix certification",
-        "executed_archives": {
-          "starter": {
-            "file": "shore-contest-starter-v13.zip",
-            "sha256": "2e6cd4806eb6fa2bc1617503da5f461c69ca32239b4b106941227a9af9df40d8"
-          },
-          "runtime": {
-            "file": "shore-organizer-runtime-strategy-v3-r3.zip",
-            "sha256": "4fa07f77a75a73bebf6095fea04eb39145fd92b1c693dec3d9260a4e4fd065c6"
-          }
-        },
-        "model": "Qwen3.5-122B-A10B-FP8",
-        "hardware": {
-          "gpu": "NVIDIA H200",
-          "gpu_count": 1
-        },
-        "environment": {
-          "torch": "2.11.0+cu130",
-          "torch_cuda": "13.0",
-          "vllm": "0.24.0"
-        },
-        "execution": {
-          "worlds": [
-            "Adam",
-            "Ramiel",
-            "Leliel"
-          ],
-          "model_service": "preloaded local vLLM service",
-          "structured_output": "explicit JSON schema",
-          "official_summary_return_code": 0,
-          "model_calls_returned": 9,
-          "valid_world_submissions": 2,
-          "worlds_without_valid_submission": 1,
-          "candidate_failure": "Model requested a saved candidate that did not exist; not an organizer-startup failure"
-        },
-        "all_whitelist_models_validated": false,
-        "not_validated": [
-          "Six-public-world full run",
-          "Other six hidden worlds",
-          "Other whitelist model configurations",
-          "Four-H200 deployment",
-          "RTX4090 deployment",
-          "Clean installation and managed model auto-start"
-        ],
-        "raw_observations_dialogue_scores_and_private_paths_included": false,
-        "original_archive_bytes_unchanged_after_run": true
-      }
+      "validation_boolean_scope": "Full supported model/hardware/development/evaluation deployment matrix not certified; single-model evidence is scoped separately"
     },
     "legacy-calibration": {
       "file": "legacy/organizer_calibration_20261031.zip",
@@ -1981,6 +1885,311 @@
       "organizer_directory_mode_enforced": false,
       "safe_r15_refresh_verified": true,
       "safe_r16_refresh_verified": true
+    },
+    "legacy-starter-v13": {
+      "file": "legacy/shore-contest-starter-v13.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 673975,
+      "sha256": "2e6cd4806eb6fa2bc1617503da5f461c69ca32239b4b106941227a9af9df40d8",
+      "archive_entries": 90,
+      "note": "Original archive before candidate lifecycle repair and new selected-three profile",
+      "wall_clock_seconds": 600,
+      "execution_mode": "organizer_strategy_paths",
+      "requires_container_runtime": false,
+      "actual_model_loaded_and_validated": false,
+      "revision_note": "Editable agent flow repair: explicit batch operations, fitted candidate persistence and optional structured output; science and scoring unchanged",
+      "protocol_e2e_validated": false,
+      "protocol_e2e_scope": "Archive integrity, released profile, standalone CLI and safe refresh; real model evidence recorded separately",
+      "default_agent_max_turns": 3,
+      "evaluation_worlds": [
+        "Adam",
+        "Ramiel",
+        "Leliel"
+      ],
+      "primary_entrypoint": "python -m development_worlds.runner --agent-dir <path> --models-file <path>",
+      "requires_dedicated_unprivileged_account": false,
+      "complete_strategy_directory": "agent",
+      "profile_id": "strategy-v3",
+      "participant_readme": "README.md",
+      "whitelist_families": 3,
+      "provided_model_directories": 5,
+      "prior_protocol_evidence": {
+        "executed_starter_sha256": "681031070672182cb82fb627f86384076640de5fb1aca7aaf10b75a9f952529d",
+        "executed_runtime_sha256": "d8fe5591ba67a073158da93a5f7547915c5c864bd867a9c2b99851cced3e335c",
+        "hidden_model_actions": 9,
+        "public_model_actions": 18,
+        "linux_uid_drop_validated": false,
+        "real_model_tensors_loaded": false,
+        "final_docs_only_rebuild_execution_identity_verified": true
+      },
+      "validation_boolean_scope": "The broad validation booleans remain false because the full supported model/hardware/development/evaluation deployment matrix has not been certified; the single observed real-model run is recorded separately.",
+      "observed_model_run": {
+        "status": "completed_official_evaluation",
+        "date": "2026-11-06",
+        "scope": "One real Qwen3.5-122B-A10B-FP8 run on one H200 across Adam, Ramiel and Leliel; not a full deployment-matrix certification",
+        "executed_archives": {
+          "starter": {
+            "file": "shore-contest-starter-v13.zip",
+            "sha256": "2e6cd4806eb6fa2bc1617503da5f461c69ca32239b4b106941227a9af9df40d8"
+          },
+          "runtime": {
+            "file": "shore-organizer-runtime-strategy-v3-r3.zip",
+            "sha256": "4fa07f77a75a73bebf6095fea04eb39145fd92b1c693dec3d9260a4e4fd065c6"
+          }
+        },
+        "model": "Qwen3.5-122B-A10B-FP8",
+        "hardware": {
+          "gpu": "NVIDIA H200",
+          "gpu_count": 1
+        },
+        "environment": {
+          "torch": "2.11.0+cu130",
+          "torch_cuda": "13.0",
+          "vllm": "0.24.0"
+        },
+        "execution": {
+          "worlds": [
+            "Adam",
+            "Ramiel",
+            "Leliel"
+          ],
+          "model_service": "preloaded local vLLM service",
+          "structured_output": "explicit JSON schema",
+          "official_summary_return_code": 0,
+          "model_calls_returned": 9,
+          "valid_world_submissions": 2,
+          "worlds_without_valid_submission": 1,
+          "candidate_failure": "Model requested a saved candidate that did not exist; not an organizer-startup failure"
+        },
+        "all_whitelist_models_validated": false,
+        "not_validated": [
+          "Six-public-world full run",
+          "Other six hidden worlds",
+          "Other whitelist model configurations",
+          "Four-H200 deployment",
+          "RTX4090 deployment",
+          "Clean installation and managed model auto-start"
+        ],
+        "raw_observations_dialogue_scores_and_private_paths_included": false,
+        "original_archive_bytes_unchanged_after_run": true
+      }
+    },
+    "legacy-runtime-strategy-v3-r3": {
+      "file": "legacy/shore-organizer-runtime-strategy-v3-r3.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 2075835,
+      "sha256": "4fa07f77a75a73bebf6095fea04eb39145fd92b1c693dec3d9260a4e4fd065c6",
+      "archive_entries": 171,
+      "note": "Original archive before candidate lifecycle repair and new selected-three profile",
+      "scoring_version": "draft-3.11.0",
+      "prediction_mapping": "P=80/(1+10e)",
+      "observation_noise_version": "1.1.0",
+      "velocity_noise_fraction": 0.0001,
+      "scientific_dataset_scope": "Latest fixed six-public/nine-hidden design; selected Adam and validation coverage installed",
+      "wall_clock_seconds": 600,
+      "hidden_artifacts_returned_during_contest": false,
+      "documentation_revision": 12,
+      "revision_note": "Editable agent flow repair: explicit batch operations, fitted candidate persistence and optional structured output; science and scoring unchanged",
+      "execution_mode": "organizer_strategy_paths",
+      "requires_container_runtime": false,
+      "actual_model_loaded_and_validated": false,
+      "profile_id": "strategy-v3",
+      "protocol_e2e_validated": false,
+      "protocol_e2e_scope": "Archive integrity, released profile, standalone CLI and safe refresh; real model evidence recorded separately",
+      "default_agent_max_turns": 3,
+      "evaluation_worlds": [
+        "Adam",
+        "Ramiel",
+        "Leliel"
+      ],
+      "primary_entrypoint": "evaluate_strategy.py --agent-dir <path> --models-file <path> --run-as <account>",
+      "requires_dedicated_unprivileged_account": true,
+      "complete_strategy_directory": "agent",
+      "participant_readme": "README.md",
+      "whitelist_families": 3,
+      "provided_model_directories": 5,
+      "prior_protocol_evidence": {
+        "executed_starter_sha256": "681031070672182cb82fb627f86384076640de5fb1aca7aaf10b75a9f952529d",
+        "executed_runtime_sha256": "d8fe5591ba67a073158da93a5f7547915c5c864bd867a9c2b99851cced3e335c",
+        "hidden_model_actions": 9,
+        "public_model_actions": 18,
+        "linux_uid_drop_validated": false,
+        "real_model_tensors_loaded": false,
+        "final_docs_only_rebuild_execution_identity_verified": true
+      },
+      "organizer_directory_mode_enforced": false,
+      "runtime_revision": 3,
+      "validation_boolean_scope": "The broad validation booleans remain false because the full supported model/hardware/development/evaluation deployment matrix has not been certified; the single observed real-model run is recorded separately.",
+      "observed_model_run": {
+        "status": "completed_official_evaluation",
+        "date": "2026-11-06",
+        "scope": "One real Qwen3.5-122B-A10B-FP8 run on one H200 across Adam, Ramiel and Leliel; not a full deployment-matrix certification",
+        "executed_archives": {
+          "starter": {
+            "file": "shore-contest-starter-v13.zip",
+            "sha256": "2e6cd4806eb6fa2bc1617503da5f461c69ca32239b4b106941227a9af9df40d8"
+          },
+          "runtime": {
+            "file": "shore-organizer-runtime-strategy-v3-r3.zip",
+            "sha256": "4fa07f77a75a73bebf6095fea04eb39145fd92b1c693dec3d9260a4e4fd065c6"
+          }
+        },
+        "model": "Qwen3.5-122B-A10B-FP8",
+        "hardware": {
+          "gpu": "NVIDIA H200",
+          "gpu_count": 1
+        },
+        "environment": {
+          "torch": "2.11.0+cu130",
+          "torch_cuda": "13.0",
+          "vllm": "0.24.0"
+        },
+        "execution": {
+          "worlds": [
+            "Adam",
+            "Ramiel",
+            "Leliel"
+          ],
+          "model_service": "preloaded local vLLM service",
+          "structured_output": "explicit JSON schema",
+          "official_summary_return_code": 0,
+          "model_calls_returned": 9,
+          "valid_world_submissions": 2,
+          "worlds_without_valid_submission": 1,
+          "candidate_failure": "Model requested a saved candidate that did not exist; not an organizer-startup failure"
+        },
+        "all_whitelist_models_validated": false,
+        "not_validated": [
+          "Six-public-world full run",
+          "Other six hidden worlds",
+          "Other whitelist model configurations",
+          "Four-H200 deployment",
+          "RTX4090 deployment",
+          "Clean installation and managed model auto-start"
+        ],
+        "raw_observations_dialogue_scores_and_private_paths_included": false,
+        "original_archive_bytes_unchanged_after_run": true
+      }
+    },
+    "legacy-h200-r18": {
+      "file": "legacy/shore-organizer-open-model-test-20261101-r18.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 2645328,
+      "sha256": "357d06d6f70a92ac53ed7e36904c63f8dc4061db01ce23fc65ecc5d688cdbba0",
+      "archive_entries": 206,
+      "note": "Original archive before candidate lifecycle repair and new selected-three profile",
+      "revision": 18,
+      "runner_version": "shore-agent-baseline-1.0.0",
+      "revision_note": "Editable agent flow repair: explicit batch operations, fitted candidate persistence and optional structured output; science and scoring unchanged",
+      "scoring_version": "draft-3.11.0",
+      "prediction_mapping": "P=80/(1+10e)",
+      "observation_noise_version": "1.1.0",
+      "velocity_noise_fraction": 0.0001,
+      "scientific_dataset_scope": "Latest fixed six-public/nine-hidden design; selected Adam and validation coverage installed",
+      "wall_clock_seconds": 600,
+      "hidden_artifacts_returned_during_contest": false,
+      "primary_entrypoint": "evaluate_strategy.py --agent-dir <path> --models-file <path> --run-as <account>",
+      "model_service_entrypoint": "scripts/serve_model.py",
+      "actual_model_loaded_and_validated": false,
+      "execution_mode": "organizer_strategy_paths",
+      "requires_container_runtime": false,
+      "profile_id": "strategy-v3",
+      "safe_r7_refresh_verified": true,
+      "protocol_e2e_validated": false,
+      "protocol_e2e_scope": "Archive integrity, released profile, standalone CLI and safe refresh; real model evidence recorded separately",
+      "safe_r8_refresh_verified": true,
+      "safe_r9_refresh_verified": true,
+      "safe_r10_refresh_verified": true,
+      "safe_r11_refresh_verified": true,
+      "default_agent_max_turns": 3,
+      "evaluation_worlds": [
+        "Adam",
+        "Ramiel",
+        "Leliel"
+      ],
+      "safe_r12_refresh_verified": true,
+      "requires_dedicated_unprivileged_account": true,
+      "complete_strategy_directory": "agent",
+      "safe_r13_refresh_verified": true,
+      "participant_readme": "README.md",
+      "whitelist_families": 3,
+      "provided_model_directories": 5,
+      "prior_protocol_evidence": {
+        "executed_starter_sha256": "681031070672182cb82fb627f86384076640de5fb1aca7aaf10b75a9f952529d",
+        "executed_runtime_sha256": "d8fe5591ba67a073158da93a5f7547915c5c864bd867a9c2b99851cced3e335c",
+        "hidden_model_actions": 9,
+        "public_model_actions": 18,
+        "linux_uid_drop_validated": false,
+        "real_model_tensors_loaded": false,
+        "final_docs_only_rebuild_execution_identity_verified": true
+      },
+      "safe_r14_refresh_verified": true,
+      "organizer_directory_mode_enforced": false,
+      "safe_r15_refresh_verified": true,
+      "safe_r16_refresh_verified": true,
+      "safe_r17_refresh_verified": true
+    },
+    "legacy-4090-r18": {
+      "file": "legacy/shore-organizer-4090-test-20261101-r18.zip",
+      "status": "legacy",
+      "extract_dir": null,
+      "bytes": 2648262,
+      "sha256": "a198de692c5405418597ab7d2b0ccc41f8876ac1832a81a677ba3be6784622f1",
+      "archive_entries": 207,
+      "note": "Original archive before candidate lifecycle repair and new selected-three profile",
+      "revision": 18,
+      "runner_version": "shore-agent-baseline-1.0.0",
+      "revision_note": "Editable agent flow repair: explicit batch operations, fitted candidate persistence and optional structured output; science and scoring unchanged",
+      "scoring_version": "draft-3.11.0",
+      "prediction_mapping": "P=80/(1+10e)",
+      "observation_noise_version": "1.1.0",
+      "velocity_noise_fraction": 0.0001,
+      "scientific_dataset_scope": "Latest fixed six-public/nine-hidden design; selected Adam and validation coverage installed",
+      "wall_clock_seconds": 600,
+      "hidden_artifacts_returned_during_contest": false,
+      "primary_entrypoint": "evaluate_strategy.py --agent-dir <path> --models-file <path> --run-as <account>",
+      "model_service_entrypoint": "scripts/serve_model.py",
+      "actual_model_loaded_and_validated": false,
+      "execution_mode": "organizer_strategy_paths",
+      "requires_container_runtime": false,
+      "profile_id": "strategy-v3",
+      "safe_r7_refresh_verified": true,
+      "protocol_e2e_validated": false,
+      "protocol_e2e_scope": "Archive integrity, released profile, standalone CLI and safe refresh; real model evidence recorded separately",
+      "safe_r8_refresh_verified": true,
+      "safe_r9_refresh_verified": true,
+      "safe_r10_refresh_verified": true,
+      "safe_r11_refresh_verified": true,
+      "default_agent_max_turns": 3,
+      "evaluation_worlds": [
+        "Adam",
+        "Ramiel",
+        "Leliel"
+      ],
+      "safe_r12_refresh_verified": true,
+      "requires_dedicated_unprivileged_account": true,
+      "complete_strategy_directory": "agent",
+      "safe_r13_refresh_verified": true,
+      "participant_readme": "README.md",
+      "whitelist_families": 3,
+      "provided_model_directories": 5,
+      "prior_protocol_evidence": {
+        "executed_starter_sha256": "681031070672182cb82fb627f86384076640de5fb1aca7aaf10b75a9f952529d",
+        "executed_runtime_sha256": "d8fe5591ba67a073158da93a5f7547915c5c864bd867a9c2b99851cced3e335c",
+        "hidden_model_actions": 9,
+        "public_model_actions": 18,
+        "linux_uid_drop_validated": false,
+        "real_model_tensors_loaded": false,
+        "final_docs_only_rebuild_execution_identity_verified": true
+      },
+      "safe_r14_refresh_verified": true,
+      "organizer_directory_mode_enforced": false,
+      "safe_r15_refresh_verified": true,
+      "safe_r16_refresh_verified": true,
+      "safe_r17_refresh_verified": true
     }
   }
 }
