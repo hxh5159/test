@@ -7,6 +7,7 @@ a4294fd168cb178a47d3ca40fd07c14f5fb056411467b182f209fcc47c9ea08c  legacy/shore-c
 c77d514665d08f0a423b5a612827182972f44323d6f956d22d3b52f250398c71  legacy/shore-contest-starter-v14.zip
 65fd3d3d90ac2033853d2c7e5ec2845b3579841f3ab2a0c4217f078368f3f48c  legacy/shore-contest-starter-v15-before-prompt-policy-doc14.zip
 b025d02daecdd720271560842788d2e11c45851640993b73e830a9e71f7fbb4c  legacy/shore-contest-starter-v15-before-readme-consolidation-doc15.zip
+fa43209ee2c037c2603f1a10615dd72877c9f0dce61602685226e5833fc75ab3  legacy/shore-contest-starter-v15.zip
 fb8675a11e6f0696fd7f76a24cd7b0f4d3d7090275cf1bb33cac54a47e94bb16  legacy/shore-contest-starter-v2.zip
 9e0e84c794f5fc8ecc2e386df694568ecd79735c74e236171c4e97fa6c2a3e89  legacy/shore-contest-starter-v3.zip
 488ba889bb5e912aec4e36072aa5d984aa081150df07ac1492e3e6e6e46e658c  legacy/shore-contest-starter-v4.zip
@@ -27,6 +28,7 @@ bc411dfce123b74191205cc1d8a42a3ba1b1a4198b7b22dab1370fced1dd2c52  legacy/shore-o
 43676fa5c2b22c096ea3ece577d5b911cb9b008e79acef6f14a67fb8b48e1ced  legacy/shore-organizer-4090-test-20261101-r17.zip
 a198de692c5405418597ab7d2b0ccc41f8876ac1832a81a677ba3be6784622f1  legacy/shore-organizer-4090-test-20261101-r18.zip
 a30cc7b8a983ba647816bb68589f4fcbe1b3c7664070fc9909ee8667079f2116  legacy/shore-organizer-4090-test-20261101-r19.zip
+d5c69becb093d7fa33b3fe8be36541119357fe9a07aabd4f59c3b601d288a4bd  legacy/shore-organizer-4090-test-20261101-r20-before-redundant-docs-doc16.zip
 b3b645e9628d0ed6a4178a7d02f699974e9436ec614a6f364e15308e984487f4  legacy/shore-organizer-4090-test-20261101-r3.zip
 640c5cfe3d47a8fe20ad9bcce907d75919d8e4c99dd66be1e6f449a634137e89  legacy/shore-organizer-4090-test-20261101-r4.zip
 d35e19fc92ecee4d5f44cc9dfaf1f3676caadd904a5a50bcc12a2b28a26c08e2  legacy/shore-organizer-4090-test-20261101-r5.zip
@@ -46,6 +48,7 @@ b816292e072682fb0e1a48d599b6967259c8e05627cd203d3dccf6ee799f4d6a  legacy/shore-o
 4b381b2197d24a29fbe94864d0fd91ddcd03a35ad7298444f2745e9314f79490  legacy/shore-organizer-open-model-test-20261101-r17.zip
 357d06d6f70a92ac53ed7e36904c63f8dc4061db01ce23fc65ecc5d688cdbba0  legacy/shore-organizer-open-model-test-20261101-r18.zip
 0d8a46f0f8df0b3a4fdbbf2b79f73d837fb4a2a87c2b16c76ebd961b16e5a351  legacy/shore-organizer-open-model-test-20261101-r19.zip
+37dd93ba8bd3ad72da98bd636a82c93ae6cc1504251d8bd5b32a6f21eac3c1b6  legacy/shore-organizer-open-model-test-20261101-r20-before-redundant-docs-doc16.zip
 71e6650dcf82e345501b62d94a8a1da62469135b47c08ab8040dd51c12060235  legacy/shore-organizer-open-model-test-20261101-r3.zip
 c4561a72bae9cc73099a62f7d095cc5e47534b7039b74cbd181affb14f6ecf99  legacy/shore-organizer-open-model-test-20261101-r4.zip
 470cd0aa8f974a22f9c18ec2aa77a491cae28d7d09a50dce93f6755194cd2910  legacy/shore-organizer-open-model-test-20261101-r5.zip
@@ -76,7 +79,8 @@ b7033365efb66f01ee4ff3c4bd5ffa9042478d6af6a68ae97d85d603ca4bd781  legacy/shore-o
 ee7c3c5af358181b2e077f2710c2a8daef1ea4e3875f5afe7648b1b71769bc23  legacy/shore-organizer-runtime-strategy-v4.zip
 8a8f1660771a3e0638e419e8d8c6248c8d92f3b39d5ba99d20644f17f1f24434  legacy/shore-organizer-runtime-strategy-v5-before-prompt-policy-doc14.zip
 c9c8c4ce21d12332af4a06f02f89893f563021c3272afa0c687e2436fc63b98a  legacy/shore-organizer-runtime-strategy-v5-before-readme-consolidation-doc15.zip
-fa43209ee2c037c2603f1a10615dd72877c9f0dce61602685226e5833fc75ab3  shore-contest-starter-v15.zip
-d5c69becb093d7fa33b3fe8be36541119357fe9a07aabd4f59c3b601d288a4bd  shore-organizer-4090-test-20261101.zip
-37dd93ba8bd3ad72da98bd636a82c93ae6cc1504251d8bd5b32a6f21eac3c1b6  shore-organizer-open-model-test-20261101.zip
-944d35cf7cba9554dbcbe21e89e643b5529d3301bd55e5c3c79ffee10d10ca20  shore-organizer-runtime-strategy-v5.zip
+944d35cf7cba9554dbcbe21e89e643b5529d3301bd55e5c3c79ffee10d10ca20  legacy/shore-organizer-runtime-strategy-v5.zip
+9b2cc4e7309f8130fdd4c810f77c489a2328aef816f689bec922fcff4f666a44  shore-contest-starter-v16.zip
+4253f0ae385fe2b7e13db1c07deb5ef89986a309d32b8f85f9a2c6c87d7596ca  shore-organizer-4090-test-20261101.zip
+2d397f3f1e88474dcf87a0ca183261221affe0cf924e0eff1ef679632911a16d  shore-organizer-open-model-test-20261101.zip
+495fe315cfff562958ecb874fb9b6349407552694a54a24824547fd4e55bfa99  shore-organizer-runtime-strategy-v6.zip

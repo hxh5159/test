@@ -1,5 +1,5 @@
 指挥部测评包文件清单（含九宇宙真实资料，不作为参赛开发包）
-文件总数：191
+文件总数：177
 
 CODE_DELIVERY_BOUNDARIES.txt
 Dockerfile.candidate
@@ -101,14 +101,12 @@ profiles/strategy-v5/references/Tabris.json
 public/FILE_LIST.txt
 public/LICENSE
 public/README.md
-public/START_HERE.txt
 public/agent/__init__.py
 public/agent/models.py
 public/agent/run.py
 public/agent/strategy.json
 public/agent/tool_worker.py
 public/agent/tools.py
-public/development_worlds/README.md
 public/development_worlds/__init__.py
 public/development_worlds/catalog.py
 public/development_worlds/console.py
@@ -116,18 +114,6 @@ public/development_worlds/evaluation.py
 public/development_worlds/runner.py
 public/development_worlds/service.py
 public/development_worlds/worlds.py
-public/docs/CODE_AND_SUBMISSION_SPEC.txt
-public/docs/CONSOLE_API.txt
-public/docs/CONTEST_WORKFLOW.txt
-public/docs/CUDA128_SETUP.txt
-public/docs/H200_OFFLINE_SETUP.txt
-public/docs/LAW_API.txt
-public/docs/MODELS.txt
-public/docs/MODEL_RUNTIME.txt
-public/docs/PARTICIPANT_FILES.txt
-public/docs/QUICKSTART.txt
-public/docs/STRATEGY_SUBMISSION.txt
-public/docs/SUBMISSION_API.txt
 public/docs/contracts/claims.example.json
 public/docs/contracts/claims.schema.json
 public/docs/contracts/exploration_protocol.json

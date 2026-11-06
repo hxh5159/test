@@ -1,15 +1,15 @@
 SHORE 指挥部测试资料库
-更新：2026-11-06；当前starter-v15、模型测试包r20、正式运行包strategy-v5。
+更新：2026-11-06；当前starter-v16、模型测试包r21、正式运行包strategy-v6（科学配置仍为strategy-v5）。
 
 一、发放范围
 
-shore-contest-starter-v15.zip
+shore-contest-starter-v16.zip
   发给攻坚组。根目录README.md说明环境安装、任务、禁止事项、提交与文件边界。包含六公开宇宙、完整可修改agent/、models.json模板、固定接口/积分器、
   公开评测、格式检查器及说明。五个已提供模型是起步配置，同一个模型可加载多个实例；基础框架默认加载注册表的
   primary_model_id，不会同时加载全部五个。所有本队策略、提示词、工具、记忆和子智能体
   代码均在agent/内；模型权重独立保存，通过models.json按稳定id逐项声明。
 
-shore-organizer-runtime-strategy-v5.zip
+shore-organizer-runtime-strategy-v6.zip
   只交指挥部。包含evaluate_strategy.py、九隐藏真实环境、验证真值及固定评分程序。
   指挥部在自己的目录保管环境，以管理员权限接收agent目录与models.json两条路径，
   通过统一命令启动队伍策略。策略仍以指定普通评测账号运行；现有文件读取条件已具备，
@@ -19,8 +19,8 @@ shore-organizer-runtime-strategy-v5.zip
   未测Tabris、Ramiel、Lilin不删除、不记零；不按原难度标签或相邻运行顺序重新分组。
   public/包含同一完整开发包，供指挥部的固定积分器及接口使用。
 
-shore-organizer-open-model-test-20261101.zip（r20，4H200）
-shore-organizer-4090-test-20261101.zip（r20，4×48GB4090诊断）
+shore-organizer-open-model-test-20261101.zip（r21，4H200）
+shore-organizer-4090-test-20261101.zip（r21，4×48GB4090诊断）
   组合公开开发组件及指挥部运行系统，仅供指挥部内部测试，不整体发送攻坚组。
   六公开开发入口与正式评测使用同一agent目录、模型注册表和实验/交卷协议。
   不附带模型张量、API密钥、任务数据库或历史运行材料。
@@ -32,14 +32,15 @@ shore-organizer-4090-test-20261101.zip（r20，4×48GB4090诊断）
 
 BASE='/inspire/hdd/project/26-the-other-shore/fengkairui-25026'
 ASSETROOT="$BASE/test"
-RUNTIME='/opt/shore-organizer-strategy-v5'
+RUNTIME='/opt/shore-organizer-strategy-v6'
 
 mkdir -p "$RUNTIME"
 python3 "$ASSETROOT/prepare_test_bundle.py" --bundle runtime --target "$RUNTIME"
 
-上述命令使用已经传到远端的新版资料，不在无网测评节点拉取仓库。已有受管理目录需要更新时，
-使用同一命令加--refresh；保留已有环境、缓存、日志和结果。starter/h200/4090
-也有同名bundle键，分别选用各自目标目录。新实验始终使用新的结果目录。
+上述命令使用已经传到远端的新版资料，不在无网测评节点拉取仓库。本次删除了14份已合并的说明，
+必须使用新的空目标目录；不要覆盖解压到旧目录，也不能用--refresh升级旧包，否则旧TXT会残留。
+旧项目、权重、依赖、日志和结果保留，逐项迁移本队agent及models.json后自检。starter/h200/4090
+仍使用同名bundle键；组合包默认解压目录已改为-r21。新实验也始终使用新结果目录。
 
 三、统一策略与模型路径
 
@@ -55,7 +56,7 @@ checkpoint路径、可选adapter_path及用途role，并指定primary_model_id�
 指挥部统一设置评测账号与解释器，直接复用现有读取条件和依赖，不把授权作为每次必做步骤。
 每次只填写agent目录和models.json两条路径，结果目录由命令自动生成；模型名、权重、
 宇宙、真实常数或claims答案不用额外输入。测评期间本次策略和权重保持不变。具体命令见
-README_策略路径测评.txt。六公开操作见开发包docs/STRATEGY_SUBMISSION.txt和QUICKSTART.txt。
+README_策略路径测评.txt。六公开操作与全部参赛接口说明统一见开发包根目录README.md。
 
 模型权重根默认：/inspire/hdd/project/26-the-other-shore/public/models。
 主项目：$BASE/DiscoverPhysics；测试资料库：$BASE/test。模型推理解释器与实验解释器由

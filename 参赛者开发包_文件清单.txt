@@ -1,17 +1,15 @@
 攻坚组开发包文件清单（不含九宇宙真实模拟器/真值）
-文件总数：90
+文件总数：76
 
 FILE_LIST.txt
 LICENSE
 README.md
-START_HERE.txt
 agent/__init__.py
 agent/models.py
 agent/run.py
 agent/strategy.json
 agent/tool_worker.py
 agent/tools.py
-development_worlds/README.md
 development_worlds/__init__.py
 development_worlds/catalog.py
 development_worlds/console.py
@@ -19,18 +17,6 @@ development_worlds/evaluation.py
 development_worlds/runner.py
 development_worlds/service.py
 development_worlds/worlds.py
-docs/CODE_AND_SUBMISSION_SPEC.txt
-docs/CONSOLE_API.txt
-docs/CONTEST_WORKFLOW.txt
-docs/CUDA128_SETUP.txt
-docs/H200_OFFLINE_SETUP.txt
-docs/LAW_API.txt
-docs/MODELS.txt
-docs/MODEL_RUNTIME.txt
-docs/PARTICIPANT_FILES.txt
-docs/QUICKSTART.txt
-docs/STRATEGY_SUBMISSION.txt
-docs/SUBMISSION_API.txt
 docs/contracts/claims.example.json
 docs/contracts/claims.schema.json
 docs/contracts/exploration_protocol.json
