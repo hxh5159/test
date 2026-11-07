@@ -1,10 +1,11 @@
 指挥部测评包文件清单（含九宇宙真实资料，不作为参赛开发包）
-文件总数：177
+文件总数：193
 
 CODE_DELIVERY_BOUNDARIES.txt
 Dockerfile.candidate
 FILE_LIST.txt
 PRIVATE_RUNTIME_NOTICE.txt
+README_压缩包测评.txt
 README_正式赛题部署.txt
 README_直接项目测评.txt
 README_策略路径测评.txt
@@ -23,6 +24,7 @@ contest_worker.py
 contest_world_definitions.json
 direct_project_eval.py
 evaluate_strategy.py
+evaluate_strategy_zip.py
 law_program_evaluation.py
 law_submission_store.py
 package_contest_runtime.py
@@ -98,6 +100,16 @@ profiles/strategy-v5/references/Matriel.json
 profiles/strategy-v5/references/Ramiel.json
 profiles/strategy-v5/references/Sachiel.json
 profiles/strategy-v5/references/Tabris.json
+profiles/strategy-v6/profile.json
+profiles/strategy-v6/references/Adam.json
+profiles/strategy-v6/references/Arael.json
+profiles/strategy-v6/references/Leliel.json
+profiles/strategy-v6/references/Lilin.json
+profiles/strategy-v6/references/Lilith.json
+profiles/strategy-v6/references/Matriel.json
+profiles/strategy-v6/references/Ramiel.json
+profiles/strategy-v6/references/Sachiel.json
+profiles/strategy-v6/references/Tabris.json
 public/FILE_LIST.txt
 public/LICENSE
 public/README.md
@@ -174,6 +186,10 @@ public/shore_agent/models.py
 public/shore_agent/tool_worker.py
 public/shore_agent/tools.py
 public/starter-manifest.json
+strategy_zip_intake.py
+tests/check_contest_job_runner.py
+tests/check_strategy_zip_evaluation.py
+tests/check_strategy_zip_intake.py
 trial_catalog.py
 trial_console.py
 trial_evaluation.py
