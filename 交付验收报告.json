@@ -1,250 +1,247 @@
 {
   "date": "2026-11-07",
   "status": "passed",
-  "scope": "strategy_zip_intake_and_private_agent_copy",
-  "documentation_revision": 17,
-  "profile_id": "strategy-v6",
+  "scope": "organizer_llm_compliance_gate",
+  "profile_id": "strategy-v7",
   "package_checks": {
-    "starter": {
-      "entries": 76,
-      "crc": true,
-      "all_payload_hashes": true,
-      "nested_public_payload_hashes": true,
-      "file_list_complete": true,
-      "file": "shore-contest-starter-v17.zip",
-      "sha256": "46aa273d14cfa1aedb97d8e40b67d24092adbd14712efe765fc44bbb8774fe92"
-    },
     "runtime": {
-      "entries": 193,
+      "entries": 208,
       "crc": true,
       "all_payload_hashes": true,
       "nested_public_payload_hashes": true,
       "file_list_complete": true,
-      "file": "shore-organizer-runtime-strategy-v7.zip",
-      "sha256": "29cd31a6cdbd1934ccec805f4ba7d54516ce6ea802582110a55d715f1ab4bf50"
+      "literal_credentials_found": false,
+      "file": "shore-organizer-runtime-strategy-v7-llm-judge.zip",
+      "sha256": "74378c9c923e286329896034a6fe51839b7819ae3d161270326fb8d00e2ca4ee"
     },
     "h200": {
-      "entries": 228,
+      "entries": 243,
       "crc": true,
       "all_payload_hashes": true,
       "nested_public_payload_hashes": true,
       "file_list_complete": true,
+      "literal_credentials_found": false,
       "file": "shore-organizer-open-model-test-20261101.zip",
-      "sha256": "b2023d6f87048d39576f4040ddb4107e6eb357a469ea8c0ea3c524efbf73d73e"
+      "sha256": "eaf571451ea0787ff0e74567e16ffb578eaa0af709651c50699dc89dfcada2f2"
     },
     "4090": {
-      "entries": 229,
+      "entries": 244,
       "crc": true,
       "all_payload_hashes": true,
       "nested_public_payload_hashes": true,
       "file_list_complete": true,
+      "literal_credentials_found": false,
       "file": "shore-organizer-4090-test-20261101.zip",
-      "sha256": "bed3a2a265bbf9fb015e444fe9a0b07266ad72a8e987a03ce5fc6d924bb6c368"
+      "sha256": "48bbbc31bdc5bdd3b0ad541e49bd1e1587e8926ae0c43b61e799f9f7370401f1"
     }
   },
   "payload_changes": {
-    "starter": {
-      "changed": [
-        "README.md",
-        "starter-manifest.json"
-      ],
-      "added": [],
-      "removed": [],
-      "unchanged_payload_count": 74,
-      "old_profiles_and_scientific_payloads_unchanged": null,
-      "public_runtime_and_development_payloads_unchanged": true
-    },
     "runtime": {
       "changed": [
         "FILE_LIST.txt",
         "PRIVATE_RUNTIME_NOTICE.txt",
-        "README_策略路径测评.txt",
+        "README_压缩包测评.txt",
         "bundle-manifest.json",
         "contest_platform.py",
         "evaluate_strategy.py",
+        "evaluate_strategy_zip.py",
         "package_contest_runtime.py",
-        "participant_packager.py",
-        "public/README.md",
-        "public/starter-manifest.json"
+        "tests/check_strategy_zip_evaluation.py"
       ],
       "added": [
-        "README_压缩包测评.txt",
-        "evaluate_strategy_zip.py",
-        "profiles/strategy-v6/profile.json",
-        "profiles/strategy-v6/references/Adam.json",
-        "profiles/strategy-v6/references/Arael.json",
-        "profiles/strategy-v6/references/Leliel.json",
-        "profiles/strategy-v6/references/Lilin.json",
-        "profiles/strategy-v6/references/Lilith.json",
-        "profiles/strategy-v6/references/Matriel.json",
-        "profiles/strategy-v6/references/Ramiel.json",
-        "profiles/strategy-v6/references/Sachiel.json",
-        "profiles/strategy-v6/references/Tabris.json",
-        "strategy_zip_intake.py",
-        "tests/check_contest_job_runner.py",
-        "tests/check_strategy_zip_evaluation.py",
-        "tests/check_strategy_zip_intake.py"
+        "README_LLM合规审查.txt",
+        "llm_judge_config.json",
+        "profiles/strategy-v7/profile.json",
+        "profiles/strategy-v7/references/Adam.json",
+        "profiles/strategy-v7/references/Arael.json",
+        "profiles/strategy-v7/references/Leliel.json",
+        "profiles/strategy-v7/references/Lilin.json",
+        "profiles/strategy-v7/references/Lilith.json",
+        "profiles/strategy-v7/references/Matriel.json",
+        "profiles/strategy-v7/references/Ramiel.json",
+        "profiles/strategy-v7/references/Sachiel.json",
+        "profiles/strategy-v7/references/Tabris.json",
+        "submission_llm_judge.py",
+        "tests/check_judge_gate.py",
+        "tests/check_submission_llm_judge.py"
       ],
       "removed": [],
-      "unchanged_payload_count": 167,
-      "old_profiles_and_scientific_payloads_unchanged": true
+      "unchanged_payload_count": 184,
+      "participant_payload_unchanged": true,
+      "science_and_references_unchanged": true,
+      "historical_profile_bytes_unchanged": true
     },
     "h200": {
       "changed": [
-        "CODE_DELIVERY_BOUNDARIES.txt",
         "FILE_LIST.txt",
         "PRIVATE_PACKAGE_MANIFEST.json",
         "PRIVATE_RUNTIME_NOTICE.txt",
-        "README.md",
-        "README_策略路径测评.txt",
+        "README_压缩包测评.txt",
         "contest_platform.py",
         "evaluate_strategy.py",
+        "evaluate_strategy_zip.py",
         "package_contest_runtime.py",
         "package_open_model_test.py",
-        "participant_packager.py",
-        "starter-manifest.json"
+        "starter-manifest.json",
+        "tests/check_strategy_zip_evaluation.py"
       ],
       "added": [
-        "README_压缩包测评.txt",
-        "evaluate_strategy_zip.py",
-        "profiles/strategy-v6/profile.json",
-        "profiles/strategy-v6/references/Adam.json",
-        "profiles/strategy-v6/references/Arael.json",
-        "profiles/strategy-v6/references/Leliel.json",
-        "profiles/strategy-v6/references/Lilin.json",
-        "profiles/strategy-v6/references/Lilith.json",
-        "profiles/strategy-v6/references/Matriel.json",
-        "profiles/strategy-v6/references/Ramiel.json",
-        "profiles/strategy-v6/references/Sachiel.json",
-        "profiles/strategy-v6/references/Tabris.json",
-        "strategy_zip_intake.py",
-        "tests/check_contest_job_runner.py",
-        "tests/check_strategy_zip_evaluation.py",
-        "tests/check_strategy_zip_intake.py"
+        "README_LLM合规审查.txt",
+        "llm_judge_config.json",
+        "profiles/strategy-v7/profile.json",
+        "profiles/strategy-v7/references/Adam.json",
+        "profiles/strategy-v7/references/Arael.json",
+        "profiles/strategy-v7/references/Leliel.json",
+        "profiles/strategy-v7/references/Lilin.json",
+        "profiles/strategy-v7/references/Lilith.json",
+        "profiles/strategy-v7/references/Matriel.json",
+        "profiles/strategy-v7/references/Ramiel.json",
+        "profiles/strategy-v7/references/Sachiel.json",
+        "profiles/strategy-v7/references/Tabris.json",
+        "submission_llm_judge.py",
+        "tests/check_judge_gate.py",
+        "tests/check_submission_llm_judge.py"
       ],
       "removed": [],
-      "unchanged_payload_count": 200,
-      "old_profiles_and_scientific_payloads_unchanged": true
+      "unchanged_payload_count": 217,
+      "participant_payload_unchanged": true,
+      "science_and_references_unchanged": true,
+      "historical_profile_bytes_unchanged": true
     },
     "4090": {
       "changed": [
-        "CODE_DELIVERY_BOUNDARIES.txt",
         "FILE_LIST.txt",
         "PRIVATE_PACKAGE_MANIFEST.json",
         "PRIVATE_RUNTIME_NOTICE.txt",
-        "README.md",
-        "README_策略路径测评.txt",
+        "README_压缩包测评.txt",
         "contest_platform.py",
         "evaluate_strategy.py",
+        "evaluate_strategy_zip.py",
         "package_contest_runtime.py",
         "package_open_model_test.py",
-        "participant_packager.py",
-        "starter-manifest.json"
+        "starter-manifest.json",
+        "tests/check_strategy_zip_evaluation.py"
       ],
       "added": [
-        "README_压缩包测评.txt",
-        "evaluate_strategy_zip.py",
-        "profiles/strategy-v6/profile.json",
-        "profiles/strategy-v6/references/Adam.json",
-        "profiles/strategy-v6/references/Arael.json",
-        "profiles/strategy-v6/references/Leliel.json",
-        "profiles/strategy-v6/references/Lilin.json",
-        "profiles/strategy-v6/references/Lilith.json",
-        "profiles/strategy-v6/references/Matriel.json",
-        "profiles/strategy-v6/references/Ramiel.json",
-        "profiles/strategy-v6/references/Sachiel.json",
-        "profiles/strategy-v6/references/Tabris.json",
-        "strategy_zip_intake.py",
-        "tests/check_contest_job_runner.py",
-        "tests/check_strategy_zip_evaluation.py",
-        "tests/check_strategy_zip_intake.py"
+        "README_LLM合规审查.txt",
+        "llm_judge_config.json",
+        "profiles/strategy-v7/profile.json",
+        "profiles/strategy-v7/references/Adam.json",
+        "profiles/strategy-v7/references/Arael.json",
+        "profiles/strategy-v7/references/Leliel.json",
+        "profiles/strategy-v7/references/Lilin.json",
+        "profiles/strategy-v7/references/Lilith.json",
+        "profiles/strategy-v7/references/Matriel.json",
+        "profiles/strategy-v7/references/Ramiel.json",
+        "profiles/strategy-v7/references/Sachiel.json",
+        "profiles/strategy-v7/references/Tabris.json",
+        "submission_llm_judge.py",
+        "tests/check_judge_gate.py",
+        "tests/check_submission_llm_judge.py"
       ],
       "removed": [],
-      "unchanged_payload_count": 201,
-      "old_profiles_and_scientific_payloads_unchanged": true
+      "unchanged_payload_count": 218,
+      "participant_payload_unchanged": true,
+      "science_and_references_unchanged": true,
+      "historical_profile_bytes_unchanged": true
     }
   },
   "standalone_checks": {
-    "starter": {
-      "isolated_entrypoint_help": true,
-      "independent_intake_import": false,
-      "packaged_profile_source_validation": false,
-      "model_or_api_calls": 0
-    },
     "runtime": {
       "isolated_entrypoint_help": true,
-      "independent_intake_import": true,
-      "packaged_profile_source_validation": true,
+      "independent_judge_import": true,
+      "released_profile_source_validation": true,
       "model_or_api_calls": 0
     },
     "h200": {
       "isolated_entrypoint_help": true,
-      "independent_intake_import": true,
-      "packaged_profile_source_validation": true,
+      "independent_judge_import": true,
+      "released_profile_source_validation": true,
       "model_or_api_calls": 0
     },
     "4090": {
       "isolated_entrypoint_help": true,
-      "independent_intake_import": true,
-      "packaged_profile_source_validation": true,
+      "independent_judge_import": true,
+      "released_profile_source_validation": true,
       "model_or_api_calls": 0
     }
   },
-  "real_models_or_gpu_run": false,
-  "raw_run_materials_added": false,
-  "new_scientific_simulations": false,
-  "science_and_nine_reference_bytes_unchanged": true,
-  "runtime_isolation_claim": "Read-only strategy staging only; no new full filesystem or network isolation certification",
-  "registered_archives_verified": 90,
-  "participant_readme_standalone_copy_matches": true,
+  "participant_package_and_readme_unchanged": true,
+  "scientific_changes": 0,
+  "real_model_or_api_calls_during_packaging": 0,
+  "new_physics_simulations": 0,
+  "same_installation_directory": "shore-organizer-runtime-strategy-v7",
+  "same_evaluation_command_and_flags": true,
+  "judge_is_not_scoring": true,
+  "runtime_isolation_claim": "Static LLM review is not complete filesystem/network isolation",
+  "registered_archives_verified": 93,
   "prepare_bundle_checks": {
-    "starter": {
-      "fresh_extract": true,
-      "repeat_no_overwrite": true,
-      "updated_readme": true
-    },
     "runtime": {
       "fresh_extract": true,
-      "repeat_no_overwrite": true,
-      "updated_readme": true
+      "repeat_no_overwrite": true
     },
     "h200": {
       "fresh_extract": true,
-      "repeat_no_overwrite": true,
-      "updated_readme": true
+      "repeat_no_overwrite": true
     },
     "4090": {
       "fresh_extract": true,
-      "repeat_no_overwrite": true,
-      "updated_readme": true
+      "repeat_no_overwrite": true
+    }
+  },
+  "previous_delivery_refresh_checks": {
+    "runtime": {
+      "previous_delivery_refresh": true,
+      "results_environment_partial_download_preserved": true,
+      "modified_agent_overwrite_rejected": true
+    },
+    "h200": {
+      "previous_delivery_refresh": true,
+      "results_environment_partial_download_preserved": true,
+      "modified_agent_overwrite_rejected": true
+    },
+    "4090": {
+      "previous_delivery_refresh": true,
+      "results_environment_partial_download_preserved": true,
+      "modified_agent_overwrite_rejected": true
     }
   },
   "prepare_bundle_unit_tests": {
     "passed": 16,
     "failed": 0
   },
-  "final_readme_clarification": "Root models.json is the sole exception to agent/ member placement",
-  "all_four_readmes_and_standalone_equal": true,
-  "previous_delivery_refresh_checks": {
-    "starter": {
-      "previous_version_refresh": true,
-      "old_results_environment_partial_download_preserved": true,
-      "edited_source_rejected_without_overwrite": true
+  "real_judge_smoke": {
+    "synthetic_cases": [
+      {
+        "fixture": "clean",
+        "status": "passed",
+        "model_calls": 1
+      },
+      {
+        "fixture": "violation",
+        "status": "rejected",
+        "model_calls": 1
+      }
+    ],
+    "synthetic_request_count": 2,
+    "official_starter_source": {
+      "status": "passed",
+      "input_bytes": 65493,
+      "files": 7,
+      "all_text_covered": true,
+      "model_calls": 1,
+      "clean_summary_exact": true
     },
-    "runtime": {
-      "previous_version_refresh": true,
-      "old_results_environment_partial_download_preserved": true,
-      "edited_source_rejected_without_overwrite": true
-    },
-    "h200": {
-      "previous_version_refresh": true,
-      "old_results_environment_partial_download_preserved": true,
-      "edited_source_rejected_without_overwrite": true
-    },
-    "4090": {
-      "previous_version_refresh": true,
-      "old_results_environment_partial_download_preserved": true,
-      "edited_source_rejected_without_overwrite": true
-    }
+    "requested_model": "gpt-6.1-sol",
+    "requested_reasoning_effort": "xhigh",
+    "no_world_or_model_weights_loaded": true,
+    "raw_review_reports_included": false,
+    "scope": "Organizer source-review API evidence; not proof of GPU-host network or system isolation."
+  },
+  "windows_expand_archive_verified": true,
+  "desktop_delivery_zip_access": {
+    "account": "hwz",
+    "all_three_current_zips": "FullControl inherited from delivery directory",
+    "archive_bytes_unchanged": true
   }
 }

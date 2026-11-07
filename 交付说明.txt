@@ -1,26 +1,13 @@
-彼岸挑战赛：交付与提交方式（2026-11-07）
+彼岸挑战赛：LLM合规审查版交付（2026-11-07）
 
-一、发给攻坚组：shore-contest-starter-v17.zip
-根README.md是完整阅读入口，独立副本为participant/README.md。
-agent/可编辑，包含全部策略、子智能体、提示词、工具、配置与合法开发记忆；models.json
-可编辑，逐项登记全部实际模型及可选LoRA绝对路径；development_worlds/、rift/、
-rift_numerics/、scripts/、shore_agent/等固定程序不得改动。程序及赛题规则本轮未改。
-六公开自测仍采用agent目录与models.json两路径。正式提交将完整agent/和models.json
-放在一个ZIP根目录，不套外层项目目录，不装入模型张量、依赖环境或公开环境程序。
-模型权重保持在共享盘原位置；全部模型ID及适配器都需登记，测评期间不得改写。
+给攻坚组：shore-contest-starter-v17.zip，完全不变；无需更新README或重装依赖。
+给指挥部：shore-organizer-runtime-strategy-v7-llm-judge.zip，解压目录仍是shore-organizer-runtime-strategy-v7。
+组委会原evaluate_strategy_zip.py命令及参数不变，需一次性设置裁判API密钥。
+收到参赛ZIP后先按原规则解压固定版本，再静态审查全部策略文本；只有passed才继续原实验、law/claims、积分与评分。
+拒绝、审查异常或覆盖不完整均停止，不把异常写成某个宇宙的0分，也不会静默跳过裁判。
+完整合规报告由指挥部保管；不得把隐藏运行资料或内部审核日志发给攻坚组。
+完整命令见README_压缩包测评.txt，裁判细节见README_LLM合规审查.txt。
 
-二、只交指挥部：shore-organizer-runtime-strategy-v7.zip
-evaluate_strategy_zip.py为正式入口；strategy_zip_intake.py负责接收、检查并封存提交。
-README_压缩包测评.txt给出完整命令。每次填写--submission-zip和--output；--run-as与
---agent-python一次统一配置。通常不必填写--profile，也不用逐个输入模型或宇宙参数。
-profiles/strategy-v6为当前配置，只更新执行源身份，九界真实规律和无噪验证参考保持。
-contest_*、trial_*、claims_truth.json及正式参考仅供指挥部；public/是同一开发包。
-旧evaluate_strategy.py仅作内部路径兼容入口。运行结果留在OUTPUT/accepted与
-OUTPUT/evaluation/private，成绩入口是OUTPUT/summary.json；私有材料不归还攻坚组。
-
-三、组织端组合测试包
-shore-organizer-open-model-test-20261101.zip与shore-organizer-4090-test-20261101.zip均为r22，
-组合公开开发与私有测评组件，不发给选手，默认解压目录以-r22结尾。
-四类包均使用新的空目录。旧包原字节在legacy保留；不删除旧环境、权重或结果。
-无需因本轮ZIP交付重装依赖或制作镜像。受理复制和只读冻结不等于全局访问隔离。
-完整文件名见两份文件清单，登记身份与校验值见packages.json和SHA256SUMS。
+H200与4090组合包同步r23；旧v7/r22均原字节保留在legacy。
+模型权重仍由models.json绝对路径读取，不打包、不复制大模型。
+参赛ZIP、定律评分与所有物理/数值/配额规则保持，不以LLM替代客观评分。

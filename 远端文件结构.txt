@@ -1,52 +1,26 @@
-彼岸挑战赛：远端文件组织（2026-11-07）
+彼岸挑战赛：LLM审查版远端文件组织（2026-11-07）
 
-共享模型根：/inspire/hdd/project/26-the-other-shore/public/models/
-  Qwen3.8-27B/
-  Qwen3.6-35B-A3B/
-  Qwen-3.6-35B-A3B-FP8/
-  Qwen3.5-122B-A10B/
-  Qwen3.5-122B-A10B-FP8/
-训练检查点与LoRA可存各队共享盘目录，models.json用完整绝对路径逐项登记。
-
-攻坚组：shore-contest-starter-v17.zip解压到新空目录
-  README.md                    完整任务、环境、接口与操作说明
-  agent/                       可修改的完整策略
-    __init__.py、run.py         固定入口文件名；协调全部子智能体
-    strategy.json              队伍、提交、版本
-    models.py、tools.py等       可修改模型通信与工具
-    prompts/、memory/等         自定义策略运行材料
-  models.json                  所有模型ID、完整checkpoint/LoRA的绝对路径
-  development_worlds/          六公开环境与固定自测
-  rift/、rift_numerics/          固定接口与积分
-  scripts/、shore_agent/        固定启动与兼容入口
-  docs/、examples/             赛题PDF、机器契约与示例
-  requirements.txt、LICENSE、FILE_LIST.txt及清单
-  results/                     本队开发自测产物（运行时生成）
-
-提交一份team01-v1.zip，根目录直接为agent/和models.json，不再提供原agent路径作为正式入口。
-不打包权重、环境、results或固定公共程序；合法开发记忆若推理需要应放入agent内。
-
-指挥部：shore-organizer-runtime-strategy-v7.zip解压到新空目录
 /inspire/hdd/project/26-the-other-shore/fengkairui-25026/
-  DiscoverPhysics/             原出题主库（不整体发给选手）
-  test/                        本资料库（不整体发给选手）
+  test/                             指挥部资料库（不整体发给选手）
   shore-organizer-runtime-strategy-v7/
-    evaluate_strategy_zip.py   正式ZIP测评入口
-    strategy_zip_intake.py     私有受理与文件检查
-    README_压缩包测评.txt      具体命令与参数
-    evaluate_strategy.py       旧路径内部兼容与实际运行后端
-    profiles/strategy-v6/      当前执行身份与原九界参考
-    profiles/strategy-v5等/    历史配置保留
-    public/                   当前同一开发包
-    contest_*、trial_*等       私有实验、积分、计分与榜单
-  received/team01-v1.zip       指挥部接收的本次提交
-  organizer-results/<新运行>/
-    accepted/                 原ZIP、只读agent、规范化models与受理回执
-    evaluation/private/       隐藏观测、对话、日志、候选、评分库
-    evaluation/summary.json   规定的成绩汇总
-    summary.json              同一成绩反馈的根入口
+    evaluate_strategy_zip.py         正式入口，原参数不变
+    strategy_zip_intake.py           原ZIP检查、解压、封存
+    submission_llm_judge.py          只读合规裁判客户端与报告
+    llm_judge_config.json            模型/网关/强度及技术限制，不含密钥
+    README_压缩包测评.txt             完整运行命令
+    README_LLM合规审查.txt            裁判规则、结果与失败处理
+    profiles/strategy-v7/            当前源码绑定与同一九界参考
+    profiles/strategy-v6等/          原字节历史配置
+    public/                          同一参赛开发包
+    contest_*、trial_*等              私有实验与客观评分
+  received/team01-v1.zip             收件：根目录agent/与models.json
+  organizer-results/<新目录>/
+    accepted/                        私有受理版本及回执
+    compliance_report.txt            通过写“不存在”，其它列证据或错误
+    compliance_report.json           指挥部结构化审查记录
+    evaluation/private/              仅通过后产生的隐藏运行材料
+    summary.json                     审查阻断状态或正常规定成绩
 
-每次填写提交ZIP路径和新结果目录，普通评测账号、实验Python、模型Python提前统一设置。
-模型仍按models.json原绝对路径读取，不搬运大权重；本次权重需保持不变。
-隐藏运行材料不归还，不能将accepted或private当成绩包发出。
-依赖可以复用已有可用环境，不要求保存镜像或重装。完整指令见README_压缩包测评.txt。
+SHORE_JUDGE_API_KEY是指挥部环境变量，不创建在队伍策略或模型目录。
+各队agent/及models.json格式、六公开自测方法不变；全部模型/LoRA路径仍写共享盘绝对路径。
+旧安装目录先保留为备份，再把新包放入同一个v7目录，主测评命令无需更改。
