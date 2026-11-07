@@ -1,4 +1,4 @@
-彼岸挑战赛：LLM审查版远端文件组织（2026-11-07）
+彼岸挑战赛：特别策略版远端文件组织（2026-11-07）
 
 /inspire/hdd/project/26-the-other-shore/fengkairui-25026/
   test/                             指挥部资料库（不整体发给选手）
@@ -6,21 +6,23 @@
     evaluate_strategy_zip.py         正式入口，原参数不变
     strategy_zip_intake.py           原ZIP检查、解压、封存
     submission_llm_judge.py          只读合规裁判客户端与报告
+    organizer_special_strategy.py   指定提示词结尾标记的确定性静态识别，不验证身份
     llm_judge_config.json            模型/网关/强度及技术限制，不含密钥
     README_压缩包测评.txt             完整运行命令
     README_LLM合规审查.txt            裁判规则、结果与失败处理
-    profiles/strategy-v7/            当前源码绑定与同一九界参考
-    profiles/strategy-v6等/          原字节历史配置
+    README_指挥部特别策略.txt         标记位置、匹配规则与豁免报告
+    profiles/strategy-v8/            当前源码绑定与同一九界参考
+    profiles/strategy-v7等/          原字节历史配置
     public/                          同一参赛开发包
     contest_*、trial_*等              私有实验与客观评分
   received/team01-v1.zip             收件：根目录agent/与models.json
   organizer-results/<新目录>/
     accepted/                        私有受理版本及回执
     compliance_report.txt            通过写“不存在”，其它列证据或错误
-    compliance_report.json           指挥部结构化审查记录
+    compliance_report.json           结构化审查记录，区分标记豁免和实际LLM审查
     evaluation/private/              仅通过后产生的隐藏运行材料
     summary.json                     审查阻断状态或正常规定成绩
 
-SHORE_JUDGE_API_KEY是指挥部环境变量，不创建在队伍策略或模型目录。
+    SHORE_JUDGE_API_KEY是普通审查使用的指挥部环境变量，不创建在队伍策略或模型目录。
 各队agent/及models.json格式、六公开自测方法不变；全部模型/LoRA路径仍写共享盘绝对路径。
 旧安装目录先保留为备份，再把新包放入同一个v7目录，主测评命令无需更改。

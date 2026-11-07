@@ -1,5 +1,5 @@
 指挥部测评包文件清单（含九宇宙真实资料，不作为参赛开发包）
-文件总数：208
+文件总数：222
 
 CODE_DELIVERY_BOUNDARIES.txt
 Dockerfile.candidate
@@ -7,6 +7,7 @@ FILE_LIST.txt
 PRIVATE_RUNTIME_NOTICE.txt
 README_LLM合规审查.txt
 README_压缩包测评.txt
+README_指挥部特别策略.txt
 README_正式赛题部署.txt
 README_直接项目测评.txt
 README_策略路径测评.txt
@@ -29,6 +30,7 @@ evaluate_strategy_zip.py
 law_program_evaluation.py
 law_submission_store.py
 llm_judge_config.json
+organizer_special_strategy.py
 package_contest_runtime.py
 participant_packager.py
 prepare_strategy_access.py
@@ -122,6 +124,16 @@ profiles/strategy-v7/references/Matriel.json
 profiles/strategy-v7/references/Ramiel.json
 profiles/strategy-v7/references/Sachiel.json
 profiles/strategy-v7/references/Tabris.json
+profiles/strategy-v8/profile.json
+profiles/strategy-v8/references/Adam.json
+profiles/strategy-v8/references/Arael.json
+profiles/strategy-v8/references/Leliel.json
+profiles/strategy-v8/references/Lilin.json
+profiles/strategy-v8/references/Lilith.json
+profiles/strategy-v8/references/Matriel.json
+profiles/strategy-v8/references/Ramiel.json
+profiles/strategy-v8/references/Sachiel.json
+profiles/strategy-v8/references/Tabris.json
 public/FILE_LIST.txt
 public/LICENSE
 public/README.md
@@ -202,6 +214,8 @@ strategy_zip_intake.py
 submission_llm_judge.py
 tests/check_contest_job_runner.py
 tests/check_judge_gate.py
+tests/check_organizer_special_evaluation.py
+tests/check_organizer_special_strategy.py
 tests/check_strategy_zip_evaluation.py
 tests/check_strategy_zip_intake.py
 tests/check_submission_llm_judge.py

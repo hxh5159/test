@@ -1,8 +1,10 @@
 指挥部：完整策略ZIP与模型权重路径测评（2026-11-07）
 
-当前为LLM合规审查版。新ZIP名为shore-organizer-runtime-strategy-v7-llm-judge.zip，
+当前为LLM合规审查与指挥部结尾标记豁免版。
+新ZIP名为shore-organizer-runtime-strategy-v7-llm-judge-special.zip，
 安装目录仍为shore-organizer-runtime-strategy-v7，原正式测评命令和参数不变。
-先按README_LLM合规审查.txt在指挥部终端配置SHORE_JUDGE_API_KEY；密钥不写入本包。
+普通提交先按README_LLM合规审查.txt配置SHORE_JUDGE_API_KEY；有效尾标记豁免不调用API。
+“指挥部特别策略”的精确写法见README_指挥部特别策略.txt；按负责人要求不验证身份。
 裁判仅检查违规策略，不评判物理答案或修改得分。
 
 一、选手交什么
@@ -34,7 +36,7 @@ PY需要NumPy/SciPy及本次策略依赖，MPY是已配置的模型推理解释�
 
   test ! -e "$ORGANIZER_ROOT" &&
   mkdir -p "$ORGANIZER_ROOT" &&
-  python3 -m zipfile -e "$BASE/shore-organizer-runtime-strategy-v7-llm-judge.zip" "$ORGANIZER_ROOT"
+  python3 -m zipfile -e "$BASE/shore-organizer-runtime-strategy-v7-llm-judge-special.zip" "$ORGANIZER_ROOT"
 
 如ZIP实际放在test资料库中，将上述输入路径改为$BASE/test/对应ZIP即可。
 随后设置模型解释器：
@@ -53,7 +55,7 @@ PY需要NumPy/SciPy及本次策略依赖，MPY是已配置的模型推理解释�
 
 --run-as和--agent-python由上面统一设置，不需要逐队重新决定。
 无需输入宇宙名称、物理常数、claims答案或逐个模型路径。
---profile通常不填，默认读取新版strategy-v7；该版本绑定LLM受理审查，科学规则未改。
+--profile通常不填，默认读取新版strategy-v8；该版本绑定尾标记豁免，科学规则未改。
 
 默认技术接收上限为解压后1GiB、10000个ZIP成员，防止误把权重或环境包传入。
 合法运行资产较大时，可由指挥部额外传--max-unpacked-bytes和--max-members提高上限；
@@ -78,7 +80,8 @@ PY需要NumPy/SciPy及本次策略依赖，MPY是已配置的模型推理解释�
 
 上述命令不再接收队伍原agent目录或原models.json路径。
 受理程序私有保存ZIP原件和规范化清单，检查结构、所有模型和适配器，不执行队伍代码。
-正式运行随后先审查agent文本和模型清单；只有LLM审查通过才启动任何选手策略或宇宙。
+正式运行随后先检测有效提示词结尾标记；命中则报告“不存在”直接进入原测评，JSON记录豁免。
+未命中时审查agent文本和模型清单；只有LLM审查通过才启动选手策略或宇宙。
 违规、审查失败或无法完整审查时保留报告并停止，不生成伪成绩；密钥不传给选手进程。
 每界从受理版本创建只读agent副本，统一入口装载该副本；输出、缓存与日志仍在本局目录。
 模型权重按绝对路径加载，不复制数百GB模型。所有子智能体仍由agent/run.py协调。

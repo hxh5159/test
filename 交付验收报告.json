@@ -1,38 +1,38 @@
 {
   "date": "2026-11-07",
   "status": "passed",
-  "scope": "organizer_llm_compliance_gate",
-  "profile_id": "strategy-v7",
+  "scope": "organizer_special_prompt_suffix_exemption",
+  "profile_id": "strategy-v8",
   "package_checks": {
     "runtime": {
-      "entries": 208,
+      "entries": 222,
       "crc": true,
       "all_payload_hashes": true,
       "nested_public_payload_hashes": true,
       "file_list_complete": true,
       "literal_credentials_found": false,
-      "file": "shore-organizer-runtime-strategy-v7-llm-judge.zip",
-      "sha256": "74378c9c923e286329896034a6fe51839b7819ae3d161270326fb8d00e2ca4ee"
+      "file": "shore-organizer-runtime-strategy-v7-llm-judge-special.zip",
+      "sha256": "93c624fccad9792635f902f9ef6356a4aa9bd9e7abcf862126675121337a9d56"
     },
     "h200": {
-      "entries": 243,
+      "entries": 257,
       "crc": true,
       "all_payload_hashes": true,
       "nested_public_payload_hashes": true,
       "file_list_complete": true,
       "literal_credentials_found": false,
       "file": "shore-organizer-open-model-test-20261101.zip",
-      "sha256": "eaf571451ea0787ff0e74567e16ffb578eaa0af709651c50699dc89dfcada2f2"
+      "sha256": "2e022832bdc5963e7f9612e4c9222d0ca59ab8d63661d7366378a7eaf82cb7da"
     },
     "4090": {
-      "entries": 244,
+      "entries": 258,
       "crc": true,
       "all_payload_hashes": true,
       "nested_public_payload_hashes": true,
       "file_list_complete": true,
       "literal_credentials_found": false,
       "file": "shore-organizer-4090-test-20261101.zip",
-      "sha256": "48bbbc31bdc5bdd3b0ad541e49bd1e1587e8926ae0c43b61e799f9f7370401f1"
+      "sha256": "88bfda885be21d4d575ec5772cd41a2fe6015c8f2b21bd8d038ee04d745d5a9d"
     }
   },
   "payload_changes": {
@@ -40,33 +40,32 @@
       "changed": [
         "FILE_LIST.txt",
         "PRIVATE_RUNTIME_NOTICE.txt",
+        "README_LLM合规审查.txt",
         "README_压缩包测评.txt",
         "bundle-manifest.json",
         "contest_platform.py",
         "evaluate_strategy.py",
-        "evaluate_strategy_zip.py",
         "package_contest_runtime.py",
-        "tests/check_strategy_zip_evaluation.py"
+        "submission_llm_judge.py"
       ],
       "added": [
-        "README_LLM合规审查.txt",
-        "llm_judge_config.json",
-        "profiles/strategy-v7/profile.json",
-        "profiles/strategy-v7/references/Adam.json",
-        "profiles/strategy-v7/references/Arael.json",
-        "profiles/strategy-v7/references/Leliel.json",
-        "profiles/strategy-v7/references/Lilin.json",
-        "profiles/strategy-v7/references/Lilith.json",
-        "profiles/strategy-v7/references/Matriel.json",
-        "profiles/strategy-v7/references/Ramiel.json",
-        "profiles/strategy-v7/references/Sachiel.json",
-        "profiles/strategy-v7/references/Tabris.json",
-        "submission_llm_judge.py",
-        "tests/check_judge_gate.py",
-        "tests/check_submission_llm_judge.py"
+        "README_指挥部特别策略.txt",
+        "organizer_special_strategy.py",
+        "profiles/strategy-v8/profile.json",
+        "profiles/strategy-v8/references/Adam.json",
+        "profiles/strategy-v8/references/Arael.json",
+        "profiles/strategy-v8/references/Leliel.json",
+        "profiles/strategy-v8/references/Lilin.json",
+        "profiles/strategy-v8/references/Lilith.json",
+        "profiles/strategy-v8/references/Matriel.json",
+        "profiles/strategy-v8/references/Ramiel.json",
+        "profiles/strategy-v8/references/Sachiel.json",
+        "profiles/strategy-v8/references/Tabris.json",
+        "tests/check_organizer_special_evaluation.py",
+        "tests/check_organizer_special_strategy.py"
       ],
       "removed": [],
-      "unchanged_payload_count": 184,
+      "unchanged_payload_count": 199,
       "participant_payload_unchanged": true,
       "science_and_references_unchanged": true,
       "historical_profile_bytes_unchanged": true
@@ -76,34 +75,33 @@
         "FILE_LIST.txt",
         "PRIVATE_PACKAGE_MANIFEST.json",
         "PRIVATE_RUNTIME_NOTICE.txt",
+        "README_LLM合规审查.txt",
         "README_压缩包测评.txt",
         "contest_platform.py",
         "evaluate_strategy.py",
-        "evaluate_strategy_zip.py",
         "package_contest_runtime.py",
         "package_open_model_test.py",
         "starter-manifest.json",
-        "tests/check_strategy_zip_evaluation.py"
+        "submission_llm_judge.py"
       ],
       "added": [
-        "README_LLM合规审查.txt",
-        "llm_judge_config.json",
-        "profiles/strategy-v7/profile.json",
-        "profiles/strategy-v7/references/Adam.json",
-        "profiles/strategy-v7/references/Arael.json",
-        "profiles/strategy-v7/references/Leliel.json",
-        "profiles/strategy-v7/references/Lilin.json",
-        "profiles/strategy-v7/references/Lilith.json",
-        "profiles/strategy-v7/references/Matriel.json",
-        "profiles/strategy-v7/references/Ramiel.json",
-        "profiles/strategy-v7/references/Sachiel.json",
-        "profiles/strategy-v7/references/Tabris.json",
-        "submission_llm_judge.py",
-        "tests/check_judge_gate.py",
-        "tests/check_submission_llm_judge.py"
+        "README_指挥部特别策略.txt",
+        "organizer_special_strategy.py",
+        "profiles/strategy-v8/profile.json",
+        "profiles/strategy-v8/references/Adam.json",
+        "profiles/strategy-v8/references/Arael.json",
+        "profiles/strategy-v8/references/Leliel.json",
+        "profiles/strategy-v8/references/Lilin.json",
+        "profiles/strategy-v8/references/Lilith.json",
+        "profiles/strategy-v8/references/Matriel.json",
+        "profiles/strategy-v8/references/Ramiel.json",
+        "profiles/strategy-v8/references/Sachiel.json",
+        "profiles/strategy-v8/references/Tabris.json",
+        "tests/check_organizer_special_evaluation.py",
+        "tests/check_organizer_special_strategy.py"
       ],
       "removed": [],
-      "unchanged_payload_count": 217,
+      "unchanged_payload_count": 232,
       "participant_payload_unchanged": true,
       "science_and_references_unchanged": true,
       "historical_profile_bytes_unchanged": true
@@ -113,34 +111,33 @@
         "FILE_LIST.txt",
         "PRIVATE_PACKAGE_MANIFEST.json",
         "PRIVATE_RUNTIME_NOTICE.txt",
+        "README_LLM合规审查.txt",
         "README_压缩包测评.txt",
         "contest_platform.py",
         "evaluate_strategy.py",
-        "evaluate_strategy_zip.py",
         "package_contest_runtime.py",
         "package_open_model_test.py",
         "starter-manifest.json",
-        "tests/check_strategy_zip_evaluation.py"
+        "submission_llm_judge.py"
       ],
       "added": [
-        "README_LLM合规审查.txt",
-        "llm_judge_config.json",
-        "profiles/strategy-v7/profile.json",
-        "profiles/strategy-v7/references/Adam.json",
-        "profiles/strategy-v7/references/Arael.json",
-        "profiles/strategy-v7/references/Leliel.json",
-        "profiles/strategy-v7/references/Lilin.json",
-        "profiles/strategy-v7/references/Lilith.json",
-        "profiles/strategy-v7/references/Matriel.json",
-        "profiles/strategy-v7/references/Ramiel.json",
-        "profiles/strategy-v7/references/Sachiel.json",
-        "profiles/strategy-v7/references/Tabris.json",
-        "submission_llm_judge.py",
-        "tests/check_judge_gate.py",
-        "tests/check_submission_llm_judge.py"
+        "README_指挥部特别策略.txt",
+        "organizer_special_strategy.py",
+        "profiles/strategy-v8/profile.json",
+        "profiles/strategy-v8/references/Adam.json",
+        "profiles/strategy-v8/references/Arael.json",
+        "profiles/strategy-v8/references/Leliel.json",
+        "profiles/strategy-v8/references/Lilin.json",
+        "profiles/strategy-v8/references/Lilith.json",
+        "profiles/strategy-v8/references/Matriel.json",
+        "profiles/strategy-v8/references/Ramiel.json",
+        "profiles/strategy-v8/references/Sachiel.json",
+        "profiles/strategy-v8/references/Tabris.json",
+        "tests/check_organizer_special_evaluation.py",
+        "tests/check_organizer_special_strategy.py"
       ],
       "removed": [],
-      "unchanged_payload_count": 218,
+      "unchanged_payload_count": 233,
       "participant_payload_unchanged": true,
       "science_and_references_unchanged": true,
       "historical_profile_bytes_unchanged": true
@@ -173,8 +170,10 @@
   "same_installation_directory": "shore-organizer-runtime-strategy-v7",
   "same_evaluation_command_and_flags": true,
   "judge_is_not_scoring": true,
+  "special_strategy_exemption": "static_prompt_rstrip_suffix",
+  "special_strategy_identity_verified": false,
   "runtime_isolation_claim": "Static LLM review is not complete filesystem/network isolation",
-  "registered_archives_verified": 93,
+  "registered_archives_verified": 96,
   "prepare_bundle_checks": {
     "runtime": {
       "fresh_extract": true,
@@ -210,7 +209,7 @@
     "passed": 16,
     "failed": 0
   },
-  "real_judge_smoke": {
+  "previous_ordinary_judge_api_evidence": {
     "synthetic_cases": [
       {
         "fixture": "clean",
@@ -236,7 +235,7 @@
     "requested_reasoning_effort": "xhigh",
     "no_world_or_model_weights_loaded": true,
     "raw_review_reports_included": false,
-    "scope": "Organizer source-review API evidence; not proof of GPU-host network or system isolation."
+    "scope": "Previously recorded ordinary source-review API evidence; special-marker paths use no API. Not proof of GPU-host network or system isolation."
   },
   "windows_expand_archive_verified": true,
   "desktop_delivery_zip_access": {

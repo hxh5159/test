@@ -1,13 +1,14 @@
-彼岸挑战赛：LLM合规审查版交付（2026-11-07）
+彼岸挑战赛：特别策略标记豁免版交付（2026-11-07）
 
 给攻坚组：shore-contest-starter-v17.zip，完全不变；无需更新README或重装依赖。
-给指挥部：shore-organizer-runtime-strategy-v7-llm-judge.zip，解压目录仍是shore-organizer-runtime-strategy-v7。
-组委会原evaluate_strategy_zip.py命令及参数不变，需一次性设置裁判API密钥。
-收到参赛ZIP后先按原规则解压固定版本，再静态审查全部策略文本；只有passed才继续原实验、law/claims、积分与评分。
-拒绝、审查异常或覆盖不完整均停止，不把异常写成某个宇宙的0分，也不会静默跳过裁判。
+给指挥部：shore-organizer-runtime-strategy-v7-llm-judge-special.zip，解压目录仍是shore-organizer-runtime-strategy-v7。
+组委会原evaluate_strategy_zip.py命令及参数不变；普通提交仍需一次性设置裁判API密钥。
+收到参赛ZIP后先按原规则解压固定版本，再静态检查指定提示词结尾标记；命中则不验证身份、零API放行。
+没有标记的提交仍完整执行原LLM合规审查，拒绝、异常或覆盖不完整均停止，不伪造科学成绩。
+豁免也只跳过LLM审查，不跳过结构、模型路径、规律接口、宇宙实验或客观评分。
 完整合规报告由指挥部保管；不得把隐藏运行资料或内部审核日志发给攻坚组。
-完整命令见README_压缩包测评.txt，裁判细节见README_LLM合规审查.txt。
+完整命令见README_压缩包测评.txt，另见README_LLM合规审查.txt与README_指挥部特别策略.txt。
 
-H200与4090组合包同步r23；旧v7/r22均原字节保留在legacy。
+H200与4090组合包同步r24；旧llm-judge/r23均原字节保留在legacy。
 模型权重仍由models.json绝对路径读取，不打包、不复制大模型。
 参赛ZIP、定律评分与所有物理/数值/配额规则保持，不以LLM替代客观评分。

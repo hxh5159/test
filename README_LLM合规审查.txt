@@ -3,18 +3,20 @@
 一、改动范围
 
 本版在完整策略ZIP受理、解压完成后，正式运行选手策略和任何宇宙实验之前，
-先由独立LLM阅读提交的策略文本。只有审查通过，才进入原有自动实验、生成
+先检查负责人授权的提示词结尾标记“指挥部特别策略”；有效标记命中时直接豁免，
+不调用审查API，报告写“不存在”。只按标记、不验证提交身份，详见README_指挥部特别策略.txt。
+没有有效标记时，由独立LLM阅读提交的策略文本。只有审查通过，才进入原有自动实验、生成
 law.py/claims.json、固定积分和评分流程。定律、预言与节约分仍按固定程序计算，
 LLM不评判物理答案，不修改得分、不替选手补写规律或声明。
 
-新包为shore-organizer-runtime-strategy-v7-llm-judge.zip，解压安装目录仍使用
+新包为shore-organizer-runtime-strategy-v7-llm-judge-special.zip，解压安装目录仍使用
 shore-organizer-runtime-strategy-v7。evaluate_strategy_zip.py的命令和参数不变。
 已有v7目录请先保留为备份，再将新ZIP解压至原来的同名目录；不覆盖运行中的目录。
 六开发宇宙与参赛包starter-v17不变，本次无需重新发放参赛包。
 
 二、一次性配置裁判凭证
 
-API密钥不在ZIP、Git仓库或配置模板中。指挥部在运行测评的同一终端输入一次：
+API密钥不在ZIP、Git仓库或配置模板中。普通提交须在运行测评的同一终端输入一次：
 
   read -r -s -p '输入指挥部LLM裁判API密钥：' SHORE_JUDGE_API_KEY
   export SHORE_JUDGE_API_KEY
@@ -85,7 +87,8 @@ SUBMISSION_ZIP填写实际收件路径。PY/MPY仍使用已配置好的实验与
   compliance_report.json     结构化结论、检查覆盖和模型调用记录
   summary.json               本次状态；通过并测评完成后为原有成绩汇总
 
-通过时，compliance_report.txt内容仅为“不存在”。
+通过或有效尾标记豁免时，compliance_report.txt内容仅为“不存在”；后者在JSON中明确
+标注organizer_marker_exemption、未调用LLM与未验证身份，不伪装为完整审查结论。
 发现违规时，列出具体相对文件名、行号、原文证据与原因，不用没有出处的概括代替证据。
 返回的引用必须能在受理源码对应行中找到；无效或捏造引用不能作为通过结论。
 完整审查报告仅指挥部保留，不随隐藏运行材料发给参赛队。
